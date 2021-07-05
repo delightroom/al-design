@@ -2,10 +2,13 @@
     @testable import ALDesign
 
     final class ALDesignTests: XCTestCase {
-        func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-            XCTAssertEqual(ALDesign().text, "Hello, World!")
+        func testTypography() {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+            let font = UIFont.boldSystemFont(ofSize: 110)
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.black, .paragraphStyle: paragraphStyle]
+            let test = NSAttributedString(string: "Test", attributes: attributes)
+            
+            XCTAssertEqual("Test".attributedString(type: .hero1), test)
         }
     }
