@@ -1,3 +1,10 @@
+//
+//  ALColor.swift
+//
+//
+//  Created by smis on 2021/07/05.
+//
+
 import UIKit
 
 public enum Typography {
@@ -35,10 +42,10 @@ extension Typography {
 }
 
 extension String {
-    public func attributedString(type: Typography, alignment: NSTextAlignment = .left, color: UIColor = .black) -> NSAttributedString {
+    public func attributedString(type: Typography, alignment: NSTextAlignment = .left, color: ALColor = .onSurfaceHighEmphasis) -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
-        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: color, .paragraphStyle: paragraphStyle]
+        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: color.color, .paragraphStyle: paragraphStyle]
         return NSAttributedString(string: self, attributes: attributes)
     }
 }
