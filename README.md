@@ -1,3 +1,11 @@
 # ALDesign
 
-A description of this package.
+## Typgoraphy 사용방법
+
+```swift
+import ALDesign
+
+"TEXT".attributedString(type: .hero1)
+"TEXT".attributedString(type: .hero1, alignment: .center)
+"TEXT".attributedString(type: .hero1, alignment: .center, color: .black)
+```
