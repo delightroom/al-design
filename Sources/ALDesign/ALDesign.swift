@@ -1,6 +1,6 @@
 import UIKit
 
-enum Typography {
+public enum Typography {
     case hero1
     case hero2
     case title1
@@ -35,7 +35,7 @@ extension Typography {
 }
 
 extension String {
-    func attributedString(type: Typography, alignment: NSTextAlignment = .left, color: UIColor = .black) -> NSAttributedString {
+    public func attributedString(type: Typography, alignment: NSTextAlignment = .left, color: UIColor = .black) -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
         let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: color, .paragraphStyle: paragraphStyle]
