@@ -7,5 +7,5 @@ import ALDesign
 
 "TEXT".attributedString(type: .hero1)
 "TEXT".attributedString(type: .hero1, alignment: .center)
-"TEXT".attributedString(type: .hero1, alignment: .center, color: .black)
+"TEXT".attributedString(type: .hero1, alignment: .center, color: .onSurfaceHighEmphasis)
 ```
