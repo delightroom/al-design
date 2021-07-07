@@ -24,7 +24,7 @@ public enum ALColor {
 }
 
 extension ALColor {
-    var color: UIColor {
+    public var color: UIColor {
         let result: UIColor
         switch self {
         case .background: result = UIColor(hexString: "#F5F9FF")
