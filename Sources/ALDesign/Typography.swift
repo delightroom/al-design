@@ -47,33 +47,33 @@ extension String {
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
-    var hero: NSMutableAttributedString {
+    public var hero: NSMutableAttributedString {
         return attributedString(type: .hero1)
     }
     
-    var title: NSMutableAttributedString {
+    public var title: NSMutableAttributedString {
         return attributedString(type: .title1)
     }
     
-    var button: NSMutableAttributedString {
+    public var button: NSMutableAttributedString {
         return attributedString(type: .button)
     }
     
-    var paragraph: NSMutableAttributedString {
+    public var paragraph: NSMutableAttributedString {
         return attributedString(type: .paragraph)
     }
     
-    var overline: NSMutableAttributedString {
+    public var overline: NSMutableAttributedString {
         return attributedString(type: .overline)
     }
     
-    var caption: NSMutableAttributedString {
+    public var caption: NSMutableAttributedString {
         return attributedString(type: .caption1)
     }
 }
 
 extension NSMutableAttributedString {
-    var two: NSMutableAttributedString {
+    public var two: NSMutableAttributedString {
         guard let font = self.attribute(.font, at: 0, effectiveRange: nil) as? UIFont else { return self }
         let result = self
         let value: UIFont
@@ -88,7 +88,7 @@ extension NSMutableAttributedString {
         return result
     }
     
-    var three: NSMutableAttributedString {
+    public var three: NSMutableAttributedString {
         guard let font = self.attribute(.font, at: 0, effectiveRange: nil) as? UIFont else { return self }
         let result = self
         let value: UIFont
@@ -104,7 +104,7 @@ extension NSMutableAttributedString {
         return result
     }
     
-    func addColor(_ color: ALColor) -> NSMutableAttributedString {
+    public func addColor(_ color: ALColor) -> NSMutableAttributedString {
         let result = self
         let range = NSRange(location: 0, length: self.length)
         if attribute(.foregroundColor, at: 0, effectiveRange: nil) != nil {
@@ -114,7 +114,7 @@ extension NSMutableAttributedString {
         return result
     }
     
-    func addAlignment(_ alignment: NSTextAlignment) -> NSMutableAttributedString {
+    public func addAlignment(_ alignment: NSTextAlignment) -> NSMutableAttributedString {
         let result = self
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
