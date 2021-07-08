@@ -78,8 +78,9 @@ extension NSMutableAttributedString {
         let result = self
         let value: UIFont
         switch font {
-        case Typography.title1.font: value = Typography.title3.font
-        case Typography.caption1.font: value = Typography.caption3.font
+        case Typography.hero1.font: value = Typography.hero2.font
+        case Typography.title1.font: value = Typography.title2.font
+        case Typography.caption1.font: value = Typography.caption2.font
         default: return self
         }
         let range = NSRange(location: 0, length: self.length)
@@ -93,9 +94,8 @@ extension NSMutableAttributedString {
         let result = self
         let value: UIFont
         switch font {
-        case Typography.hero1.font: value = Typography.hero2.font
-        case Typography.title1.font: value = Typography.title2.font
-        case Typography.caption1.font: value = Typography.caption2.font
+        case Typography.title1.font: value = Typography.title3.font
+        case Typography.caption1.font: value = Typography.caption3.font
         default: return self
         }
         let range = NSRange(location: 0, length: self.length)
@@ -111,6 +111,16 @@ extension NSMutableAttributedString {
             removeAttribute(.foregroundColor, range: range)
         }
         result.addAttribute(.foregroundColor, value: color.color, range: range)
+        return result
+    }
+    
+    public func addColor(_ uiColor: UIColor) -> NSMutableAttributedString {
+        let result = self
+        let range = NSRange(location: 0, length: self.length)
+        if attribute(.foregroundColor, at: 0, effectiveRange: nil) != nil {
+            removeAttribute(.foregroundColor, range: range)
+        }
+        result.addAttribute(.foregroundColor, value: uiColor, range: range)
         return result
     }
     

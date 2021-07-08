@@ -10,6 +10,22 @@
             XCTAssertEqual("Test".hero, testString)
         }
         
+        func testTypographyTwo() {
+            let font = UIFont.boldSystemFont(ofSize: 48)
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
+            let testString = NSAttributedString(string: "Test", attributes: attributes)
+            
+            XCTAssertEqual("Test".hero.two, testString)
+        }
+        
+        func testTypographyThree() {
+            let font = UIFont.systemFont(ofSize: 12)
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
+            let testString = NSAttributedString(string: "Test", attributes: attributes)
+            
+            XCTAssertEqual("Test".caption.three, testString)
+        }
+        
         func testTypographyAddColor() {
             let font = UIFont.boldSystemFont(ofSize: 110)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
@@ -36,6 +52,14 @@
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
             XCTAssertEqual("Test".hero.addColor(.appBar).addAlignment(.left), testString)
+        }
+        
+        func testTypographyAddUIColor() {
+            let font = UIFont.boldSystemFont(ofSize: 110)
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor(hexString: "#123456")]
+            let testString = NSAttributedString(string: "Test", attributes: attributes)
+            
+            XCTAssertEqual("Test".hero.addColor(UIColor(hexString: "#123456")), testString)
         }
         
         func testColors() {
