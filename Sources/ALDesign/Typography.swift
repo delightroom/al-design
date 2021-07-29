@@ -25,16 +25,16 @@ extension Typography {
     var font: UIFont {
         let result: UIFont
         switch self {
-        case .hero1: result = UIFont.boldSystemFont(ofSize: 110)
-        case .hero2: result = UIFont.boldSystemFont(ofSize: 48)
-        case .title1: result = UIFont.boldSystemFont(ofSize: 32)
-        case .title2: result = UIFont.boldSystemFont(ofSize: 26)
-        case .title3: result = UIFont.boldSystemFont(ofSize: 20)
-        case .button: result = UIFont.boldSystemFont(ofSize: 17)
+        case .hero1: result = UIFont.systemFont(ofSize: 110, weight: .heavy)
+        case .hero2: result = UIFont.systemFont(ofSize: 48, weight: .heavy)
+        case .title1: result = UIFont.systemFont(ofSize: 32, weight: .heavy)
+        case .title2: result = UIFont.systemFont(ofSize: 26, weight: .heavy)
+        case .title3: result = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        case .button: result = UIFont.systemFont(ofSize: 17, weight: .heavy)
         case .paragraph: result = UIFont.systemFont(ofSize: 16)
-        case .overline: result = UIFont.boldSystemFont(ofSize: 14)
+        case .overline: result = UIFont.systemFont(ofSize: 14, weight: .heavy)
         case .caption1: result = UIFont.systemFont(ofSize: 14)
-        case .caption2: result = UIFont.boldSystemFont(ofSize: 12)
+        case .caption2: result = UIFont.systemFont(ofSize: 12, weight: .heavy)
         case .caption3: result = UIFont.systemFont(ofSize: 12)
         }
         return result

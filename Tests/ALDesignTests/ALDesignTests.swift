@@ -3,7 +3,7 @@
 
     final class ALDesignTests: XCTestCase {
         func testTypography() {
-            let font = UIFont.boldSystemFont(ofSize: 110)
+            let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
@@ -11,7 +11,7 @@
         }
         
         func testTypographyTwo() {
-            let font = UIFont.boldSystemFont(ofSize: 48)
+            let font = UIFont.systemFont(ofSize: 48, weight: .heavy)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
@@ -27,7 +27,7 @@
         }
         
         func testTypographyAddColor() {
-            let font = UIFont.boldSystemFont(ofSize: 110)
+            let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
@@ -37,7 +37,7 @@
         func testTypographyAddAlignment() {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .left
-            let font = UIFont.boldSystemFont(ofSize: 110)
+            let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color, .paragraphStyle: paragraphStyle]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
@@ -47,7 +47,7 @@
         func testTypographyAddColorAndAlignment() {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .left
-            let font = UIFont.boldSystemFont(ofSize: 110)
+            let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.appBar.color, .paragraphStyle: paragraphStyle]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
@@ -55,7 +55,7 @@
         }
         
         func testTypographyAddUIColor() {
-            let font = UIFont.boldSystemFont(ofSize: 110)
+            let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
             let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor(hexString: "#123456")]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
