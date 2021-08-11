@@ -1,5 +1,5 @@
 //
-//  PremiumIcon.swift
+//  MissionPremiumIcon.swift
 //  
 //
 //  Created by smis on 2021/08/11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum PremiumIcon {
+public enum MissionPremiumIcon {
     case missionDefault
     case missionPhoto
     case missionShake
@@ -27,7 +27,7 @@ public enum PremiumIcon {
     case missionSquat
 }
 
-extension PremiumIcon {
+extension MissionPremiumIcon {
     public var image: UIImage {
         let result: UIImage
         switch self {
