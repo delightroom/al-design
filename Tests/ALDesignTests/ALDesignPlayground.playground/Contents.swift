@@ -14,6 +14,10 @@ class MyViewController : UIViewController {
         imageView.image = NaviIcon.sleep.filled
         imageView.sizeToFit()
         
+        let label = UILabel()
+        label.attributedText = "Hello ALDesign".hero.two.addColor(UIColor.onSurfaceMediumEmphasis)
+        label.sizeToFit()
+        
         view.addSubview(imageView)
         self.view = view
     }
