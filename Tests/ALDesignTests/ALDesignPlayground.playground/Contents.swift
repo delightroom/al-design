@@ -31,3 +31,9 @@ let moreVerticalImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSiz
 moreVerticalImageView.image = CommonIcon.moreVertical.image
 moreVerticalImageView.tintColor = .black
 moreVerticalImageView.sizeToFit()
+
+
+let back24x48ImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 48, height: 48)))
+back24x48ImageView.backgroundColor = .white
+back24x48ImageView.contentMode = .center
+back24x48ImageView.image = CommonIcon.back.image

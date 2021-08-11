@@ -110,7 +110,6 @@ extension CommonIcon {
         case .flash: result = UIImage(named: "ic_flash_24_24" , in: .module, compatibleWith: nil)!
         case .subsetting: result = UIImage(named: "ic_subsetting_24_24" , in: .module, compatibleWith: nil)!
         case .lock: result = UIImage(named: "ic_lock_24_24" , in: .module, compatibleWith: nil)!
-        
         }
         return result
     }
