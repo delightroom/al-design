@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImage {
-    struct ALIcon {
+    public struct ALIcon {
         static let sleepFilled = UIImage(named: "ic_sleep_filled_24_24", in: .module, compatibleWith: nil)!
     }
 }

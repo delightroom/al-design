@@ -9,7 +9,7 @@ import UIKit
 
 
 extension UIColor {
-    struct ALColor {
+    public struct ALColor {
         /// dark: #0E1117
         /// light: #F5F9FF
         static var background: UIColor {
