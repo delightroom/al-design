@@ -7,7 +7,7 @@
 
 import UIKit
 
-@available(*, deprecated, message: "Use Colors instead")
+@available(*, deprecated, message: "Use .ALColor.\"color name\" instead")
 public enum ALColor {
     case background
     case appBar
@@ -24,7 +24,7 @@ public enum ALColor {
     case black400
 }
 
-@available(*, deprecated, message: "Use Colors instead")
+@available(*, deprecated, message: "Use .ALColor.\"color name\" instead")
 extension ALColor {
     public var color: UIColor {
         let result: UIColor

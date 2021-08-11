@@ -43,7 +43,7 @@ extension Typography {
 
 extension String {
     private func attributedString(type: Typography) -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: Colors.light.onSurfaceHighEmphasis]
+        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: UIColor.ALColor.onSurfaceHighEmphasis]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
@@ -104,7 +104,7 @@ extension NSMutableAttributedString {
         return result
     }
     
-    @available(*, deprecated, message: "Use Colors.\"color name\" instead")
+    @available(*, deprecated, message: "Use .ALColor.\"color name\" instead")
     public func addColor(_ color: ALColor) -> NSMutableAttributedString {
         let result = self
         let range = NSRange(location: 0, length: self.length)
