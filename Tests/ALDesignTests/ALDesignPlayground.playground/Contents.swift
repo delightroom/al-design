@@ -26,12 +26,10 @@ let mission16x16ImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSiz
 mission16x16ImageView.image = MissionPremiumIcon.missionMath.image
 mission16x16ImageView.tintColor = .black
 
-
 let moreVerticalImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
 moreVerticalImageView.image = CommonIcon.moreVertical.image
 moreVerticalImageView.tintColor = .black
 moreVerticalImageView.sizeToFit()
-
 
 let back24x48ImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 48, height: 48)))
 back24x48ImageView.backgroundColor = .white
