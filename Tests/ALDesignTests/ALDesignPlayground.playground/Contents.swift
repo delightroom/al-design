@@ -6,12 +6,12 @@ import ALDesign
 
 class MyViewController : UIViewController {
     override func loadView() {
-        let view = UIImageView()
+        let view = UIView()
         view.backgroundColor = .white
 
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
         imageView.backgroundColor = .blue
-        imageView.image = UIImage.ALIcon.sleepFilled
+        imageView.image = NaviIcon.sleep.filled
         imageView.sizeToFit()
         
         view.addSubview(imageView)

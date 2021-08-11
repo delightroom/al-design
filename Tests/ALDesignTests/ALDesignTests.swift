@@ -68,8 +68,8 @@
         }
         
         func testIcons() {
-            let sleepFilled = UIImage.ALIcon.sleepFilled
-            XCTAssertEqual(CGSize(width: 24, height: 24), sleepFilled.size)
-            XCTAssertNotNil(UIImage.ALIcon.sleepFilled)
+            let sleepFilled = NaviIcon.sleep.filled
+            XCTAssertNotNil(sleepFilled)
+            XCTAssertEqual(CGSize(width: 24, height: 24), sleepFilled.size)   
         }
     }
