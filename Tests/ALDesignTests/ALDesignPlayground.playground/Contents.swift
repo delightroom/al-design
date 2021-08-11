@@ -20,4 +20,8 @@ premiumImageView.sizeToFit()
 let premiumGradientImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
 premiumGradientImageView.image = PremiumIcon.premium.gradientImage
 premiumGradientImageView.tintColor = .black
-premiumGradientImageView.sizeToFit()
+premiumImageView.sizeToFit()
+
+let mission16x16ImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 16, height: 16)))
+mission16x16ImageView.image = PremiumIcon.missionMath.image
+mission16x16ImageView.tintColor = .black
