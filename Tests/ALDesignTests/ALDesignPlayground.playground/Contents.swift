@@ -4,23 +4,20 @@ import UIKit
 import PlaygroundSupport
 import ALDesign
 
-class MyViewController : UIViewController {
-    override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .white
+let naviIconImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+naviIconImageView.image = NaviIcon.sleep.filled
+naviIconImageView.sizeToFit()
 
-        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
-        imageView.backgroundColor = .blue
-        imageView.image = NaviIcon.sleep.filled
-        imageView.sizeToFit()
-        
-        let label = UILabel()
-        label.attributedText = "Hello ALDesign".hero.two.addColor(UIColor.onSurfaceMediumEmphasis)
-        label.sizeToFit()
-        
-        view.addSubview(imageView)
-        self.view = view
-    }
-}
-// Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController()
+let label = UILabel()
+label.attributedText = "Hello ALDesign".hero.two.addColor(UIColor.onSurfaceMediumEmphasis)
+label.sizeToFit()
+
+let premiumImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+premiumImageView.image = PremiumIcon.premium.image
+premiumImageView.tintColor = .black
+premiumImageView.sizeToFit()
+
+let premiumGradientImageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+premiumGradientImageView.image = PremiumIcon.premium.gradientImage
+premiumGradientImageView.tintColor = .black
+premiumGradientImageView.sizeToFit()
