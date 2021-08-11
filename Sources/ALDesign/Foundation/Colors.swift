@@ -159,5 +159,80 @@ extension UIColor {
             }
             return result
         }
+        
+        /// #F50F3B
+        static var primary: UIColor {
+            return UIColor(hexString: "#F50F3B")
+        }
+        
+        /// #C10020
+        static var primaryVariant: UIColor {
+            return UIColor(hexString: "#C10020")
+        }
+        
+        /// #FFFFFF
+        static var onPrimary: UIColor {
+            return UIColor(hexString: "#FFFFFF")
+        }
+        
+        /// #F50026, #FA005C, #FF9800
+        static var premiumCTA: [UIColor] {
+            return [UIColor(hexString: "#F50026"), UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
+        }
+        
+        /// #FA005C, #FF9800
+        static var premiumHorizon: [UIColor] {
+            return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
+        }
+        
+        /// #FA005C, #FF9800
+        static var premiumVertical: UIColor {
+            return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
+        }
+        
+        /// #00A3C7
+        static var secondary: UIColor {
+            return UIColor(hexString: "#00A3C7")
+        }
+        
+        /// #009299
+        static var secondaryVariant: UIColor {
+            return UIColor(hexString: "#009299")
+        }
+        
+        /// #FEFEFE
+        static var onSecondary: UIColor {
+            return UIColor(hexString: "#FEFEFE")
+        }
+        
+        /// #FFDA15
+        static var color1: UIColor {
+            return UIColor(hexString: "#FFDA15")
+        }
+        
+        /// #FF9800
+        static var color2: UIColor {
+            return UIColor(hexString: "#FF9800")
+        }
+        
+        /// #FA005C
+        static var color3: UIColor {
+            return UIColor(hexString: "#FA005C")
+        }
+        
+        /// #FF5D00
+        static var negative: UIColor {
+            return UIColor(hexString: "#FF5D00")
+        }
+        
+        /// #22BB3C
+        static var positive: UIColor {
+            return UIColor(hexString: "#22BB3C")
+        }
+        
+        /// #E2B00A
+        static var caution: UIColor {
+            return UIColor(hexString: "#E2B00A")
+        }
     }
 }
