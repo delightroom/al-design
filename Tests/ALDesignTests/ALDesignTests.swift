@@ -66,4 +66,8 @@
             let testColor = UIColor(hexString: "#F5F9FF")
             XCTAssertEqual(UIColor.ALColor.background, testColor)
         }
+        
+        func testIcons() {
+            XCTAssertNotNil(UIImage.ALIcon.sleepFilled)
+        }
     }

@@ -175,6 +175,7 @@ extension UIColor {
             return UIColor(hexString: "#FFFFFF")
         }
         
+        // TODO: gradient 방향 고려 필요
         /// #F50026, #FA005C, #FF9800
         static var premiumCTA: [UIColor] {
             return [UIColor(hexString: "#F50026"), UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
@@ -186,7 +187,7 @@ extension UIColor {
         }
         
         /// #FA005C, #FF9800
-        static var premiumVertical: UIColor {
+        static var premiumVertical: [UIColor] {
             return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
         }
         
