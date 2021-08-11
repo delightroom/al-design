@@ -13,7 +13,6 @@ public enum Colors {
 }
 
 extension Colors {
-    
     /// dark: #0E1117
     /// light: #F5F9FF
     var background: UIColor {

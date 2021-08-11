@@ -4,7 +4,7 @@
     final class ALDesignTests: XCTestCase {
         func testTypography() {
             let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
-            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: Colors.light.onSurfaceHighEmphasis]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
             XCTAssertEqual("Test".hero, testString)
@@ -12,7 +12,7 @@
         
         func testTypographyTwo() {
             let font = UIFont.systemFont(ofSize: 48, weight: .heavy)
-            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: Colors.light.onSurfaceHighEmphasis]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
             XCTAssertEqual("Test".hero.two, testString)
@@ -20,7 +20,7 @@
         
         func testTypographyThree() {
             let font = UIFont.systemFont(ofSize: 12)
-            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: Colors.light.onSurfaceHighEmphasis]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
             XCTAssertEqual("Test".caption.three, testString)
@@ -28,17 +28,17 @@
         
         func testTypographyAddColor() {
             let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
-            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color]
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: Colors.light.onSurfaceHighEmphasis]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
-            XCTAssertEqual("Test".hero.addColor(.onSurfaceHighEmphasis), testString)
+            XCTAssertEqual("Test".hero.addColor(Colors.light.onSurfaceHighEmphasis), testString)
         }
         
         func testTypographyAddAlignment() {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .left
             let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
-            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.onSurfaceHighEmphasis.color, .paragraphStyle: paragraphStyle]
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: Colors.light.onSurfaceHighEmphasis, .paragraphStyle: paragraphStyle]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
             XCTAssertEqual("Test".hero.addAlignment(.left), testString)
@@ -48,10 +48,10 @@
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .left
             let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
-            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: ALColor.appBar.color, .paragraphStyle: paragraphStyle]
+            let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: Colors.light.onSurfaceHighEmphasis, .paragraphStyle: paragraphStyle]
             let testString = NSAttributedString(string: "Test", attributes: attributes)
             
-            XCTAssertEqual("Test".hero.addColor(.appBar).addAlignment(.left), testString)
+            XCTAssertEqual("Test".hero.addColor(Colors.light.onSurfaceHighEmphasis).addAlignment(.left), testString)
         }
         
         func testTypographyAddUIColor() {
@@ -64,6 +64,6 @@
         
         func testColors() {
             let testColor = UIColor(hexString: "#F5F9FF")
-            XCTAssertEqual(ALColor.background.color, testColor)
+            XCTAssertEqual(Colors.light.background, testColor)
         }
     }
