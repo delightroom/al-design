@@ -98,13 +98,13 @@ extension UIColor {
         return result
     }
     
-    /// dark: #F5F9FF
+    /// dark: #7689A5
     /// light: #7689A5
     public static var onSurfaceMediumEmphasis: UIColor {
         let result: UIColor
         if #available(iOS 13.0, *) {
             switch UITraitCollection.current.userInterfaceStyle {
-            case .dark: result = UIColor(hexString: "#F5F9FF")
+            case .dark: result = UIColor(hexString: "#7689A5")
             default: result = UIColor(hexString: "#7689A5")
             }
         } else {
