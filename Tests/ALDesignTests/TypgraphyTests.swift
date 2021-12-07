@@ -44,14 +44,11 @@ extension String {
 
 extension UIFont {
     static func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
-        guard let result = UIFont(name: "Lexend-SemiBold", size: size) else {
-            do {
-                try registerFontIfNeeded()
-                return UIFont.lexendSemiBold(ofSize: 110)
-            } catch {
-                return UIFont.systemFont(ofSize: size, weight: .heavy)
-            }
+        do {
+            try registerFontIfNeeded()
+            return UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize)!
+        } catch {
+            return UIFont.systemFont(ofSize: size, weight: .heavy)
         }
-        return result
     }
 }

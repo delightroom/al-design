@@ -12,6 +12,7 @@ enum FontError: Error {
 }
 
 public func registerFontIfNeeded() throws {
+    guard UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize) == nil else { return }
     guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf") else {
         throw FontError.error("url not found")
     }
