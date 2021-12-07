@@ -14,24 +14,12 @@ final class TypographyTests: XCTestCase {
         XCTAssertNotNil(font)
     }
     
-    func testNumberHeroOne() {
-        let font = lexendSemiBold(ofSize: 110)
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+    func testNumberTypo() {
+        let fonts = [lexendSemiBold(ofSize: 110), lexendSemiBold(ofSize: 48), lexendSemiBold(ofSize:32), lexendSemiBold(ofSize: 26), lexendSemiBold(ofSize: 20)]
 
         let input = "123456789"
-        let output = input.number(.hero1)
-        let correctOutput = NSAttributedString(string: input, attributes: attributes)
-
-        XCTAssertEqual(output, correctOutput)
-    }
-    
-    func testNumberHeroTwo() {
-        let font = lexendSemiBold(ofSize: 48)
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
-
-        let input = "123456789"
-        let output = input.number(.hero2)
-        let correctOutput = NSAttributedString(string: input, attributes: attributes)
+        let output = [input.number(.hero1), input.number(.hero2), input.number(.title1), input.number(.title2), input.number(.title3)]
+        let correctOutput = fonts.map { NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.onSurfaceHighEmphasis]) }
 
         XCTAssertEqual(output, correctOutput)
     }

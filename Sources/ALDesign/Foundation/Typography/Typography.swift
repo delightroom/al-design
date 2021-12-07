@@ -40,7 +40,16 @@ public enum Typography {
 extension String {
     public func number(_ typo: Typography) -> NSAttributedString {
         let result: NSAttributedString
-        let font: UIFont = lexendSemiBold(ofSize: 110)
+        let fontSize: CGFloat
+        switch typo {
+        case .hero1: fontSize = 110
+        case .hero2: fontSize = 48
+        case .title1: fontSize = 32
+        case .title2: fontSize = 26
+        case .title3: fontSize = 20
+        default: fontSize = 20
+        }
+        let font: UIFont = lexendSemiBold(ofSize: fontSize)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
         result = NSAttributedString(string: self, attributes: attributes)
         return result
