@@ -7,13 +7,11 @@
 
 import UIKit
 
-public typealias FontNameExt = (name: String, ext: String)
-
 enum FontError: Error {
     case error(_ message: String)
 }
 
-public func autoRegisteringFont(_ fontNames: [FontNameExt], _ spmBundleName : String) throws {
+public func autoRegisteringFont() throws {
     guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf") else {
         throw FontError.error("url not found")
     }

@@ -10,11 +10,8 @@ import ALDesign
 
 final class TypographyTests: XCTestCase {
     func testlexend() {
-        let fontToRegister = [
-              FontNameExt(name: "Lexend-SemiBold", ext: "ttf"),
-            ]
         do {
-            try autoRegisteringFont(fontToRegister, "ALDesign")
+            try autoRegisteringFont()
             let font = UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize)
             XCTAssertNotNil(font)
         } catch {
@@ -48,11 +45,8 @@ extension String {
 extension UIFont {
     static func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
         guard let result = UIFont(name: "Lexend-SemiBold", size: size) else {
-            let fontToRegister = [
-                  FontNameExt(name: "Lexend-SemiBold", ext: "ttf"),
-                ]
             do {
-                try autoRegisteringFont(fontToRegister, "ALDesign")
+                try autoRegisteringFont()
                 return UIFont.lexendSemiBold(ofSize: 110)
             } catch {
                 return UIFont.systemFont(ofSize: size, weight: .heavy)
