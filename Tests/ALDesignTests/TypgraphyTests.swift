@@ -10,18 +10,12 @@ import ALDesign
 
 final class TypographyTests: XCTestCase {
     func testlexend() {
-        do {
-            try registerFontIfNeeded()
-            let font = UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize)
-            XCTAssertNotNil(font)
-        } catch {
-            dump(error)
-            XCTFail()
-        }
+        let font = lexendSemiBold(ofSize: 11)
+        XCTAssertNotNil(font)
     }
     
     func testNumberHeroOne() {
-        let font = UIFont.lexendSemiBold(ofSize: 110)
+        let font = lexendSemiBold(ofSize: 110)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
 
         let input = "123456789"

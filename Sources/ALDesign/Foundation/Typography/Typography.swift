@@ -7,25 +7,20 @@
 
 import UIKit
 
-enum FontError: Error {
-    case error(_ message: String)
-}
-
-public func registerFontIfNeeded() throws {
-    guard UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize) == nil else { return }
-    guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf") else {
-        throw FontError.error("url not found")
-    }
-    guard let fontDataProvider = CGDataProvider(url: fontUrl as CFURL) else {
-        throw FontError.error("Could not get reference to font data provider.")
-    }
-    guard let font = CGFont(fontDataProvider) else {
-        throw FontError.error("Could not get font from CoreGraphics.")
-    }
+public func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
+    let lexendFont = UIFont(name: "Lexend-SemiBold", size: size)
+    let systemFont = UIFont.systemFont(ofSize: size, weight: .heavy)
+    guard lexendFont == nil else { return lexendFont! }
+    guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf"),
+          let fontDataProvider = CGDataProvider(url: fontUrl as CFURL),
+          let font = CGFont(fontDataProvider) else {
+              return systemFont
+          }
     var error: Unmanaged<CFError>?
     guard CTFontManagerRegisterGraphicsFont(font, &error) else {
-        throw FontError.error("Error registering font: \(dump(error)!).")
+        return systemFont
     }
+    return UIFont(name: "Lexend-SemiBold", size: size)!
 }
 
 public enum Typography {
@@ -40,6 +35,16 @@ public enum Typography {
     case caption1
     case caption2
     case caption3
+}
+
+extension String {
+    public func number(_ typo: Typography) -> NSAttributedString {
+        let result: NSAttributedString
+        let font: UIFont = lexendSemiBold(ofSize: 110)
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+        result = NSAttributedString(string: self, attributes: attributes)
+        return result
+    }
 }
 
 extension Typography {
@@ -166,27 +171,5 @@ extension String {
         paragraphStyle.alignment = alignment
         let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: color.color, .paragraphStyle: paragraphStyle]
         return NSAttributedString(string: self, attributes: attributes)
-    }
-}
-
-
-extension String {
-    public func number(_ typo: Typography) -> NSAttributedString {
-        let result: NSAttributedString
-        let font: UIFont = UIFont.lexendSemiBold(ofSize: 110)
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
-        result = NSAttributedString(string: self, attributes: attributes)
-        return result
-    }
-}
-
-extension UIFont {
-    static public func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
-        do {
-            try registerFontIfNeeded()
-            return UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize)!
-        } catch {
-            return UIFont.systemFont(ofSize: size, weight: .heavy)
-        }
     }
 }
