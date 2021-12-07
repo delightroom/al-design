@@ -14,15 +14,10 @@ enum FontError: Error {
 }
 
 public func autoRegisteringFont(_ fontNames: [FontNameExt], _ spmBundleName : String) throws {
-    try fontURLs(in: Bundle.module).forEach { try registerFont(from: $0) }
-}
-
-func fontURLs(in bundle: Bundle) -> [URL] {
-    var result: [URL] = []
-    if let url = bundle.url(forResource: "Lexend-SemiBold", withExtension: "ttf") {
-        result.append(url)
+    guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf") else {
+        throw FontError.error("url not found")
     }
-    return result
+    try registerFont(from: fontUrl)
 }
 
 func registerFont(from url: URL) throws {
