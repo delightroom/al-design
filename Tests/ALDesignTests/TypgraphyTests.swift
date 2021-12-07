@@ -11,7 +11,7 @@ import ALDesign
 final class TypographyTests: XCTestCase {
     func testlexend() {
         do {
-            try autoRegisteringFont()
+            try registerFontIfNeeded()
             let font = UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize)
             XCTAssertNotNil(font)
         } catch {
@@ -46,7 +46,7 @@ extension UIFont {
     static func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
         guard let result = UIFont(name: "Lexend-SemiBold", size: size) else {
             do {
-                try autoRegisteringFont()
+                try registerFontIfNeeded()
                 return UIFont.lexendSemiBold(ofSize: 110)
             } catch {
                 return UIFont.systemFont(ofSize: size, weight: .heavy)

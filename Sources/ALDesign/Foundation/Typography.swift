@@ -11,15 +11,11 @@ enum FontError: Error {
     case error(_ message: String)
 }
 
-public func autoRegisteringFont() throws {
+public func registerFontIfNeeded() throws {
     guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf") else {
         throw FontError.error("url not found")
     }
-    try registerFont(from: fontUrl)
-}
-
-func registerFont(from url: URL) throws {
-    guard let fontDataProvider = CGDataProvider(url: url as CFURL) else {
+    guard let fontDataProvider = CGDataProvider(url: fontUrl as CFURL) else {
         throw FontError.error("Could not get reference to font data provider.")
     }
     guard let font = CGFont(fontDataProvider) else {
