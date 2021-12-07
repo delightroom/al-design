@@ -7,6 +7,35 @@
 
 import UIKit
 
+public typealias FontNameExt = (name: String, ext: String)
+
+enum FontError: Error {
+    case error(_ message: String)
+}
+
+public func autoRegisteringFont(_ fontNames: [FontNameExt], _ spmBundleName : String) throws {
+    try fontURLs(for: fontNames, in: Bundle.module).forEach { try registerFont(from: $0) }
+}
+
+func fontURLs(for fontNames: [FontNameExt], in bundle: Bundle) -> [URL] {
+    return fontNames.compactMap { police in
+        bundle.url(forResource: police.name, withExtension: police.ext)
+    }
+}
+
+func registerFont(from url: URL) throws {
+    guard let fontDataProvider = CGDataProvider(url: url as CFURL) else {
+        throw FontError.error("Could not get reference to font data provider.")
+    }
+    guard let font = CGFont(fontDataProvider) else {
+        throw FontError.error("Could not get font from CoreGraphics.")
+    }
+    var error: Unmanaged<CFError>?
+    guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+        throw FontError.error("Error registering font: \(dump(error)!).")
+    }
+}
+
 public enum Typography {
     case hero1
     case hero2

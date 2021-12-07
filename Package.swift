@@ -25,7 +25,7 @@ let package = Package(
             resources: [.process("Resources")]),
         .testTarget(
             name: "ALDesignTests",
-            dependencies: ["ALDesign"],
-            resources: [.process("Resources")]),
+            dependencies: ["ALDesign"]),
+//            resources: [.process("Resources")]),
     ]
 )
