@@ -31,24 +31,3 @@ final class TypographyTests: XCTestCase {
         XCTAssertEqual(output, correctOutput)
     }
 }
-
-extension String {
-    func number(_ typo: Typography) -> NSAttributedString {
-        let result: NSAttributedString
-        let font: UIFont = UIFont.lexendSemiBold(ofSize: 110)
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
-        result = NSAttributedString(string: self, attributes: attributes)
-        return result
-    }
-}
-
-extension UIFont {
-    static func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
-        do {
-            try registerFontIfNeeded()
-            return UIFont(name: "Lexend-SemiBold", size: UIFont.labelFontSize)!
-        } catch {
-            return UIFont.systemFont(ofSize: size, weight: .heavy)
-        }
-    }
-}
