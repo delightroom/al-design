@@ -24,4 +24,15 @@ final class TypographyTests: XCTestCase {
 
         XCTAssertEqual(output, correctOutput)
     }
+    
+    func testNumberHeroTwo() {
+        let font = lexendSemiBold(ofSize: 48)
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+
+        let input = "123456789"
+        let output = input.number(.hero2)
+        let correctOutput = NSAttributedString(string: input, attributes: attributes)
+
+        XCTAssertEqual(output, correctOutput)
+    }
 }
