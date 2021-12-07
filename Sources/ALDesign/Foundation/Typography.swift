@@ -18,9 +18,11 @@ public func autoRegisteringFont(_ fontNames: [FontNameExt], _ spmBundleName : St
 }
 
 func fontURLs(for fontNames: [FontNameExt], in bundle: Bundle) -> [URL] {
-    return fontNames.compactMap { police in
-        bundle.url(forResource: police.name, withExtension: police.ext)
+    var result: [URL] = []
+    if let url = bundle.url(forResource: "Lexend-SemiBold", withExtension: "ttf") {
+        result.append(url)
     }
+    return result
 }
 
 func registerFont(from url: URL) throws {
