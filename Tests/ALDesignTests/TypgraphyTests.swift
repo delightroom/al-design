@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import ALDesign
+import ALDesign
 
 final class TypographyTests: XCTestCase {
     func testlexend() {
