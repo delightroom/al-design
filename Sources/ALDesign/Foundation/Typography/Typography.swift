@@ -39,7 +39,6 @@ public enum Typography {
 
 extension String {
     public func number(_ typo: Typography) -> NSAttributedString {
-        let result: NSAttributedString
         let fontSize: CGFloat
         switch typo {
         case .hero1: fontSize = 110
@@ -51,8 +50,26 @@ extension String {
         }
         let font: UIFont = lexendSemiBold(ofSize: fontSize)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
-        result = NSAttributedString(string: self, attributes: attributes)
-        return result
+        return NSAttributedString(string: self, attributes: attributes)
+    }
+    
+    public func text(_ typo: Typography) -> NSAttributedString {
+        let font: UIFont
+        switch typo {
+        case .hero1: font = UIFont.systemFont(ofSize: 110, weight: .heavy)
+        case .hero2: font = UIFont.systemFont(ofSize: 48, weight: .heavy)
+        case .title1: font = UIFont.systemFont(ofSize: 32, weight: .heavy)
+        case .title2: font = UIFont.systemFont(ofSize: 26, weight: .heavy)
+        case .title3: font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        case .button: font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+        case .paragraph: font = UIFont.systemFont(ofSize: 16)
+        case .overline: font = UIFont.systemFont(ofSize: 14, weight: .heavy)
+        case .caption1: font = UIFont.systemFont(ofSize: 14)
+        case .caption2: font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+        case .caption3: font = UIFont.systemFont(ofSize: 12)
+        }
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+        return NSAttributedString(string: self, attributes: attributes)
     }
 }
 

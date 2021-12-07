@@ -23,4 +23,14 @@ final class TypographyTests: XCTestCase {
 
         XCTAssertEqual(output, correctOutput)
     }
+    
+    func testTextTypo() {
+        let fonts = [UIFont.systemFont(ofSize: 110, weight: .heavy), UIFont.systemFont(ofSize: 48, weight: .heavy), UIFont.systemFont(ofSize: 32, weight: .heavy), UIFont.systemFont(ofSize: 26, weight: .heavy), UIFont.systemFont(ofSize: 20, weight: .heavy), UIFont.systemFont(ofSize: 17, weight: .heavy), UIFont.systemFont(ofSize: 16), UIFont.systemFont(ofSize: 14, weight: .heavy), UIFont.systemFont(ofSize: 14), UIFont.systemFont(ofSize: 12, weight: .heavy), UIFont.systemFont(ofSize: 12)]
+
+        let input = "Good Morning"
+        let output = [input.text(.hero1), input.text(.hero2), input.text(.title1), input.text(.title2), input.text(.title3), input.text(.button), input.text(.paragraph), input.text(.overline), input.text(.caption1), input.text(.caption2), input.text(.caption3)]
+        let correctOutput = fonts.map { NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.onSurfaceHighEmphasis]) }
+
+        XCTAssertEqual(output, correctOutput)
+    }
 }
