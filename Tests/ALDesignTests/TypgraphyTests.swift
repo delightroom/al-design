@@ -24,15 +24,6 @@ final class TypographyTests: XCTestCase {
     }
     
     func testNumberHeroOne() {
-        let fontToRegister = [
-              FontNameExt(name: "Lexend-SemiBold", ext: "ttf"),
-            ]
-        do {
-            try autoRegisteringFont(fontToRegister, "ALDesign")
-        } catch {
-            dump(error)
-            XCTFail()
-        }
         let font = UIFont.lexendSemiBold(ofSize: 110)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
 
@@ -56,7 +47,17 @@ extension String {
 
 extension UIFont {
     static func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
-        guard let result = UIFont(name: "Lexend-SemiBold", size: size) else { return UIFont.systemFont(ofSize: size, weight: .heavy) }
+        guard let result = UIFont(name: "Lexend-SemiBold", size: size) else {
+            let fontToRegister = [
+                  FontNameExt(name: "Lexend-SemiBold", ext: "ttf"),
+                ]
+            do {
+                try autoRegisteringFont(fontToRegister, "ALDesign")
+                return UIFont.lexendSemiBold(ofSize: 110)
+            } catch {
+                return UIFont.systemFont(ofSize: size, weight: .heavy)
+            }
+        }
         return result
     }
 }
