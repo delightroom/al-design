@@ -33,7 +33,7 @@ final class TypographyTests: XCTestCase {
             dump(error)
             XCTFail()
         }
-        let font = UIFont.systemFont(ofSize: 110, weight: .heavy)
+        let font = UIFont.lexendSemiBold(ofSize: 110)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
 
         let input = "123456789"
