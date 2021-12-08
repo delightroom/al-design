@@ -19,7 +19,7 @@ final class TypographyTests: XCTestCase {
 
         let input = "123456789"
         let output = [input.number(.hero1), input.number(.hero2), input.number(.title1), input.number(.title2), input.number(.title3)]
-        let correctOutput = fonts.map { NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.onSurfaceHighEmphasis]) }
+        let correctOutput = fonts.map { NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.surfaceHighEmphasis]) }
 
         XCTAssertEqual(output, correctOutput)
     }
@@ -35,16 +35,16 @@ final class TypographyTests: XCTestCase {
             let style = NSMutableParagraphStyle()
             style.maximumLineHeight = lineHeight
             style.minimumLineHeight = lineHeight
-            return NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.onSurfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - $0.lineHeight) / 2])
+            return NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.surfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - $0.lineHeight) / 2])
         }
 
         XCTAssertEqual(output, correctOutput)
     }
     
     func testTypoWithAddColor() {
-        let input = "Hello ALDesign".number(.title1).addColor(UIColor.onSurfaceMediumEmphasis)
+        let input = "Hello ALDesign".number(.title1).addColor(UIColor.surfaceMediumEmphasis)
         let output = input.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor
-        let correctOutput = UIColor.onSurfaceMediumEmphasis
+        let correctOutput = UIColor.surfaceMediumEmphasis
         
         XCTAssertNotNil(output)
         XCTAssertEqual(output, correctOutput)
@@ -61,11 +61,11 @@ final class TypographyTests: XCTestCase {
     }
     
     func testTypoWithAddColorAndAddAlignment() {
-        let input = "Hello ALDesign".number(.title1).addColor(UIColor.onSurfaceMediumEmphasis).addAlignment(.center)
+        let input = "Hello ALDesign".number(.title1).addColor(UIColor.surfaceMediumEmphasis).addAlignment(.center)
         let output = [input.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor, input.attribute(.paragraphStyle, at: 0, effectiveRange: nil) as? NSMutableParagraphStyle]
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        let correctOutput = [UIColor.onSurfaceMediumEmphasis, paragraphStyle]
+        let correctOutput = [UIColor.surfaceMediumEmphasis, paragraphStyle]
         
         XCTAssertNotNil(output)
         XCTAssertEqual(output, correctOutput)

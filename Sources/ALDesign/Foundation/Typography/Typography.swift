@@ -49,7 +49,7 @@ extension String {
         default: fontSize = 20
         }
         let font: UIFont = lexendSemiBold(ofSize: fontSize)
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
@@ -94,7 +94,7 @@ extension String {
         let style = NSMutableParagraphStyle()
         style.maximumLineHeight = lineHeight
         style.minimumLineHeight = lineHeight
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - font.lineHeight) / 2]
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - font.lineHeight) / 2]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
 }
