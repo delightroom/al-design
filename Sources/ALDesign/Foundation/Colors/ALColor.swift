@@ -190,30 +190,9 @@ extension UIColor {
         return UIColor(hexString: "#F50F3B")
     }
     
-    /// #C10020
+    /// #990016
     public static var primaryVariant: UIColor {
-        return UIColor(hexString: "#C10020")
-    }
-    
-    /// #FFFFFF
-    public static var onPrimary: UIColor {
-        return UIColor(hexString: "#FFFFFF")
-    }
-    
-    // TODO: gradient 방향 고려 필요
-    /// #F50026, #FA005C, #FF9800
-    public static var premiumCTA: [UIColor] {
-        return [UIColor(hexString: "#F50026"), UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
-    }
-    
-    /// #FA005C, #FF9800
-    public static var premiumHorizon: [UIColor] {
-        return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
-    }
-    
-    /// #FA005C, #FF9800
-    public static var premiumVertical: [UIColor] {
-        return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
+        return UIColor(hexString: "#990016")
     }
     
     /// #00A3C7
@@ -221,29 +200,24 @@ extension UIColor {
         return UIColor(hexString: "#00A3C7")
     }
     
-    /// #009299
+    /// #005967
     public static var secondaryVariant: UIColor {
-        return UIColor(hexString: "#009299")
+        return UIColor(hexString: "#005967")
+    }
+    // TODO: gradient 방향 고려 필요
+    /// #F60129, #FA015B, #FF8F06
+    public static var premiumCTA: [UIColor] {
+        return [UIColor(hexString: "#F60129"), UIColor(hexString: "#FA015B"), UIColor(hexString: "#FF8F06")]
     }
     
-    /// #FEFEFE
-    public static var onSecondary: UIColor {
-        return UIColor(hexString: "#FEFEFE")
+    /// #FA015B, #FF8F06
+    public static var premiumHorizon: [UIColor] {
+        return [UIColor(hexString: "#FA015B"), UIColor(hexString: "#FF8F06")]
     }
     
-    /// #FFDA15
-    public static var color1: UIColor {
-        return UIColor(hexString: "#FFDA15")
-    }
-    
-    /// #FF9800
-    public static var color2: UIColor {
-        return UIColor(hexString: "#FF9800")
-    }
-    
-    /// #FA005C
-    public static var color3: UIColor {
-        return UIColor(hexString: "#FA005C")
+    /// #FA015B, #FF8F06
+    public static var premiumVertical: [UIColor] {
+        return [UIColor(hexString: "#FA015B"), UIColor(hexString: "#FF8F06")]
     }
     
     /// #FF5D00
@@ -259,6 +233,35 @@ extension UIColor {
     /// #E2B00A
     public static var caution: UIColor {
         return UIColor(hexString: "#E2B00A")
+    }
+    
+    /// #FFFFFF
+    public static var onPrimary: UIColor {
+        return UIColor(hexString: "#FFFFFF")
+    }
+    
+    /// #FEFEFE
+    @available(*, deprecated, message: "'onSecondary' was deprecated in 2.0.0")
+    public static var onSecondary: UIColor {
+        return UIColor(hexString: "#FEFEFE")
+    }
+    
+    /// #FFDA15
+    @available(*, deprecated, message: "'color1' was deprecated in 2.0.0")
+    public static var color1: UIColor {
+        return UIColor(hexString: "#FFDA15")
+    }
+    
+    /// #FF9800
+    @available(*, deprecated, message: "'color2' was deprecated in 2.0.0")
+    public static var color2: UIColor {
+        return UIColor(hexString: "#FF9800")
+    }
+    
+    /// #FA005C
+    @available(*, deprecated, message: "'color3' was deprecated in 2.0.0")
+    public static var color3: UIColor {
+        return UIColor(hexString: "#FA005C")
     }
 }
 
