@@ -38,7 +38,7 @@ public enum Typography {
 }
 
 extension String {
-    public func number(_ typo: Typography) -> NSAttributedString {
+    public func number(_ typo: Typography) -> NSMutableAttributedString {
         let fontSize: CGFloat
         switch typo {
         case .hero1: fontSize = 110
@@ -50,10 +50,10 @@ extension String {
         }
         let font: UIFont = lexendSemiBold(ofSize: fontSize)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
-        return NSAttributedString(string: self, attributes: attributes)
+        return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
-    public func text(_ typo: Typography) -> NSAttributedString {
+    public func text(_ typo: Typography) -> NSMutableAttributedString {
         let lineHeight: CGFloat
         let font: UIFont
         switch typo {
@@ -95,7 +95,7 @@ extension String {
         style.maximumLineHeight = lineHeight
         style.minimumLineHeight = lineHeight
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.onSurfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - font.lineHeight) / 2]
-        return NSAttributedString(string: self, attributes: attributes)
+        return NSMutableAttributedString(string: self, attributes: attributes)
     }
 }
 
