@@ -120,6 +120,7 @@ extension UIColor {
         }
         return result
     }
+    
     @available(*, deprecated, message: "'onSurfaceHighEmphasis' was deprecated in 2.0.0: Use surfaceHighEmphasis instead")
     public static var onSurfaceHighEmphasis: UIColor {
         return surfaceHighEmphasis
@@ -127,7 +128,6 @@ extension UIColor {
     
     /// dark: black700
     /// light: white900
-    
     public static var surfaceMediumEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -174,8 +174,8 @@ extension UIColor {
     public static var surfaceDisabled: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(600)
-        default: result = .black(500)
+        case .light: result = .white(500)
+        default: result = .black(300)
         }
         return result
     }
