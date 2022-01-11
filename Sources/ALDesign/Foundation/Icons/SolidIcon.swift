@@ -5,7 +5,7 @@
 //  Created by smis on 2022/01/11.
 //
 
-import Foundation
+import UIKit
 
 public struct SolidIcon {
     public static let fullpopupClose2448 = UIImage(named: "ic_fullpopup_close_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)

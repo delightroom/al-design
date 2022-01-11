@@ -5,9 +5,9 @@
 //  Created by smis on 2022/01/11.
 //
 
-import Foundation
+import UIKit
 
-public static LineIcon {
+public struct LineIcon {
     public static let close2448 = UIImage(named: "ic_close_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let delete2448 = UIImage(named: "ic_delete_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let back2448 = UIImage(named: "ic_back_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)

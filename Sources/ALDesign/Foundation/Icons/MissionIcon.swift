@@ -5,7 +5,7 @@
 //  Created by smis on 2022/01/11.
 //
 
-import Foundation
+import UIKit
 
 public struct MissionIcon {
     public static let typingGradient2424 = UIImage(named: "ic_mission_typing_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
