@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_fullpopup_close_24_48.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

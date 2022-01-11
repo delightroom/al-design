@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_sound_off_16_16.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
