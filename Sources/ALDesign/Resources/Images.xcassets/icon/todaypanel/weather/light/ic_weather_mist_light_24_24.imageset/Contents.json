@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_weather_mist_light_24_24.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

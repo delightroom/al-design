@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_weather_unknown_light_32_32.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
