@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "img_dissmiss_qrcode_128.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
