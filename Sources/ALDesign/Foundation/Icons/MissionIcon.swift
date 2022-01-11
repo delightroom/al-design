@@ -8,9 +8,9 @@
 import UIKit
 
 public struct MissionIcon {
-    public static let typingGradient2424 = UIImage(named: "ic_mission_typing_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let walkingGradient2424 = UIImage(named: "ic_mission_walking_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let squatGradient2424 = UIImage(named: "ic_mission_squat_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+    public static let typingGradient2424 = UIImage(named: "ic_mission_typing_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let walkingGradient2424 = UIImage(named: "ic_mission_walking_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let squatGradient2424 = UIImage(named: "ic_mission_squat_gradient_24_24", in: .module, compatibleWith: nil)!
     public static let photo2424 = UIImage(named: "ic_mission_photo_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let shake2424 = UIImage(named: "ic_mission_shake_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let math2424 = UIImage(named: "ic_mission_math_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)

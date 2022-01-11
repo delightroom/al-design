@@ -8,15 +8,15 @@
 import UIKit
 
 public struct PremiumIcon {
-    public static let premiumGradient2448 = UIImage(named: "ic_premium_gradient_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let timepressureGradient2424 = UIImage(named: "ic_timepressure_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let backupsoundGradient2424 = UIImage(named: "ic_backupsound_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let wucGradient2424 = UIImage(named: "ic_wuc_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let sppGradient2424 = UIImage(named: "ic_spp_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let labelReminderGradient2424 = UIImage(named: "ic_label_reminder_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let purchaseNewfeaturesGradient2424 = UIImage(named: "ic_purchase_newfeatures_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let purchaseTurnoffadsGradient2424 = UIImage(named: "ic_purchase_turnoffads_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let premiumGradient2424 = UIImage(named: "ic_premium_gradient_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+    public static let premiumGradient2448 = UIImage(named: "ic_premium_gradient_24_48", in: .module, compatibleWith: nil)!
+    public static let timepressureGradient2424 = UIImage(named: "ic_timepressure_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let backupsoundGradient2424 = UIImage(named: "ic_backupsound_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let wucGradient2424 = UIImage(named: "ic_wuc_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let sppGradient2424 = UIImage(named: "ic_spp_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let labelReminderGradient2424 = UIImage(named: "ic_label_reminder_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let purchaseNewfeaturesGradient2424 = UIImage(named: "ic_purchase_newfeatures_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let purchaseTurnoffadsGradient2424 = UIImage(named: "ic_purchase_turnoffads_gradient_24_24", in: .module, compatibleWith: nil)!
+    public static let premiumGradient2424 = UIImage(named: "ic_premium_gradient_24_24", in: .module, compatibleWith: nil)!
     public static let timepressure2424 = UIImage(named: "ic_timepressure_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let backupsound2424 = UIImage(named: "ic_backupsound_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let wuc2424 = UIImage(named: "ic_wuc_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
