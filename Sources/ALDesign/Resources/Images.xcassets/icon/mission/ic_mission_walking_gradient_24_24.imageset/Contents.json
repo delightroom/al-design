@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_mission_walking_gradient_24_24.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
