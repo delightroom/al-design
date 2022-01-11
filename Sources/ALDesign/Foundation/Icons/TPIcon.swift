@@ -89,7 +89,7 @@ public struct TPIcon {
         return UIImage(named: "ic_weather_unknown_\(theme)_32_32", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     public static var sunnyDay24: UIImage {
-        return UIImage(named: "ic_weather_sunny_day_\(theme)_32_32-1", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: "ic_weather_sunny_day_\(theme)_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     public static var sunnyNight24: UIImage {
         return UIImage(named: "ic_weather_sunny_night_\(theme)_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
