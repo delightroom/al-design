@@ -8,7 +8,6 @@
 import UIKit
 
 public struct SolidIcon {
-    public static let fullpopupClose2448 = UIImage(named: "ic_fullpopup_close_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let soundOn2448 = UIImage(named: "ic_sound_on_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let soundOff2448 = UIImage(named: "ic_sound_off_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let label2448 = UIImage(named: "ic_label_24_48", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
@@ -24,13 +23,13 @@ public struct SolidIcon {
     public static let vibrate2424 = UIImage(named: "ic_vibrate_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let backspace2424 = UIImage(named: "ic_backspace_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let flashOff2424 = UIImage(named: "ic_flashoff_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let flash2424 = UIImage(named: "ic_flash_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+    public static let flashOn2424 = UIImage(named: "ic_flash_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let circle2424 = UIImage(named: "ic_circle_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let ok2424 = UIImage(named: "ic_ok_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let caution2424 = UIImage(named: "ic_caution_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let heart2424 = UIImage(named: "ic_heart_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let important2424 = UIImage(named: "ic_important_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let sent2424 = UIImage(named: "ic_sent_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+    public static let send2424 = UIImage(named: "ic_sent_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let theme2424 = UIImage(named: "ic_theme_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let bellOn2424 = UIImage(named: "ic_bell_on_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let bellOff2424 = UIImage(named: "ic_bell_off_24_24", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
@@ -51,12 +50,12 @@ public struct SolidIcon {
     public static let vibrate1616 = UIImage(named: "ic_vibrate_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let backspace1616 = UIImage(named: "ic_backspace_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let flashOff1616 = UIImage(named: "ic_flashoff_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let flash1616 = UIImage(named: "ic_flash_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+    public static let flashOn1616 = UIImage(named: "ic_flash_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let circle1616 = UIImage(named: "ic_circle_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let ok1616 = UIImage(named: "ic_ok_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let caution1616 = UIImage(named: "ic_caution_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let heart1616 = UIImage(named: "ic_heart_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let important1616 = UIImage(named: "ic_important_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
-    public static let sent1616 = UIImage(named: "ic_sent_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
+    public static let send1616 = UIImage(named: "ic_sent_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     public static let theme1616 = UIImage(named: "ic_theme_16_16", in: .module, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
 }
