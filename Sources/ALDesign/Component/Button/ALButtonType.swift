@@ -8,35 +8,11 @@
 import Foundation
 import UIKit
 
-public enum ALButtonType {
-    case big
-    case mediumGradient
-    case mediumPrimary
-    case mediumBasic
-    case mediumLine
-    case smallGradient
-    case smallPrimary
-    case smallBasic
-    case smallLine
-    case smallLineRightArrow
-    case smallLineLeftArrow
-    case smallUnderline
-    case tinyGradient
-    case tinyPrimary
-    case tinyBasic
-    case tinyLine
-    case tinyLineRightArrow
-    case tinyLineLeftArrow
-    case tinyUnderline
-}
-
 enum ALButtonSize {
     case big
     case medium
     case small
     case tiny
-    
-
 }
 
 extension ALButtonSize {
@@ -51,14 +27,14 @@ extension ALButtonSize {
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = SolidIcon.play1616
-                result.append("\(title) ".text(.overline))
                 result.append(NSAttributedString(attachment: attatchment))
+                result.append(" \(title)".text(.overline))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = SolidIcon.play1616
+                result.append("\(title) ".text(.overline))
                 result.append(NSAttributedString(attachment: attatchment))
-                result.append(" \(title)".text(.overline))
             case .underline:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
@@ -74,14 +50,14 @@ extension ALButtonSize {
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = SolidIcon.play1616
-                result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
+                result.append(" \(title)".text(.caption1))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = SolidIcon.play1616
+                result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
-                result.append(" \(title)".text(.caption1))
             case .underline:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
@@ -163,70 +139,6 @@ extension ALButtonStyle {
         case .gradient, .primary: result = .primaryVariant
         case .basic: result = UIColor(hexString: "#2F333D")
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
-        }
-        return result
-    }
-}
-
-extension ALButtonType {
-    public func attributedTitle(for title: String) -> NSMutableAttributedString {
-        let result: NSMutableAttributedString
-        switch self {
-        case .big: result = title.text(.title3).addColor(.onPrimary)
-        case .mediumGradient, .mediumPrimary: result = title.text(.button).addColor(.onPrimary)
-        case .mediumBasic: result = title.text(.button).addColor(.surfaceHighEmphasis)
-        case .mediumLine: result = title.text(.button).addColor(.surfaceMediumEmphasis)
-        case .smallGradient, .smallPrimary: result = title.text(.overline).addColor(.onPrimary)
-        case .smallBasic: result = title.text(.overline).addColor(.surfaceHighEmphasis)
-        case .smallLine: result = title.text(.overline).addColor(.surfaceMediumEmphasis)
-        case .smallLineRightArrow:
-            result = NSMutableAttributedString()
-            let attatchment = NSTextAttachment()
-            attatchment.image = SolidIcon.play1616
-            result.append("\(title) ".text(.overline).addColor(.surfaceMediumEmphasis))
-            result.append(NSAttributedString(attachment: attatchment))
-        case .smallLineLeftArrow:
-            result = NSMutableAttributedString()
-            let attatchment = NSTextAttachment()
-            attatchment.image = SolidIcon.play1616
-            result.append(NSAttributedString(attachment: attatchment))
-            result.append(" \(title)".text(.overline).addColor(.surfaceMediumEmphasis))
-        case .smallUnderline:
-            result = NSMutableAttributedString()
-            let attatchment = NSTextAttachment()
-            attatchment.image = LineIcon.forward1616
-            result.append("\(title) ".text(.overline).addColor(.surfaceMediumEmphasis))
-            result.append(NSAttributedString(attachment: attatchment))
-        case .tinyGradient, .tinyPrimary: result = title.text(.caption1).addColor(.onPrimary)
-        case .tinyBasic: result = title.text(.caption1).addColor(.surfaceHighEmphasis)
-        case .tinyLine: result = title.text(.caption1).addColor(.surfaceMediumEmphasis)
-        case .tinyLineRightArrow:
-            result = NSMutableAttributedString()
-            let attatchment = NSTextAttachment()
-            attatchment.image = SolidIcon.play1616
-            result.append("\(title) ".text(.caption1).addColor(.surfaceMediumEmphasis))
-            result.append(NSAttributedString(attachment: attatchment))
-        case .tinyLineLeftArrow:
-            result = NSMutableAttributedString()
-            let attatchment = NSTextAttachment()
-            attatchment.image = SolidIcon.play1616
-            result.append(NSAttributedString(attachment: attatchment))
-            result.append(" \(title)".text(.caption1).addColor(.surfaceMediumEmphasis))
-        case .tinyUnderline:
-            result = NSMutableAttributedString()
-            let attatchment = NSTextAttachment()
-            attatchment.image = SolidIcon.play1616
-            result.append("\(title) ".text(.caption1).addColor(.surfaceMediumEmphasis))
-            result.append(NSAttributedString(attachment: attatchment))
-        }
-        return result
-    }
-    
-    var cornerRadius: CGFloat {
-        let result: CGFloat
-        switch self {
-        case .big, .mediumGradient, .mediumPrimary, .mediumBasic, .mediumLine, .smallGradient: result = 6
-        case .smallPrimary, .smallBasic, .smallLine, .smallLineRightArrow, .smallLineLeftArrow, .smallUnderline, .tinyGradient, .tinyPrimary, .tinyBasic, .tinyLine, .tinyLineRightArrow, .tinyLineLeftArrow, .tinyUnderline: result = 4
         }
         return result
     }
