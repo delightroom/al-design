@@ -40,15 +40,27 @@ public class ALButton: UIButton {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = size.cornerRadius
-        backgroundColor = style.backgroundColor
         contentEdgeInsets = size.contentEdgeInsets
-//        setAttributedTitle(self.title, for: .normal)
-        
+        setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
         if let borderColor = style.borderColor {
             layer.borderColor = borderColor
             layer.borderWidth = 1
         }
         sizeToFit()
+        if let backgroundColor = style.backgroundColor {
+            if backgroundColor.count > 1 {
+                let gradient: CAGradientLayer = CAGradientLayer()
+                gradient.colors = backgroundColor.map { $0.cgColor }
+                gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+                gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+                gradient.frame = bounds
+                layer.addSublayer(gradient)
+                clipsToBounds = true
+                self.backgroundColor = backgroundColor.first
+            } else {
+                self.backgroundColor = backgroundColor.first
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -66,5 +78,15 @@ public class ALButton: UIButton {
     private func handleDisabled() {
         let color: UIColor = isEnabled ? style.textColor : style.disabledColor
         setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(color), for: .normal)
+    }
+}
+
+extension ALButton {
+    func addUndeline() {
+        layer.borderWidth = 0
+        let border = CALayer()
+        border.backgroundColor = style.borderColor
+        border.frame = CGRect(x: 0, y: frame.size.height, width: frame.width, height: 1)
+        layer.addSublayer(border)
     }
 }

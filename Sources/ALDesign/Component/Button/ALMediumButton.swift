@@ -8,52 +8,42 @@
 import Foundation
 import UIKit
 
-public class ALMediumButton: UIButton {
-    private let title: NSMutableAttributedString
-    
-    public override var isHighlighted: Bool {
-        didSet { handlePressed() }
-    }
-    
-    public override var isEnabled: Bool {
-        didSet { handleDisabled() }
-    }
-    
-    lazy private var pressedView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 6
-        view.backgroundColor = UIColor(hexString: "#0B0C0F").withAlphaComponent(0.6)
-        view.frame = bounds
-        return view
-    }()
-    
+public class ALMediumGradientButton: ALButton {
     public init(title: String) {
-        self.title = title.text(.button).addColor(.onPrimary)
-        super.init(frame: .zero)
-        layer.cornerRadius = 6
-        backgroundColor = .primary
-        contentEdgeInsets = UIEdgeInsets(top: 14, left: 32, bottom: 14, right: 32)
-        setAttributedTitle(self.title, for: .normal)
-        sizeToFit()
+        super.init(size: .medium, style: .gradient, title: title)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func handlePressed() {
-        if isHighlighted {
-            addSubview(pressedView)
-        } else {
-            pressedView.removeFromSuperview()
-        }
+}
+
+public class ALMediumPrimaryButton: ALButton {
+    public init(title: String) {
+        super.init(size: .medium, style: .primary, title: title)
     }
     
-    private func handleDisabled() {
-        if isEnabled {
-            setAttributedTitle(title.addColor(.onPrimary), for: .normal)
-        } else {
-            setAttributedTitle(title.addColor(.primaryVariant), for: .normal)
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+public class ALMediumBasicButton: ALButton {
+    public init(title: String) {
+        super.init(size: .medium, style: .basic, title: title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+public class ALMediumLineButton: ALButton {
+    public init(title: String) {
+        super.init(size: .medium, style: .line, title: title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
