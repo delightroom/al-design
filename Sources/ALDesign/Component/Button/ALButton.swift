@@ -13,8 +13,8 @@ public class ALButton: UIButton {
     var style: ALButtonStyle
     public var title: String {
         didSet {
-            sizeToFit()
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+            sizeToFit()
             resetBackgroundColorIfNeeded()
         }
     }
