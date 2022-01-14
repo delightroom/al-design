@@ -11,7 +11,11 @@ import UIKit
 public class ALButton: UIButton {
     var size: ALButtonSize
     var style: ALButtonStyle
-    var title: NSMutableAttributedString
+    public var title: String {
+        didSet {
+            setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+        }
+    }
     
     public override var isHighlighted: Bool {
         didSet { handlePressed() }
@@ -32,13 +36,13 @@ public class ALButton: UIButton {
     init(size: ALButtonSize, style: ALButtonStyle, title: String) {
         self.size = size
         self.style = style
-        self.title = size.attributedTitle(for: title, style: style)
+        self.title = title
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = size.cornerRadius
         backgroundColor = style.backgroundColor
         contentEdgeInsets = size.contentEdgeInsets
-        setAttributedTitle(self.title, for: .normal)
+//        setAttributedTitle(self.title, for: .normal)
         
         if let borderColor = style.borderColor {
             layer.borderColor = borderColor
@@ -61,6 +65,6 @@ public class ALButton: UIButton {
     
     private func handleDisabled() {
         let color: UIColor = isEnabled ? style.textColor : style.disabledColor
-        setAttributedTitle(title.addColor(color), for: .normal)
+        setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(color), for: .normal)
     }
 }
