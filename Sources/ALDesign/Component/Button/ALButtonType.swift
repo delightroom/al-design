@@ -41,7 +41,7 @@ extension ALButtonSize {
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = LineIcon.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.forward1616.size)
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
                 result.append("\(title) ".text(.overline))
                 result.append(NSAttributedString(attachment: attatchment))
             default:
@@ -67,7 +67,7 @@ extension ALButtonSize {
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = LineIcon.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.forward1616.size)
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
                 result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
             default:
