@@ -140,7 +140,7 @@ extension ALButtonStyle {
     var backgroundColor: UIColor {
         let result: UIColor
         switch self {
-        case .gradient: result = .premiumHorizon
+        case .gradient: result = .premiumHorizon.first!
         case .primary: result = .onPrimary
         case .basic: result = .surfaceDefault
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .clear
@@ -148,11 +148,11 @@ extension ALButtonStyle {
         return result
     }
     
-    var borderColor: UIColor? {
-        let result: UIColor?
+    var borderColor: CGColor? {
+        let result: CGColor?
         switch self {
         case .gradient, .primary, .basic: result = nil
-        case .line, .lineIconLeft, .lineIconRight: result = .surfaceMediumEmphasis
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = UIColor.surfaceMediumEmphasis.cgColor
         }
         return result
     }

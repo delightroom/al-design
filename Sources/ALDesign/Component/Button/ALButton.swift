@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ALButton: UIButton {
+public class ALButton: UIButton {
     var size: ALButtonSize
     var style: ALButtonStyle
     var title: NSMutableAttributedString
@@ -36,7 +36,7 @@ class ALButton: UIButton {
         super.init(frame: .zero)
         layer.cornerRadius = size.cornerRadius
         backgroundColor = style.backgroundColor
-        contentEdgeInsets = size.cornerRadius
+        contentEdgeInsets = size.contentEdgeInsets
         setAttributedTitle(self.title, for: .normal)
         
         if let borderColor = style.borderColor {
