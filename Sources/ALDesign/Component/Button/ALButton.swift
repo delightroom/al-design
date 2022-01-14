@@ -16,6 +16,9 @@ public class ALButton: UIButton {
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
             sizeToFit()
             resetBackgroundColorIfNeeded()
+            if style == .underline {
+                addUndeline()
+            }
         }
     }
     
