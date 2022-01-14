@@ -13,6 +13,7 @@ public class ALButton: UIButton {
     var style: ALButtonStyle
     public var title: String {
         didSet {
+            resetBackgroundColorIfNeeded()
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
         }
     }
@@ -79,6 +80,18 @@ public class ALButton: UIButton {
     private func handleDisabled() {
         let color: UIColor = isEnabled ? style.textColor : style.disabledColor
         setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(color), for: .normal)
+    }
+    
+    private func resetBackgroundColorIfNeeded() {
+        guard let backgroundColor = style.backgroundColor, backgroundColor.count > 1 else { return }
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = backgroundColor.map { $0.cgColor }
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.frame = bounds
+        layer.addSublayer(gradient)
+        clipsToBounds = true
+        self.backgroundColor = backgroundColor.first
     }
 }
 
