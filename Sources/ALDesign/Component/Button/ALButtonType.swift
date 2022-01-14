@@ -123,7 +123,7 @@ extension ALButtonStyle {
         let result: [UIColor]?
         switch self {
         case .gradient: result = UIColor.premiumHorizon
-        case .primary: result = [.onPrimary]
+        case .primary: result = [.primary]
         case .basic: result = [.surfaceDefault]
         case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
