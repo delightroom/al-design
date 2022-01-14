@@ -31,7 +31,7 @@ public class ALButton: UIButton {
     
     lazy private var pressedView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 6
+        view.layer.cornerRadius = size.cornerRadius
         view.backgroundColor = UIColor(hexString: "#0B0C0F").withAlphaComponent(0.6)
         view.frame = bounds
         return view
