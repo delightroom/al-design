@@ -34,6 +34,7 @@ public class ALButton: UIButton {
         self.style = style
         self.title = size.attributedTitle(for: title, style: style)
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = size.cornerRadius
         backgroundColor = style.backgroundColor
         contentEdgeInsets = size.contentEdgeInsets
