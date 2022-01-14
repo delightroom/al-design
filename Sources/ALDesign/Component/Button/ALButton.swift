@@ -14,10 +14,12 @@ public class ALButton: UIButton {
     public var title: String {
         didSet {
             sizeToFit()
-            resetBackgroundColorIfNeeded()
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+            resetBackgroundColorIfNeeded()
         }
     }
+    
+    private var gradient: CAGradientLayer?
     
     public override var isHighlighted: Bool {
         didSet { handlePressed() }
@@ -59,6 +61,7 @@ public class ALButton: UIButton {
                 layer.addSublayer(gradient)
                 clipsToBounds = true
                 self.backgroundColor = backgroundColor.first
+                self.gradient = gradient
             } else {
                 self.backgroundColor = backgroundColor.first
             }
@@ -85,6 +88,7 @@ public class ALButton: UIButton {
     
     private func resetBackgroundColorIfNeeded() {
         guard let backgroundColor = style.backgroundColor, backgroundColor.count > 1 else { return }
+        self.gradient?.removeFromSuperlayer()
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.colors = backgroundColor.map { $0.cgColor }
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
@@ -93,6 +97,7 @@ public class ALButton: UIButton {
         layer.addSublayer(gradient)
         clipsToBounds = true
         self.backgroundColor = backgroundColor.first
+        self.gradient = gradient
     }
 }
 
