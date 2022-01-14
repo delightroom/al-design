@@ -27,7 +27,7 @@ extension ALButtonSize {
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
                 attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: 1), size: SolidIcon.play1616.size)
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1), size: SolidIcon.play1616.size)
                 result.append(NSAttributedString(attachment: attatchment))
                 result.append(" \(title)".text(.overline))
             case .lineIconRight:
