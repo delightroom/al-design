@@ -21,7 +21,7 @@ extension UIColor {
         case 700: result = UIColor(hexString: "#C2CADA")
         case 800: result = UIColor(hexString: "#B4BDCF")
         case 900: result = UIColor(hexString: "#ABB3C4")
-        default: result = .white
+        default: result = UIColor(hexString: "#F2F6FF")
         }
         return result
     }
@@ -39,7 +39,7 @@ extension UIColor {
         case 700: result = UIColor(hexString: "#666D7D")
         case 800: result = UIColor(hexString: "#747C8C")
         case 900: result = UIColor(hexString: "#858E9E")
-        default: result = .black
+        default: result = UIColor(hexString: "#0B0C0F")
         }
         return result
     }
