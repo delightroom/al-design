@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ALSmallLineIconLeftButton: ALButton {
+public class ALSmallLineIconLeftButton: ALButton {
     public init(title: String) {
         super.init(size: .small, style: .lineIconLeft, title: title)
     }
