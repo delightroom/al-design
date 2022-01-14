@@ -16,9 +16,6 @@ public class ALButton: UIButton {
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
             sizeToFit()
             resetBackgroundColorIfNeeded()
-            if style == .underline {
-                addUndeline()
-            }
         }
     }
     
@@ -101,15 +98,5 @@ public class ALButton: UIButton {
         clipsToBounds = true
         self.backgroundColor = backgroundColor.first
         self.gradient = gradient
-    }
-}
-
-extension ALButton {
-    func addUndeline() {
-        layer.borderWidth = 0
-        let border = CALayer()
-        border.backgroundColor = style.borderColor
-        border.frame = CGRect(x: 0, y: frame.size.height, width: frame.width, height: 1)
-        layer.addSublayer(border)
     }
 }

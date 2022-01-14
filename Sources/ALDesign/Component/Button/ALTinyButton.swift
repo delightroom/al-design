@@ -69,6 +69,14 @@ public class ALTinyLineIconLeftButton: ALButton {
 }
 
 public class ALTinyUnderlineButton: ALButton {
+    private let underline = CALayer()
+    
+    public override var title: String {
+        didSet {
+            addUndeline()
+        }
+    }
+    
     public init(title: String) {
         super.init(size: .tiny, style: .underline, title: title)
         addUndeline()
@@ -76,5 +84,13 @@ public class ALTinyUnderlineButton: ALButton {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addUndeline() {
+        layer.borderWidth = 0
+        underline.removeFromSuperlayer()
+        underline.backgroundColor = style.borderColor
+        underline.frame = CGRect(x: 0, y: frame.size.height, width: frame.width, height: 1)
+        layer.addSublayer(underline)
     }
 }
