@@ -86,13 +86,13 @@ extension ALButtonSize {
         return result
     }
     
-    var contentEdgeInsets: UIEdgeInsets {
+    func contentEdgeInsets(for style: ALButtonStyle) -> UIEdgeInsets {
         let result: UIEdgeInsets
         switch self {
         case .big: result = UIEdgeInsets(top: 22, left: 56, bottom: 22, right: 56)
         case .medium: result = UIEdgeInsets(top: 14, left: 32, bottom: 14, right: 32)
-        case .small: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
-        case .tiny: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12)
+        case .small: result = style == .underline ? UIEdgeInsets(top: 8, left: 0, bottom: 4, right: 0) : UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+        case .tiny: result = style == .underline ? UIEdgeInsets(top: 3, left: 0, bottom: 6, right: 0) : UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12)
         }
         return result
     }

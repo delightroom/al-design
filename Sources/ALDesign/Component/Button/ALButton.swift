@@ -40,7 +40,7 @@ public class ALButton: UIButton {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = size.cornerRadius
-        contentEdgeInsets = size.contentEdgeInsets
+        contentEdgeInsets = size.contentEdgeInsets(for: style)
         setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
         if let borderColor = style.borderColor {
             layer.borderColor = borderColor
@@ -68,6 +68,7 @@ public class ALButton: UIButton {
     }
     
     private func handlePressed() {
+        guard style != .underline else { return }
         if isHighlighted {
             addSubview(pressedView)
         } else {
