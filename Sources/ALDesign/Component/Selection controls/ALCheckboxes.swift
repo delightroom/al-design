@@ -51,7 +51,12 @@ extension ALCheckboxes: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndices.insert(indexPath.row)
+        let selected = indexPath.row
+        if selectedIndices.contains(selected) {
+            selectedIndices.remove(selected)
+        } else {
+            selectedIndices.insert(selected)
+        }
         reloadData()
     }
 }
