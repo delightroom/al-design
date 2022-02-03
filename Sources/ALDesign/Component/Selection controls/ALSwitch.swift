@@ -11,6 +11,7 @@ import UIKit
 public class ALSwitch: UISwitch {
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
         onTintColor = .secondary
     }
     
