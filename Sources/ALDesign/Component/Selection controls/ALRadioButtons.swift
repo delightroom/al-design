@@ -96,10 +96,10 @@ class ALRadioButtonCell: UITableViewCell {
     }
     
     func select() {
-        button.image = UIImage(named: "radio_button_selected", in: .module, compatibleWith: nil)!
+        selection.image = UIImage(named: "radio_button_selected", in: .module, compatibleWith: nil)!
     }
     
     func deselect() {
-        button.image = UIImage(named: "radio_button_unselected", in: .module, compatibleWith: nil)!
+        selection.image = UIImage(named: "radio_button_unselected", in: .module, compatibleWith: nil)!
     }
 }
