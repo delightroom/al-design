@@ -73,7 +73,7 @@ extension String {
             font = UIFont.systemFont(ofSize: 20, weight: .heavy)
             lineHeight = 26
         case .button:
-            font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+            font = UIFont.systemFont(ofSize: 18, weight: .heavy)
             lineHeight = 24
         case .paragraph:
             font = UIFont.systemFont(ofSize: 16)
