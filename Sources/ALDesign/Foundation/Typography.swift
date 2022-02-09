@@ -13,6 +13,7 @@ public enum Typography {
     case title1
     case title2
     case title3
+    case subtitle
     case button
     case paragraph
     case overline
@@ -30,6 +31,7 @@ extension Typography {
         case .title1: result = UIFont.systemFont(ofSize: 32, weight: .heavy)
         case .title2: result = UIFont.systemFont(ofSize: 26, weight: .heavy)
         case .title3: result = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        case .subtitle: result = UIFont.systemFont(ofSize: 18)
         case .button: result = UIFont.systemFont(ofSize: 17, weight: .heavy)
         case .paragraph: result = UIFont.systemFont(ofSize: 16)
         case .overline: result = UIFont.systemFont(ofSize: 14, weight: .heavy)
@@ -53,6 +55,10 @@ extension String {
     
     public var title: NSMutableAttributedString {
         return attributedString(type: .title1)
+    }
+    
+    public var subtitle: NSMutableAttributedString {
+        return attributedString(type: .subtitle)
     }
     
     public var button: NSMutableAttributedString {
