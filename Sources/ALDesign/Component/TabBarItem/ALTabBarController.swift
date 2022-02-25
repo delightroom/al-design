@@ -48,8 +48,8 @@ open class ALTabBarController: UITabBarController {
         guard barButtons.count > item.index, let tabBarItemImage = tabBar.items?[item.index].image else { return }
 
         let tabBarButton = barButtons[item.index]
-        let padding: CGFloat = 5
-        let x = (tabBar.frame.width/CGFloat(barButtons.count))*0.5 + (tabBarItemImage.size.width/2 + padding)
+        let padding: CGFloat = 3
+        let x = (tabBar.frame.width/CGFloat(barButtons.count) + tabBarItemImage.size.width)/2 + padding
         let y = tabBarButton.bounds.height/2 - (tabBarItemImage.size.width/2 + padding)
         let size = CGSize(width: 4, height: 4)
         let customBadge = CustomBadgeView(frame: CGRect(x: x, y: y, width: size.width, height: size.height))
