@@ -54,6 +54,7 @@ extension UITabBarItem {
         item.tag = 404
         item.accessibilityLabel = MainTabUI.moreTabBarItem
         item.accessibilityIdentifier = MainTabUI.moreTabBarItem
+        item.imageInsets = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
         return item
     }
     

@@ -51,7 +51,7 @@ open class ALTabBarController: UITabBarController {
         let padding: CGFloat = 3
         let x = (tabBar.frame.width/CGFloat(barButtons.count) + tabBarItemImage.size.width)/2 + padding
         let y = tabBarButton.bounds.height/2 - (tabBarItemImage.size.width/2 + padding)
-        let size = CGSize(width: 4, height: 4)
+        let size = CGSize(width: 6, height: 6)
         let customBadge = CustomBadgeView(frame: CGRect(x: x, y: y, width: size.width, height: size.height))
         
         tabBarButton.subviews.forEach { ( $0 as? CustomBadgeView)?.removeFromSuperview() }
