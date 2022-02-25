@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ALTabBarController: UITabBarController {
+public class ALTabBarController: UITabBarController {
     lazy private var indicatorImage: UIImage = {
         let size = CGSize(width: 24, height: 35)
         let rect = CGRect(origin: .zero, size: size)
