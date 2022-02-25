@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class ALTabBarController: UITabBarController {
+open class ALTabBarController: UITabBarController {
     lazy private var indicatorImage: UIImage = {
         let size = CGSize(width: 24, height: 35)
         let rect = CGRect(origin: .zero, size: size)
@@ -23,7 +23,7 @@ public class ALTabBarController: UITabBarController {
         return image
     }()
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().selectionIndicatorImage = indicatorImage
         tabBar.barTintColor = .surface
