@@ -49,7 +49,7 @@ open class ALTabBarController: UITabBarController {
 
         let tabBarButton = barButtons[item.index]
         let padding: CGFloat = 5
-        let x = tabBarButton.bounds.width/2 + (tabBarItemImage.size.width/2 + padding)
+        let x = (tabBarButton.frame.width/barButtons.count/2) + tabBarButton.bounds.width/2 + (tabBarItemImage.size.width/2 + padding)
         let y = tabBarButton.bounds.height/2 - (tabBarItemImage.size.width/2 + padding)
         let size = CGSize(width: 4, height: 4)
         let customBadge = CustomBadgeView(frame: CGRect(x: x, y: y, width: size.width, height: size.height))
@@ -58,7 +58,7 @@ open class ALTabBarController: UITabBarController {
         tabBarButton.addSubview(customBadge)
     }
     
-    open func hideCustomeNewBadge(at item: TabBarItem) {
+    open func hideCustomNewBadge(at item: TabBarItem) {
         let barButtons = tabBar.subviews.filter { $0 is UIControl }
         guard barButtons.count > item.index else { return }
         let tabBarButton = barButtons[item.index]
