@@ -23,7 +23,7 @@ public class ALTabBarController: UITabBarController {
         return image
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().selectionIndicatorImage = indicatorImage
         tabBar.barTintColor = .surface
