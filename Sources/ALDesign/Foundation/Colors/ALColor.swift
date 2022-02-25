@@ -44,8 +44,8 @@ extension UIColor {
         return result
     }
 
-    /// light: white100
     /// dark: black50
+    /// light: white100
     public static var background: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -55,8 +55,8 @@ extension UIColor {
         return result
     }
     
-    /// dark: white200
-    /// light: black300
+    /// dark: black300
+    /// light: white200
     public static var appbar: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -66,8 +66,8 @@ extension UIColor {
         return result
     }
     
-    /// dark: white400
-    /// light: black400
+    /// dark: black400
+    /// light: white400
     public static var onSurfaceDivider12: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -77,8 +77,8 @@ extension UIColor {
         return result
     }
     
-    /// dark: white300
-    /// light: black300
+    /// dark: black300
+    /// light: white300
     public static var onSurfaceDivider5: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -88,8 +88,8 @@ extension UIColor {
         return result
     }
     
-    /// dark: black00, 0.88
-    /// light: black, 0.88
+    /// dark: black, 0.88
+    /// light: black00, 0.88
     public static var scrim: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -99,8 +99,8 @@ extension UIColor {
         return result
     }
     
-    /// dark: white
-    /// light: black100
+    /// dark: black100
+    /// light: white
     public static var surface: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -110,8 +110,8 @@ extension UIColor {
         return result
     }
     
-    /// dark: black50
-    /// light: white50
+    /// dark: white50
+    /// light: black50
     public static var surfaceHighEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -126,8 +126,8 @@ extension UIColor {
         return surfaceHighEmphasis
     }
     
-    /// dark: black700
-    /// light: white900
+    /// dark: white900
+    /// light: black700
     public static var surfaceMediumEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -142,19 +142,19 @@ extension UIColor {
         return surfaceMediumEmphasis
     }
     
-    /// dark: black900
-    /// light: white600
+    /// dark: white900
+    /// light: black600
     public static var surfaceLowEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .black(900)
-        default: result = .white(600)
+        case .light: result = .white(900)
+        default: result = .black(600)
         }
         return result
     }
     
-    /// dark: white600
-    /// light: black500
+    /// dark: black500
+    /// light: white600
     public static var surfaceDefault: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
@@ -169,8 +169,8 @@ extension UIColor {
         return surfaceDefault
     }
     
-    /// dark: white500
-    /// light: black300
+    /// dark: black300
+    /// light: white500
     public static var surfaceDisabled: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
