@@ -19,8 +19,8 @@ public struct MainTabUI {
 extension UITabBarItem {
     public static var alarm: UITabBarItem {
         let item = UITabBarItem()
-        item.image = NaviIcon.alarmOutline2424.withTintColor(.surfaceLowEmphasis)
-        item.selectedImage = NaviIcon.alarmFilled2424.withTintColor(.surfaceHighEmphasis)
+        item.image = NaviIcon.alarmOutline2424.withTintColor(.surfaceLowEmphasis, renderingMode: .alwaysOriginal)
+        item.selectedImage = NaviIcon.alarmFilled2424.withTintColor(.surfaceHighEmphasis, renderingMode: .alwaysOriginal)
         item.tag = 401
         item.accessibilityLabel = MainTabUI.homeTabBarItem
         item.accessibilityIdentifier = MainTabUI.homeTabBarItem
@@ -29,8 +29,8 @@ extension UITabBarItem {
     
     public static var sleepSound: UITabBarItem {
         let item = UITabBarItem()
-        item.image = NaviIcon.sleepOutline2424.withTintColor(.surfaceLowEmphasis)
-        item.selectedImage = NaviIcon.settingFilled2424.withTintColor(.surfaceHighEmphasis)
+        item.image = NaviIcon.sleepOutline2424.withTintColor(.surfaceLowEmphasis, renderingMode: .alwaysOriginal)
+        item.selectedImage = NaviIcon.sleepFilled2424.withTintColor(.surfaceHighEmphasis, renderingMode: .alwaysOriginal)
         item.tag = 402
         item.accessibilityLabel = MainTabUI.sleepTabBarItem
         item.accessibilityIdentifier = MainTabUI.sleepTabBarItem
@@ -39,8 +39,8 @@ extension UITabBarItem {
     
     public static var todaypanel: UITabBarItem {
         let item = UITabBarItem()
-        item.image = NaviIcon.todaypanelOutline2424.withTintColor(.surfaceLowEmphasis)
-        item.selectedImage = NaviIcon.todaypanelFilled2424.withTintColor(.surfaceHighEmphasis)
+        item.image = NaviIcon.todaypanelOutline2424.withTintColor(.surfaceLowEmphasis, renderingMode: .alwaysOriginal)
+        item.selectedImage = NaviIcon.todaypanelFilled2424.withTintColor(.surfaceHighEmphasis, renderingMode: .alwaysOriginal)
         item.tag = 403
         item.accessibilityLabel = MainTabUI.todayTabBarItem
         item.accessibilityIdentifier = MainTabUI.todayTabBarItem
@@ -49,8 +49,8 @@ extension UITabBarItem {
     
     public static var more: UITabBarItem {
         let item = UITabBarItem()
-        item.image = NaviIcon.settingOutline2424.withTintColor(.surfaceLowEmphasis)
-        item.selectedImage = NaviIcon.settingFilled2424.withTintColor(.surfaceHighEmphasis)
+        item.image = NaviIcon.settingOutline2424.withTintColor(.surfaceLowEmphasis, renderingMode: .alwaysOriginal)
+        item.selectedImage = NaviIcon.settingFilled2424.withTintColor(.surfaceHighEmphasis, renderingMode: .alwaysOriginal)
         item.tag = 404
         item.accessibilityLabel = MainTabUI.moreTabBarItem
         item.accessibilityIdentifier = MainTabUI.moreTabBarItem
@@ -59,8 +59,8 @@ extension UITabBarItem {
     
     public static var history: UITabBarItem {
         let item = UITabBarItem()
-        item.image = NaviIcon.historyOutline2424.withTintColor(.surfaceLowEmphasis)
-        item.selectedImage = NaviIcon.historyFilled2424.withTintColor(.surfaceHighEmphasis)
+        item.image = NaviIcon.historyOutline2424.withTintColor(.surfaceLowEmphasis, renderingMode: .alwaysOriginal)
+        item.selectedImage = NaviIcon.historyFilled2424.withTintColor(.surfaceHighEmphasis, renderingMode: .alwaysOriginal)
         return item
     }
 }
