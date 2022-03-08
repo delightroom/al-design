@@ -7,7 +7,23 @@
 
 import UIKit
 
+//enum ALColor {
+//    case white50
+//    //..
+//
+//    var value: UIColor {
+//        return UIColor.white
+//    }
+//}
+//
+//extension UIColor {
+//    public static var white50: UIColor {
+//
+//    }
+//}
+
 extension UIColor {
+    // 피드백, enum이나 static 변경 고려
     public static func white(_ value: Int) -> UIColor {
         let result: UIColor
         switch value {

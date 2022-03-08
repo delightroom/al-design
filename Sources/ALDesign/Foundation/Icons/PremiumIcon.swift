@@ -7,6 +7,8 @@
 
 import UIKit
 
+// SFSymbols 처럼 선택할 수 있는 것이 좋다
+// 컬러, 템플릿 구분을 할 수 있는 이름이나
 public struct PremiumIcon {
     public static let premiumGradient2448 = UIImage(named: "ic_premium_gradient_24_48", in: .module, compatibleWith: nil)!
     public static let timepressureGradient2424 = UIImage(named: "ic_timepressure_gradient_24_24", in: .module, compatibleWith: nil)!
