@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_weather_lightcloudy_day_dark_48_48.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_UnstableConnection_TodayPanel_60.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

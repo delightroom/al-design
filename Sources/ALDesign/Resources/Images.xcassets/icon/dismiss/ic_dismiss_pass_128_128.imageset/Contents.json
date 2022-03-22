@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_dismiss_pass_128_128.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

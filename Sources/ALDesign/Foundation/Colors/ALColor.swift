@@ -7,274 +7,235 @@
 
 import UIKit
 
+//enum ALColor {
+//    case white50
+//    //..
+//
+//    var value: UIColor {
+//        return UIColor.white
+//    }
+//}
+//
+//extension UIColor {
+//    public static var white50: UIColor {
+//
+//    }
+//}
+
 extension UIColor {
-    /// dark: #0E1117
-    /// light: #F5F9FF
-    public static var backgroundv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#0E1117")
-//            default: result = UIColor(hexString: "#F5F9FF")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#F5F9FF")
-//        }
-        return UIColor(hexString: "#F5F9FF")
+    // 피드백, enum이나 static 변경 고려
+    public static func white(_ value: Int) -> UIColor {
+        let result: UIColor
+        switch value {
+        case 50: result = UIColor(hexString: "#F7FAFF")
+        case 100: result = UIColor(hexString: "#F2F6FF")
+        case 200: result = UIColor(hexString: "#EDF1FA")
+        case 300: result = UIColor(hexString: "#E6ECF7")
+        case 400: result = UIColor(hexString: "#DDE3F0")
+        case 500: result = UIColor(hexString: "#D5DCEB")
+        case 600: result = UIColor(hexString: "#CCD3E3")
+        case 700: result = UIColor(hexString: "#C2CADA")
+        case 800: result = UIColor(hexString: "#B4BDCF")
+        case 900: result = UIColor(hexString: "#ABB3C4")
+        default: result = UIColor(hexString: "#F2F6FF")
+        }
+        return result
     }
     
-    /// dark: #1A203B
-    /// light: #E8F1FF
-    public static var appbarv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#1A203B")
-//            default: result = UIColor(hexString: "#E8F1FF")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#E8F1FF")
-//        }
-        return UIColor(hexString: "#E8F1FF")
+    public static func black(_ value: Int) -> UIColor {
+        let result: UIColor
+        switch value {
+        case 50: result = UIColor(hexString: "#15171C")
+        case 100: result = UIColor(hexString: "#1D1F26")
+        case 200: result = UIColor(hexString: "#24272E")
+        case 300: result = UIColor(hexString: "#2F333D")
+        case 400: result = UIColor(hexString: "#3E434F")
+        case 500: result = UIColor(hexString: "#4B515E")
+        case 600: result = UIColor(hexString: "#585F6E")
+        case 700: result = UIColor(hexString: "#666D7D")
+        case 800: result = UIColor(hexString: "#747C8C")
+        case 900: result = UIColor(hexString: "#858E9E")
+        default: result = UIColor(hexString: "#0B0C0F")
+        }
+        return result
+    }
+
+    /// dark: black50
+    /// light: white100
+    public static var background: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(100)
+        default: result = .black(50)
+        }
+        return result
     }
     
-    /// dark: #0E1117, 0.8
-    /// light: #30435F, 0.8
-    public static var scrimv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#0E1117").withAlphaComponent(0.8)
-//            default: result = UIColor(hexString: "#30435F").withAlphaComponent(0.8)
-//            }
-//        } else {
-//            result = UIColor(hexString: "#30435F").withAlphaComponent(0.8)
-//        }
-        return UIColor(hexString: "#30435F").withAlphaComponent(0.8)
+    /// dark: black300
+    /// light: white200
+    public static var appbar: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(200)
+        default: result = .black(300)
+        }
+        return result
     }
     
-    /// dark: #30435F
-    /// light: #BDCFED
-    public static var onSurfaceDisabledv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#30435F")
-//            default: result = UIColor(hexString: "#BDCFED")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#BDCFED")
-//        }
-        return UIColor(hexString: "#BDCFED")
+    /// dark: black400
+    /// light: white400
+    public static var onSurfaceDivider12: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(400)
+        default: result = .black(400)
+        }
+        return result
     }
     
-    /// dark: #171D2E
-    /// light: #FFFFFF
-    public static var surfacev1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#171D2E")
-//            default: result = UIColor(hexString: "#FFFFFF")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#FFFFFF")
-//        }
-        return UIColor(hexString: "#FFFFFF")
+    /// dark: black300
+    /// light: white300
+    public static var onSurfaceDivider5: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(300)
+        default: result = .black(300)
+        }
+        return result
     }
     
-    /// dark: #F5F9FF
-    /// light: #1F252E
-    public static var onSurfaceHighEmphasisv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#F5F9FF")
-//            default: result = UIColor(hexString: "#1F252E")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#1F252E")
-//        }
-        return UIColor(hexString: "#1F252E")
+    /// dark: black, 0.88
+    /// light: black00, 0.88
+    public static var scrim: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .black(100).withAlphaComponent(0.88)
+        default: result = .black.withAlphaComponent(0.88)
+        }
+        return result
     }
     
-    /// dark: #7689A5
-    /// light: #7689A5
-    public static var onSurfaceMediumEmphasisv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#7689A5")
-//            default: result = UIColor(hexString: "#7689A5")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#7689A5")
-//        }
-        return UIColor(hexString: "#7689A5")
+    /// dark: black100
+    /// light: white
+    public static var surface: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white
+        default: result = black(100)
+        }
+        return result
     }
     
-    /// dark: #4E617D
-    /// light: #A9BBD9
-    public static var onSurfaceDefaultv1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#4E617D")
-//            default: result = UIColor(hexString: "#A9BBD9")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#A9BBD9")
-//        }
-        return UIColor(hexString: "#A9BBD9")
+    /// dark: white50
+    /// light: black50
+    public static var surfaceHighEmphasis: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .black(50)
+        default: result = .white(50)
+        }
+        return result
     }
     
-    /// dark: #30435F
-    /// light: #D2E4FF
-    public static var onSurfaceDivider12v1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#30435F")
-//            default: result = UIColor(hexString: "#D2E4FF")
-//            }
-//        } else {
-//            result = UIColor(hexString: "#D2E4FF")
-//        }
-        return UIColor(hexString: "#D2E4FF")
+    /// dark: white900
+    /// light: black700
+    public static var surfaceMediumEmphasis: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .black(700)
+        default: result = .white(900)
+        }
+        return result
     }
     
-    /// dark: #30435F, 0.5
-    /// light: #E8F1FF, 0.5
-    public static var onSurfaceDivider5v1: UIColor {
-//        let result: UIColor
-//        if #available(iOS 13.0, *) {
-//            switch UITraitCollection.current.userInterfaceStyle {
-//            case .dark: result = UIColor(hexString: "#30435F").withAlphaComponent(0.5)
-//            default: result = UIColor(hexString: "#E8F1FF").withAlphaComponent(0.5)
-//            }
-//        } else {
-//            result = UIColor(hexString: "#E8F1FF").withAlphaComponent(0.5)
-//        }
-        return UIColor(hexString: "#E8F1FF").withAlphaComponent(0.5)
+    /// dark: white900
+    /// light: black600
+    public static var surfaceLowEmphasis: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(900)
+        default: result = .black(600)
+        }
+        return result
+    }
+    
+    /// dark: black500
+    /// light: white600
+    public static var surfaceDefault: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(600)
+        default: result = .black(500)
+        }
+        return result
+    }
+    
+    /// dark: black300
+    /// light: white500
+    public static var surfaceDisabled: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .white(500)
+        default: result = .black(300)
+        }
+        return result
     }
     
     /// #F50F3B
-    public static var primaryv1: UIColor {
+    public static var primary: UIColor {
         return UIColor(hexString: "#F50F3B")
     }
     
-    /// #C10020
-    public static var primaryVariantv1: UIColor {
-        return UIColor(hexString: "#C10020")
-    }
-    
-    /// #FFFFFF
-    public static var onPrimaryv1: UIColor {
-        return UIColor(hexString: "#FFFFFF")
-    }
-    
-    // TODO: gradient 방향 고려 필요
-    /// #F50026, #FA005C, #FF9800
-    public static var premiumCTA: [UIColor] {
-        return [UIColor(hexString: "#F50026"), UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
-    }
-    
-    /// #FA005C, #FF9800
-    public static var premiumHorizon: [UIColor] {
-        return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
-    }
-    
-    /// #FA005C, #FF9800
-    public static var premiumVertical: [UIColor] {
-        return [UIColor(hexString: "#FA005C"), UIColor(hexString: "#FF9800")]
+    /// #990016
+    public static var primaryVariant: UIColor {
+        return UIColor(hexString: "#990016")
     }
     
     /// #00A3C7
-    public static var secondaryv1: UIColor {
+    public static var secondary: UIColor {
         return UIColor(hexString: "#00A3C7")
     }
     
-    /// #009299
-    public static var secondaryVariantv1: UIColor {
-        return UIColor(hexString: "#009299")
+    /// #005967
+    public static var secondaryVariant: UIColor {
+        return UIColor(hexString: "#005967")
+    }
+    // TODO: gradient 방향 고려 필요
+    /// #F60129, #FA015B, #FF8F06
+    public static var premiumCTA: [UIColor] {
+        return [UIColor(hexString: "#F60129"), UIColor(hexString: "#FA015B"), UIColor(hexString: "#FF8F06")]
     }
     
-    /// #FEFEFE
-    public static var onSecondaryv1: UIColor {
-        return UIColor(hexString: "#FEFEFE")
+    /// #FA015B, #FF8F06
+    public static var premiumHorizon: [UIColor] {
+        return [UIColor(hexString: "#FA015B"), UIColor(hexString: "#FF8F06")]
     }
     
-    /// #FFDA15
-    public static var color1v1: UIColor {
-        return UIColor(hexString: "#FFDA15")
-    }
-    
-    /// #FF9800
-    public static var color2v1: UIColor {
-        return UIColor(hexString: "#FF9800")
-    }
-    
-    /// #FA005C
-    public static var color3v1: UIColor {
-        return UIColor(hexString: "#FA005C")
+    /// #FA015B, #FF8F06
+    public static var premiumVertical: [UIColor] {
+        return [UIColor(hexString: "#FA015B"), UIColor(hexString: "#FF8F06")]
     }
     
     /// #FF5D00
-    public static var negativev1: UIColor {
+    public static var negative: UIColor {
         return UIColor(hexString: "#FF5D00")
     }
     
     /// #22BB3C
-    public static var positivev1: UIColor {
+    public static var positive: UIColor {
         return UIColor(hexString: "#22BB3C")
     }
     
     /// #E2B00A
-    public static var cautionv1: UIColor {
+    public static var caution: UIColor {
         return UIColor(hexString: "#E2B00A")
     }
-}
-
-@available(*, deprecated, message: "Use .ALColor.\"color name\" instead")
-public enum ALColor {
-    case background
-    case appBar
-    case scrim
-    case onSurfaceDisabled
-    case onSurfaceDivider12
-    case onSurfaceDivider5
-    case surface
-    case onSurfaceHighEmphasis
-    case black600
-    case onSurfaceMediumEmphasis
-    case onSurfaceDefault
-    case black1300
-    case black400
-}
-
-@available(*, deprecated, message: "Use .ALColor.\"color name\" instead")
-extension ALColor {
-    public var color: UIColor {
-        let result: UIColor
-        switch self {
-        case .background: result = UIColor(hexString: "#F5F9FF")
-        case .appBar: result = UIColor(hexString: "#E8F1FF")
-        case .scrim: result = UIColor(hexString: "#30435F")
-        case .onSurfaceDisabled: result = UIColor(hexString: "#BDCFED")
-        case .onSurfaceDivider12: result = UIColor(hexString: "#D2E4FF")
-        case .onSurfaceDivider5: result = UIColor(hexString: "#E8F1FF")
-        case .surface: result = UIColor(hexString: "#FFFFFF")
-        case .onSurfaceHighEmphasis: result = UIColor(hexString: "#1F252E")
-        case .black600: result = UIColor(hexString: "#4E617D")
-        case .onSurfaceMediumEmphasis: result = UIColor(hexString: "#7689A5")
-        case .onSurfaceDefault: result = UIColor(hexString: "#A9BBD9")
-        case .black1300: result = UIColor(hexString: "#FAFCFF")
-        case .black400: result = UIColor(hexString: "#122541")
-        }
-        return result
+    
+    /// #FFFFFF
+    public static var onPrimary: UIColor {
+        return UIColor(hexString: "#FFFFFF")
     }
 }
-
 
 extension UIColor {
     convenience init(hexString: String) {

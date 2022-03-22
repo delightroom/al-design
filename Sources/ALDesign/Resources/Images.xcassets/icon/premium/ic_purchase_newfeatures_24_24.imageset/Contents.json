@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_purchase_newfeatures_24_24.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

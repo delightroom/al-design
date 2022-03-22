@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_ringtone_24_24.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
