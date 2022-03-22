@@ -10,7 +10,7 @@ import UIKit
 extension UIColor {
     /// dark: #0E1117
     /// light: #F5F9FF
-    public static var background: UIColor {
+    public static var backgroundv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -25,7 +25,7 @@ extension UIColor {
     
     /// dark: #1A203B
     /// light: #E8F1FF
-    public static var appbar: UIColor {
+    public static var appbarv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -40,7 +40,7 @@ extension UIColor {
     
     /// dark: #0E1117, 0.8
     /// light: #30435F, 0.8
-    public static var scrim: UIColor {
+    public static var scrimv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -55,7 +55,7 @@ extension UIColor {
     
     /// dark: #30435F
     /// light: #BDCFED
-    public static var onSurfaceDisabled: UIColor {
+    public static var onSurfaceDisabledv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -70,7 +70,7 @@ extension UIColor {
     
     /// dark: #171D2E
     /// light: #FFFFFF
-    public static var surface: UIColor {
+    public static var surfacev1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -85,7 +85,7 @@ extension UIColor {
     
     /// dark: #F5F9FF
     /// light: #1F252E
-    public static var onSurfaceHighEmphasis: UIColor {
+    public static var onSurfaceHighEmphasisv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -100,7 +100,7 @@ extension UIColor {
     
     /// dark: #7689A5
     /// light: #7689A5
-    public static var onSurfaceMediumEmphasis: UIColor {
+    public static var onSurfaceMediumEmphasisv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -115,7 +115,7 @@ extension UIColor {
     
     /// dark: #4E617D
     /// light: #A9BBD9
-    public static var onSurfaceDefault: UIColor {
+    public static var onSurfaceDefaultv1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -130,7 +130,7 @@ extension UIColor {
     
     /// dark: #30435F
     /// light: #D2E4FF
-    public static var onSurfaceDivider12: UIColor {
+    public static var onSurfaceDivider12v1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -145,7 +145,7 @@ extension UIColor {
     
     /// dark: #30435F, 0.5
     /// light: #E8F1FF, 0.5
-    public static var onSurfaceDivider5: UIColor {
+    public static var onSurfaceDivider5v1: UIColor {
 //        let result: UIColor
 //        if #available(iOS 13.0, *) {
 //            switch UITraitCollection.current.userInterfaceStyle {
@@ -159,17 +159,17 @@ extension UIColor {
     }
     
     /// #F50F3B
-    public static var primary: UIColor {
+    public static var primaryv1: UIColor {
         return UIColor(hexString: "#F50F3B")
     }
     
     /// #C10020
-    public static var primaryVariant: UIColor {
+    public static var primaryVariantv1: UIColor {
         return UIColor(hexString: "#C10020")
     }
     
     /// #FFFFFF
-    public static var onPrimary: UIColor {
+    public static var onPrimaryv1: UIColor {
         return UIColor(hexString: "#FFFFFF")
     }
     
@@ -190,47 +190,47 @@ extension UIColor {
     }
     
     /// #00A3C7
-    public static var secondary: UIColor {
+    public static var secondaryv1: UIColor {
         return UIColor(hexString: "#00A3C7")
     }
     
     /// #009299
-    public static var secondaryVariant: UIColor {
+    public static var secondaryVariantv1: UIColor {
         return UIColor(hexString: "#009299")
     }
     
     /// #FEFEFE
-    public static var onSecondary: UIColor {
+    public static var onSecondaryv1: UIColor {
         return UIColor(hexString: "#FEFEFE")
     }
     
     /// #FFDA15
-    public static var color1: UIColor {
+    public static var color1v1: UIColor {
         return UIColor(hexString: "#FFDA15")
     }
     
     /// #FF9800
-    public static var color2: UIColor {
+    public static var color2v1: UIColor {
         return UIColor(hexString: "#FF9800")
     }
     
     /// #FA005C
-    public static var color3: UIColor {
+    public static var color3v1: UIColor {
         return UIColor(hexString: "#FA005C")
     }
     
     /// #FF5D00
-    public static var negative: UIColor {
+    public static var negativev1: UIColor {
         return UIColor(hexString: "#FF5D00")
     }
     
     /// #22BB3C
-    public static var positive: UIColor {
+    public static var positivev1: UIColor {
         return UIColor(hexString: "#22BB3C")
     }
     
     /// #E2B00A
-    public static var caution: UIColor {
+    public static var cautionv1: UIColor {
         return UIColor(hexString: "#E2B00A")
     }
 }

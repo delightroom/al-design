@@ -45,7 +45,7 @@ extension Typography {
 
 extension String {
     private func attributedString(type: Typography) -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: UIColor.onSurfaceHighEmphasisv1]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
