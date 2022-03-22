@@ -30,7 +30,7 @@ extension Typography {
 
 extension String {
     private func attributedString(type: Typography) -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: UIColor.surfaceHighEmphasis]
+        let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: UIColor.onSurfaceHighEmphasisv1]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
@@ -42,6 +42,11 @@ extension String {
     @available(*, deprecated, message: "'.title' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var title: NSMutableAttributedString {
         return attributedString(type: .title1)
+    }
+    
+    @available(*, deprecated, message: "'.subtitle' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
+    public var subtitle: NSMutableAttributedString {
+        return attributedString(type: .subtitle)
     }
     
     @available(*, deprecated, message: "'.button' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
