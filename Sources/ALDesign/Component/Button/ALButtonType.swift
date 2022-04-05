@@ -113,6 +113,7 @@ extension ALButtonSize {
 enum ALButtonStyle {
     case gradient
     case primary
+    case basicEmphasis
     case basic
     case line
     case lineIconLeft
@@ -125,6 +126,7 @@ extension ALButtonStyle {
         let result: UIColor
         switch self {
         case .gradient, .primary: result = .onPrimary
+        case .basicEmphasis: result = UITraitCollection.current.userInterfaceStyle == .dark ? .black(100) : .white(100)
         case .basic: result = .surfaceHighEmphasis
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
@@ -136,6 +138,7 @@ extension ALButtonStyle {
         switch self {
         case .gradient: result = UIColor.premiumHorizon
         case .primary: result = [.primary]
+        case .basicEmphasis: result = UITraitCollection.current.userInterfaceStyle == .dark ? [.white(700)] : [.black(400)]
         case .basic: result = [.surfaceDefault]
         case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
@@ -145,16 +148,17 @@ extension ALButtonStyle {
     var borderColor: CGColor? {
         let result: CGColor?
         switch self {
-        case .gradient, .primary, .basic: result = nil
+        case .gradient, .primary, .basicEmphasis, .basic: result = nil
         case .line, .lineIconLeft, .lineIconRight, .underline: result = UIColor.surfaceMediumEmphasis.cgColor
         }
         return result
     }
     
-    var disabledColor: UIColor {
+    var disabledTextColor: UIColor {
         let result: UIColor
         switch self {
         case .gradient, .primary: result = .primaryVariant
+        case .basicEmphasis: result = UITraitCollection.current.userInterfaceStyle == .dark ? .black(900) : .black(200)
         case .basic: result = UIColor(hexString: "#2F333D")
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
         }

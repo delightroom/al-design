@@ -51,20 +51,24 @@ public class ALButton: UIButton {
             layer.borderWidth = 1
         }
         sizeToFit()
-        if let backgroundColor = style.backgroundColor {
-            if backgroundColor.count > 1 {
-                let gradient: CAGradientLayer = CAGradientLayer()
-                gradient.colors = backgroundColor.map { $0.cgColor }
-                gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-                gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-                gradient.frame = bounds
-                layer.addSublayer(gradient)
-                clipsToBounds = true
-                self.backgroundColor = backgroundColor.first
-                self.gradient = gradient
-            } else {
-                self.backgroundColor = backgroundColor.first
-            }
+        setupBackgroudColor()
+    }
+    
+    private func setupBackgroudColor() {
+        guard let backgroundColor = style.backgroundColor else { return }
+        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
+        if backgroundColor.count > 1 {
+            let gradient: CAGradientLayer = CAGradientLayer()
+            gradient.colors = backgroundColor.map { $0.withAlphaComponent(alpha).cgColor }
+            gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+            gradient.frame = bounds
+            layer.addSublayer(gradient)
+            clipsToBounds = true
+            self.backgroundColor = backgroundColor.first?.withAlphaComponent(alpha)
+            self.gradient = gradient
+        } else {
+            self.backgroundColor = backgroundColor.first?.withAlphaComponent(alpha)
         }
     }
     
@@ -82,8 +86,9 @@ public class ALButton: UIButton {
     }
     
     private func handleDisabled() {
-        let color: UIColor = isEnabled ? style.textColor : style.disabledColor
-        setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(color), for: .normal)
+        let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
+        setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(textColor), for: .normal)
+        setupBackgroudColor()
     }
     
     private func resetBackgroundColorIfNeeded() {
