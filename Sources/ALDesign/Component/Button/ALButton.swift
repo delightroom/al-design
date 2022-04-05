@@ -56,18 +56,10 @@ public class ALButton: UIButton {
     
     private func setupBackgroudColor() {
         guard let backgroundColor = style.backgroundColor else { return }
-        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
         if backgroundColor.count > 1 {
-            let gradient: CAGradientLayer = CAGradientLayer()
-            gradient.colors = backgroundColor.map { $0.withAlphaComponent(alpha).cgColor }
-            gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-            gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-            gradient.frame = bounds
-            layer.addSublayer(gradient)
-            clipsToBounds = true
-            self.backgroundColor = backgroundColor.first?.withAlphaComponent(alpha)
-            self.gradient = gradient
+            resetBackgroundColorIfNeeded()
         } else {
+            let alpha: CGFloat = isEnabled ? 1.0 : 0.4
             self.backgroundColor = backgroundColor.first?.withAlphaComponent(alpha)
         }
     }
@@ -93,15 +85,15 @@ public class ALButton: UIButton {
     
     private func resetBackgroundColorIfNeeded() {
         guard let backgroundColor = style.backgroundColor, backgroundColor.count > 1 else { return }
+        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
         self.gradient?.removeFromSuperlayer()
         let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = backgroundColor.map { $0.cgColor }
+        gradient.colors = backgroundColor.map { $0.withAlphaComponent(alpha).cgColor }
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.frame = bounds
         layer.addSublayer(gradient)
         clipsToBounds = true
-        self.backgroundColor = backgroundColor.first
         self.gradient = gradient
     }
 }
