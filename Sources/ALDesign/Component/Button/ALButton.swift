@@ -15,7 +15,7 @@ public class ALButton: UIButton {
         didSet {
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
             sizeToFit()
-            resetBackgroundColorIfNeeded()
+            setupBackgroundColor()
         }
     }
     
@@ -51,19 +51,22 @@ public class ALButton: UIButton {
             layer.borderWidth = 1
         }
         sizeToFit()
-        if let backgroundColor = style.backgroundColor {
-            if backgroundColor.count > 1 {
-                let gradient: CAGradientLayer = CAGradientLayer()
-                gradient.colors = backgroundColor.map { $0.cgColor }
-                gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-                gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-                gradient.frame = bounds
-                layer.insertSublayer(gradient, below: titleLabel?.layer)
-                clipsToBounds = true
-                self.gradient = gradient
-            } else {
-                self.backgroundColor = backgroundColor.first
-            }
+        setupBackgroundColor()
+    }
+    
+    private func setupBackgroundColor() {
+        guard let backgroundColor = style.backgroundColor else { return }
+        if backgroundColor.count > 1 {
+            let gradient: CAGradientLayer = CAGradientLayer()
+            gradient.colors = backgroundColor.map { $0.cgColor }
+            gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+            gradient.frame = bounds
+            layer.insertSublayer(gradient, below: titleLabel?.layer)
+            clipsToBounds = true
+            self.gradient = gradient
+        } else {
+            self.backgroundColor = backgroundColor.first
         }
     }
     
@@ -81,21 +84,8 @@ public class ALButton: UIButton {
     }
     
     private func handleDisabled() {
+        setupBackgroundColor()
         let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
         setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(textColor), for: .normal)
-    }
-    
-    private func resetBackgroundColorIfNeeded() {
-        guard let backgroundColor = style.backgroundColor, backgroundColor.count > 1 else { return }
-        self.gradient?.removeFromSuperlayer()
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = backgroundColor.map { $0.cgColor }
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient.frame = bounds
-        layer.insertSublayer(gradient, below: titleLabel?.layer)
-        clipsToBounds = true
-        self.backgroundColor = backgroundColor.first
-        self.gradient = gradient
     }
 }
