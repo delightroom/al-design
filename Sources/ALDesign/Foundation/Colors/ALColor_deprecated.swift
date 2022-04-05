@@ -9,22 +9,18 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    @available(*, deprecated, message: "'onSurfaceHighEmphasis' was deprecated in 2.0.0: Use surfaceHighEmphasis instead")
     public static var onSurfaceHighEmphasis: UIColor {
         return surfaceHighEmphasis
     }
     
-    @available(*, deprecated, message: "'onSurfaceMediumEmphasis' was deprecated in 2.0.0: Use surfaceMediumEmphasis instead")
     public static var onSurfaceMediumEmphasis: UIColor {
         return surfaceMediumEmphasis
     }
     
-    @available(*, deprecated, message: "'onSurfaceDefault' was deprecated in 2.0.0: Use surfaceDefault instead")
     public static var onSurfaceDefault: UIColor {
         return surfaceDefault
     }
     
-    @available(*, deprecated, message: "'onSurfaceDisabled' was deprecated in 2.0.0: Use surfaceDisabled instead")
     public static var onSurfaceDisabled: UIColor {
         return surfaceDisabled
     }
@@ -105,7 +101,6 @@ extension UIColor {
     }
     
     /// #FEFEFE
-    @available(*, deprecated, message: "'onSecondary' was deprecated in 2.0.0")
     public static var onSecondary: UIColor {
         return UIColor(hexString: "#FEFEFE")
     }

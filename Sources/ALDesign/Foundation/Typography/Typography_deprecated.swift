@@ -34,44 +34,36 @@ extension String {
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
     
-    @available(*, deprecated, message: "'.hero' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var hero: NSMutableAttributedString {
         return attributedString(type: .hero1)
     }
     
-    @available(*, deprecated, message: "'.title' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var title: NSMutableAttributedString {
         return attributedString(type: .title1)
     }
     
-    @available(*, deprecated, message: "'.subtitle' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var subtitle: NSMutableAttributedString {
         return attributedString(type: .subtitle)
     }
     
-    @available(*, deprecated, message: "'.button' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var button: NSMutableAttributedString {
         return attributedString(type: .button)
     }
     
-    @available(*, deprecated, message: "'.paragraph' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var paragraph: NSMutableAttributedString {
         return attributedString(type: .paragraph)
     }
     
-    @available(*, deprecated, message: "'.overline' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var overline: NSMutableAttributedString {
         return attributedString(type: .overline)
     }
     
-    @available(*, deprecated, message: "'.caption' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var caption: NSMutableAttributedString {
         return attributedString(type: .caption1)
     }
 }
 
 extension NSMutableAttributedString {
-    @available(*, deprecated, message: "'.two' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var two: NSMutableAttributedString {
         guard let font = self.attribute(.font, at: 0, effectiveRange: nil) as? UIFont else { return self }
         let result = self
@@ -88,7 +80,6 @@ extension NSMutableAttributedString {
         return result
     }
     
-    @available(*, deprecated, message: "'.three' was deprecated in 2.0.0: Use number(_ :Typography) or text(_ :Typography) instead")
     public var three: NSMutableAttributedString {
         guard let font = self.attribute(.font, at: 0, effectiveRange: nil) as? UIFont else { return self }
         let result = self
@@ -104,7 +95,6 @@ extension NSMutableAttributedString {
         return result
     }
     
-    @available(*, deprecated, message: "Use .ALColor.\"color name\" instead")
     public func addColor(_ color: ALColor) -> NSMutableAttributedString {
         let result = self
         let range = NSRange(location: 0, length: self.length)
