@@ -86,9 +86,9 @@ public class ALButton: UIButton {
     }
     
     private func handleDisabled() {
+        setupBackgroudColor()
         let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
         setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(textColor), for: .normal)
-        setupBackgroudColor()
     }
     
     private func resetBackgroundColorIfNeeded() {
