@@ -28,6 +28,16 @@ public class ALTinyPrimaryButton: ALButton {
     }
 }
 
+public class ALTinyBasicEmphasisButton: ALButton {
+    public init(title: String) {
+        super.init(size: .tiny, style: .basicEmphasis, title: title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 public class ALTinyBasicButton: ALButton {
     public init(title: String) {
         super.init(size: .tiny, style: .basic, title: title)

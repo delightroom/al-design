@@ -28,6 +28,16 @@ public class ALMediumPrimaryButton: ALButton {
     }
 }
 
+public class ALMediumBasicEmphasisButton: ALButton {
+    public init(title: String) {
+        super.init(size: .medium, style: .basicEmphasis, title: title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 public class ALMediumBasicButton: ALButton {
     public init(title: String) {
         super.init(size: .medium, style: .basic, title: title)
