@@ -58,9 +58,8 @@ public class ALButton: UIButton {
                 gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
                 gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
                 gradient.frame = bounds
-                layer.addSublayer(gradient)
+                layer.insertSublayer(gradient, below: titleLabel?.layer)
                 clipsToBounds = true
-                self.backgroundColor = backgroundColor.first
                 self.gradient = gradient
             } else {
                 self.backgroundColor = backgroundColor.first
@@ -94,7 +93,7 @@ public class ALButton: UIButton {
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.frame = bounds
-        layer.addSublayer(gradient)
+        layer.insertSublayer(gradient, below: titleLabel?.layer)
         clipsToBounds = true
         self.backgroundColor = backgroundColor.first
         self.gradient = gradient
