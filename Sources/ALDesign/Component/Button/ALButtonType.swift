@@ -162,6 +162,6 @@ extension ALButtonStyle {
         case .basic: result = UIColor(hexString: "#2F333D")
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
         }
-        return result
+        return result.withAlphaComponent(0.4)
     }
 }
