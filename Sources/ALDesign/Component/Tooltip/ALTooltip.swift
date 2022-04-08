@@ -26,7 +26,7 @@ public class ALTooltip: UIView {
     }()
     
     lazy private var arrowView: TooltipArrowView = {
-        let view = TooltipArrowView()
+        let view = TooltipArrowView(arrowDirection: arrowDirection)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
