@@ -22,7 +22,7 @@ final class TooltipArrowView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         backgroundColor = .clear
-        print(frame)
+
         let path = UIBezierPath()
         if arrowDirection == .bottom {
             path.move(to: .zero)

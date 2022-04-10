@@ -8,8 +8,9 @@
 import UIKit
 
 public class ALTooltip: UIView {
-    private let arrowDirection: ALTooltipArrowDirection
     private let title: String
+    private let arrowDirection: ALTooltipArrowDirection
+    private let type: ALTooltipType
     
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
@@ -31,9 +32,10 @@ public class ALTooltip: UIView {
         return view
     }()
     
-    public init(title: String, arrowDirection: ALTooltipArrowDirection) {
+    public init(title: String, arrowDirection: ALTooltipArrowDirection, type: ALTooltipType) {
         self.title = title
         self.arrowDirection = arrowDirection
+        self.type = type
         super.init(frame: .zero)
         initView()
     }
@@ -44,8 +46,9 @@ public class ALTooltip: UIView {
     
     private func initView() {
         translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(lessThanOrEqualToConstant: 270).isActive = true
         layer.cornerRadius = 6
-        backgroundColor = UIColor(hexString: "#00BEC7")
+        backgroundColor = type.backgroundColor
         
         addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
