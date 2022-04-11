@@ -56,7 +56,7 @@ public class ALButton: UIButton {
     
     private func setupBackgroundColor() {
         guard let backgroundColor = style.backgroundColor else { return }
-        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
+        let alpha: CGFloat = 1.0
         if backgroundColor.count > 1 {
             self.gradient?.removeFromSuperlayer()
             let gradient: CAGradientLayer = CAGradientLayer()
