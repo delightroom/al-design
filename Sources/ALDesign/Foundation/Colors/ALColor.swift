@@ -181,6 +181,17 @@ extension UIColor {
         return result
     }
     
+    /// dark: white600
+    /// light: black200
+    public static var priority: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = .black(200)
+        default: result = .white(600)
+        }
+        return result
+    }
+    
     /// #F50F3B
     public static var primary: UIColor {
         return UIColor(hexString: "#F50F3B")

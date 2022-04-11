@@ -28,9 +28,9 @@ public class ALSmallPrimaryButton: ALButton {
     }
 }
 
-public class ALSmallBasicEmphasisButton: ALButton {
+public class ALSmallAffordanceButton: ALButton {
     public init(title: String) {
-        super.init(size: .small, style: .basicEmphasis, title: title)
+        super.init(size: .small, style: .affordance, title: title)
     }
     
     required init?(coder: NSCoder) {

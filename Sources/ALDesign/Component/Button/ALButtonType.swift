@@ -113,7 +113,7 @@ extension ALButtonSize {
 enum ALButtonStyle {
     case gradient
     case primary
-    case basicEmphasis
+    case affordance
     case basic
     case line
     case lineIconLeft
@@ -126,7 +126,7 @@ extension ALButtonStyle {
         let result: UIColor
         switch self {
         case .gradient, .primary: result = .onPrimary
-        case .basicEmphasis: result = UITraitCollection.current.userInterfaceStyle == .dark ? .black(100) : .white(100)
+        case .affordance: result = .appbar
         case .basic: result = .surfaceHighEmphasis
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
@@ -138,7 +138,7 @@ extension ALButtonStyle {
         switch self {
         case .gradient: result = UIColor.premiumHorizon
         case .primary: result = [.primary]
-        case .basicEmphasis: result = UITraitCollection.current.userInterfaceStyle == .dark ? [.white(700)] : [.black(400)]
+        case .affordance: result = [.priority]
         case .basic: result = [.surfaceDefault]
         case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
@@ -148,7 +148,7 @@ extension ALButtonStyle {
     var borderColor: CGColor? {
         let result: CGColor?
         switch self {
-        case .gradient, .primary, .basicEmphasis, .basic: result = nil
+        case .gradient, .primary, .affordance, .basic: result = nil
         case .line, .lineIconLeft, .lineIconRight, .underline: result = UIColor.surfaceMediumEmphasis.cgColor
         }
         return result
@@ -158,8 +158,8 @@ extension ALButtonStyle {
         let result: UIColor
         switch self {
         case .gradient, .primary: result = .primaryVariant
-        case .basicEmphasis: result = UITraitCollection.current.userInterfaceStyle == .dark ? .black(900) : .black(200)
-        case .basic: result = UIColor(hexString: "#2F333D")
+        case .affordance: result = .surfaceMediumEmphasis
+        case .basic: result = .surfaceLowEmphasis
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
         }
         return result.withAlphaComponent(0.4)
