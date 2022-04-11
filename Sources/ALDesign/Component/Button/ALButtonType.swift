@@ -162,6 +162,6 @@ extension ALButtonStyle {
         case .basic: result = .surfaceLowEmphasis
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
         }
-        return result
+        return result.withAlphaComponent(0.4)
     }
 }

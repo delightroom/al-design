@@ -36,7 +36,7 @@ extension UIColor {
         case 600: result = UIColor(hexString: "#CCD3E3")
         case 700: result = UIColor(hexString: "#C2CADA")
         case 800: result = UIColor(hexString: "#B4BDCF")
-        case 900: result = UIColor(hexString: "#ABB3C4")
+        case 900: result = UIColor(hexString: "#AAB3C4")
         default: result = UIColor(hexString: "#F2F6FF")
         }
         return result
