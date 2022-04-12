@@ -99,7 +99,7 @@ public class ALSmallUnderlineButton: ALButton {
     private func addUndeline() {
         layer.borderWidth = 0
         underline.removeFromSuperlayer()
-        underline.backgroundColor = style.borderColor
+        underline.backgroundColor = style.borderColor?.cgColor
         underline.frame = CGRect(x: 0, y: frame.size.height, width: frame.width, height: 1)
         layer.addSublayer(underline)
     }

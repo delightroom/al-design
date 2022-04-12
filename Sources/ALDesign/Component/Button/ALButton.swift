@@ -46,17 +46,14 @@ public class ALButton: UIButton {
         layer.cornerRadius = size.cornerRadius
         contentEdgeInsets = size.contentEdgeInsets(for: style)
         setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
-        if let borderColor = style.borderColor {
-            layer.borderColor = borderColor
-            layer.borderWidth = 1
-        }
         sizeToFit()
+        setupBorderIfNeeded()
         setupBackgroundColor()
     }
     
     private func setupBackgroundColor() {
         guard let backgroundColor = style.backgroundColor else { return }
-        let alpha: CGFloat = 1.0
+        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
         if backgroundColor.count > 1 {
             self.gradient?.removeFromSuperlayer()
             let gradient: CAGradientLayer = CAGradientLayer()
@@ -70,6 +67,13 @@ public class ALButton: UIButton {
         } else {
             self.backgroundColor = backgroundColor.first?.withAlphaComponent(alpha)
         }
+    }
+    
+    private func setupBorderIfNeeded() {
+        guard let borderColor = style.borderColor else { return }
+        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
+        layer.borderColor = borderColor.withAlphaComponent(alpha).cgColor
+        layer.borderWidth = 1
     }
     
     required init?(coder: NSCoder) {
@@ -86,6 +90,7 @@ public class ALButton: UIButton {
     }
     
     private func handleDisabled() {
+        setupBorderIfNeeded()
         setupBackgroundColor()
         let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
         setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(textColor), for: .normal)

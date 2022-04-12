@@ -145,11 +145,11 @@ extension ALButtonStyle {
         return result
     }
     
-    var borderColor: CGColor? {
-        let result: CGColor?
+    var borderColor: UIColor? {
+        let result: UIColor?
         switch self {
         case .gradient, .primary, .affordance, .basic: result = nil
-        case .line, .lineIconLeft, .lineIconRight, .underline: result = UIColor.surfaceMediumEmphasis.cgColor
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
         return result
     }
@@ -157,10 +157,8 @@ extension ALButtonStyle {
     var disabledTextColor: UIColor {
         let result: UIColor
         switch self {
-        case .gradient, .primary: result = .primaryVariant
-        case .affordance: result = .surfaceMediumEmphasis
-        case .basic: result = .surfaceLowEmphasis
-        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
+        case .gradient, .primary: result = .scrim
+        case .affordance, .basic, .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceLowEmphasis
         }
         return result
     }
