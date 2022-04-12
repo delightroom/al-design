@@ -52,7 +52,7 @@ public class ALButton: UIButton {
     }
     
     private func setupBackgroundColor() {
-        guard let backgroundColor = style.backgroundColor else { return }
+        guard let backgroundColor = isEnabled ? style.backgroundColor : style.disabledBackgroundColor else { return }
         let alpha: CGFloat = isEnabled ? 1.0 : 0.4
         if backgroundColor.count > 1 {
             self.gradient?.removeFromSuperlayer()

@@ -162,4 +162,15 @@ extension ALButtonStyle {
         }
         return result.withAlphaComponent(0.4)
     }
+    
+    var disabledBackgroundColor: [UIColor]? {
+        let result: [UIColor]?
+        switch self {
+        case .gradient: result = UIColor.premiumHorizon
+        case .primary: result = [.primary]
+        case .affordance, .basic: result = [.surfaceDefault]
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
+        }
+        return result
+    }
 }
