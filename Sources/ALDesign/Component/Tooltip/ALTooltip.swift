@@ -12,6 +12,7 @@ public class ALTooltip: UIView {
     private let message: String
     private let type: ALTooltipType
     private var messageLabelTopConstraint: NSLayoutConstraint?
+    private var arrowViewConstraints: [NSLayoutConstraint] = []
     
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
@@ -71,16 +72,29 @@ public class ALTooltip: UIView {
     
     private func addTailView() {
         addSubview(arrowView)
+        setupArrowView()
+    }
+    
+    public func setupArrowView(for leadingAnchorConstant: CGFloat? = nil) {
+        arrowViewConstraints.forEach { $0.isActive = false }
+        arrowViewConstraints.removeAll()
         switch type {
         case .smallTop, .basicTop, .contentsTop:
-            arrowView.bottomAnchor.constraint(equalTo: topAnchor).isActive = true
-            arrowView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            arrowViewConstraints.append(arrowView.bottomAnchor.constraint(equalTo: topAnchor))
+            arrowViewConstraints.append(arrowView.centerXAnchor.constraint(equalTo: centerXAnchor))
         case .smallBottom, .basicBottom, .contentsBottom:
-            arrowView.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
-            arrowView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            arrowViewConstraints.append(arrowView.topAnchor.constraint(equalTo: bottomAnchor))
+            
         }
-        arrowView.widthAnchor.constraint(equalToConstant: 7).isActive = true
-        arrowView.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        if let leadingAnchorConstant = leadingAnchorConstant, leadingAnchorConstant > 0 && leadingAnchorConstant < 270 {
+            arrowViewConstraints.append(arrowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingAnchorConstant))
+        } else {
+            arrowViewConstraints.append(arrowView.centerXAnchor.constraint(equalTo: centerXAnchor))
+        }
+        arrowViewConstraints.append(arrowView.widthAnchor.constraint(equalToConstant: 14))
+        arrowViewConstraints.append(arrowView.heightAnchor.constraint(equalToConstant: 10))
+        
+        arrowViewConstraints.forEach { $0.isActive = true }
     }
     
     private func addTitleViewIfNeeded() {
