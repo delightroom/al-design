@@ -7,176 +7,124 @@
 
 import UIKit
 
-//enum ALColor {
-//    case white50
-//    //..
-//
-//    var value: UIColor {
-//        return UIColor.white
-//    }
-//}
-//
-//extension UIColor {
-//    public static var white50: UIColor {
-//
-//    }
-//}
-
 extension UIColor {
-    // 피드백, enum이나 static 변경 고려
-    public static func white(_ value: Int) -> UIColor {
-        let result: UIColor
-        switch value {
-        case 50: result = UIColor(hexString: "#F7FAFF")
-        case 100: result = UIColor(hexString: "#F2F6FF")
-        case 200: result = UIColor(hexString: "#EDF1FA")
-        case 300: result = UIColor(hexString: "#E6ECF7")
-        case 400: result = UIColor(hexString: "#DDE3F0")
-        case 500: result = UIColor(hexString: "#D5DCEB")
-        case 600: result = UIColor(hexString: "#CCD3E3")
-        case 700: result = UIColor(hexString: "#C2CADA")
-        case 800: result = UIColor(hexString: "#B4BDCF")
-        case 900: result = UIColor(hexString: "#ABB3C4")
-        default: result = UIColor(hexString: "#F2F6FF")
-        }
-        return result
-    }
-    
-    public static func black(_ value: Int) -> UIColor {
-        let result: UIColor
-        switch value {
-        case 50: result = UIColor(hexString: "#15171C")
-        case 100: result = UIColor(hexString: "#1D1F26")
-        case 200: result = UIColor(hexString: "#24272E")
-        case 300: result = UIColor(hexString: "#2F333D")
-        case 400: result = UIColor(hexString: "#3E434F")
-        case 500: result = UIColor(hexString: "#4B515E")
-        case 600: result = UIColor(hexString: "#585F6E")
-        case 700: result = UIColor(hexString: "#666D7D")
-        case 800: result = UIColor(hexString: "#747C8C")
-        case 900: result = UIColor(hexString: "#858E9E")
-        default: result = UIColor(hexString: "#0B0C0F")
-        }
-        return result
-    }
-
-    /// dark: black50
     /// light: white100
+    /// dark: black50
     public static var background: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(100)
-        default: result = .black(50)
+        case .light: result = ALColorPalette.white100.value
+        default: result = ALColorPalette.black50.value
         }
         return result
     }
     
-    /// dark: black300
     /// light: white200
+    /// dark: black300
     public static var appbar: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(200)
-        default: result = .black(300)
+        case .light: result = ALColorPalette.white200.value
+        default: result = ALColorPalette.black300.value
         }
         return result
     }
     
-    /// dark: black400
     /// light: white400
+    /// dark: black400
     public static var onSurfaceDivider12: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(400)
-        default: result = .black(400)
+        case .light: result = ALColorPalette.white400.value
+        default: result = ALColorPalette.black400.value
         }
         return result
     }
     
-    /// dark: black300
     /// light: white300
+    /// dark: black300
     public static var onSurfaceDivider5: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(300)
-        default: result = .black(300)
+        case .light: result = ALColorPalette.white300.value
+        default: result = ALColorPalette.black300.value
         }
         return result
     }
     
+    /// light: black100, 0.88
     /// dark: black, 0.88
-    /// light: black00, 0.88
     public static var scrim: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .black(100).withAlphaComponent(0.88)
+        case .light: result = ALColorPalette.black100.value.withAlphaComponent(0.88)
         default: result = .black.withAlphaComponent(0.88)
         }
         return result
     }
     
-    /// dark: black100
     /// light: white
+    /// dark: black100
     public static var surface: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white
-        default: result = black(100)
+        case .light: result = ALColorPalette.white.value
+        default: result = ALColorPalette.black100.value
         }
         return result
     }
     
-    /// dark: white50
     /// light: black50
+    /// dark: white50
     public static var surfaceHighEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .black(50)
-        default: result = .white(50)
+        case .light: result = ALColorPalette.black50.value
+        default: result = ALColorPalette.white50.value
         }
         return result
     }
     
-    /// dark: white900
     /// light: black700
+    /// dark: white900
     public static var surfaceMediumEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .black(700)
-        default: result = .white(900)
+        case .light: result = ALColorPalette.black700.value
+        default: result = ALColorPalette.white900.value
         }
         return result
     }
     
-    /// dark: white900
     /// light: black600
+    /// dark: white900
     public static var surfaceLowEmphasis: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(900)
-        default: result = .black(600)
+        case .light: result = ALColorPalette.white900.value
+        default: result = ALColorPalette.black600.value
         }
         return result
     }
     
-    /// dark: black500
     /// light: white600
+    /// dark: black500
     public static var surfaceDefault: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(600)
-        default: result = .black(500)
+        case .light: result = ALColorPalette.white600.value
+        default: result = ALColorPalette.black500.value
         }
         return result
     }
     
-    /// dark: black300
     /// light: white500
+    /// dark: black300
     public static var surfaceDisabled: UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = .white(500)
-        default: result = .black(300)
+        case .light: result = ALColorPalette.white500.value
+        default: result = ALColorPalette.black300.value
         }
         return result
     }
