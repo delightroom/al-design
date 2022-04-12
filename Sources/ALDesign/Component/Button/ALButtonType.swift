@@ -160,6 +160,6 @@ extension ALButtonStyle {
         case .gradient, .primary: result = .scrim
         case .affordance, .basic, .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceLowEmphasis
         }
-        return result
+        return result.withAlphaComponent(0.4)
     }
 }
