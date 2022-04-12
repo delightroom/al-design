@@ -9,23 +9,36 @@ import Foundation
 import UIKit
 
 public enum ALTooltipType {
-    case small
-    case basic
-    case contents
+    case smallTop
+    case smallBottom
+    case basicTop
+    case basicBottom
+    case contentsTop
+    case contentsBottom
 }
 
 extension ALTooltipType {
-    var backgroundColor: UIColor {
-        let result: UIColor
+    func attributedTitle(for title: String?) -> NSMutableAttributedString? {
+        guard let title = title else { return nil }
+        return title.button.addColor(.onPrimary)
+    }
+    
+    func attributedMessage(for message: String) -> NSMutableAttributedString {
+        let result: NSMutableAttributedString
         switch self {
-        case .small: result = UIColor(hexString: "#3E434F")
-        case .basic, .contents: result = .secondary
+        case .smallTop, .smallBottom: result = message.overline
+        case .basicTop, .basicBottom: result = message.paragraph.addColor(.onPrimary)
+        case .contentsTop, .contentsBottom: result = message.caption.addColor(.onPrimary)
         }
         return result
     }
-}
-
-public enum ALTooltipArrowDirection {
-    case top
-    case bottom
+    
+    var backgroundColor: UIColor {
+        let result: UIColor
+        switch self {
+        case .smallTop, .smallBottom: result = ALColorPalette.gray400.value
+        case .basicTop, .basicBottom, .contentsTop, .contentsBottom: result = .secondary
+        }
+        return result
+    }
 }
