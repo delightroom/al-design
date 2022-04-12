@@ -41,6 +41,11 @@ public class ALTooltip: UIView {
         self.type = type
         super.init(frame: .zero)
         initView()
+        addTapGestureRecognizer()
+    }
+    
+    public func hide() {
+        removeFromSuperview()
     }
     
     required init?(coder: NSCoder) {
@@ -90,5 +95,14 @@ public class ALTooltip: UIView {
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44).isActive = true
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -6).isActive = true
+    }
+    
+    private func addTapGestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func tapped() {
+        hide()
     }
 }
