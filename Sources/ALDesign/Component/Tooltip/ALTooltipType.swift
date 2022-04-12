@@ -41,4 +41,23 @@ extension ALTooltipType {
         }
         return result
     }
+    
+    var horizontalEdgeInset: CGFloat {
+        let result: CGFloat
+        switch self {
+        case .smallTop, .smallBottom: result = 8
+        case .basicTop, .basicBottom, .contentsTop, .contentsBottom: result = 16
+        }
+        return result
+    }
+    
+    var verticalEdgeInset: CGFloat {
+        let result: CGFloat
+        switch self {
+        case .smallTop, .smallBottom: result = 8
+        case .basicTop, .basicBottom: result = 10
+        case .contentsTop, .contentsBottom: result = 16
+        }
+        return result
+    }
 }

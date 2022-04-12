@@ -24,7 +24,7 @@ public class ALTooltip: UIView {
     lazy private var messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
+        label.numberOfLines = 4
         label.attributedText = type.attributedMessage(for: message)
         return label
     }()
@@ -59,11 +59,11 @@ public class ALTooltip: UIView {
         backgroundColor = type.backgroundColor
         
         addSubview(messageLabel)
-        messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
-        messageLabelTopConstraint = messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8)
+        messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: type.horizontalEdgeInset).isActive = true
+        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -type.horizontalEdgeInset).isActive = true
+        messageLabelTopConstraint = messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: type.verticalEdgeInset)
         messageLabelTopConstraint?.isActive = true
-        messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -type.verticalEdgeInset).isActive = true
         
         addTitleViewIfNeeded()
         addTailView()
