@@ -11,17 +11,19 @@ public class ALTooltip: UIView {
     private let title: String?
     private let message: String
     private let type: ALTooltipType
+    private var messageLabelTopConstraint: NSLayoutConstraint?
     
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.attributedText = type.attributedTitle(for: title)
         return label
     }()
     
     lazy private var messageLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.attributedText = type.attributedMessage(for: message)
         return label
@@ -54,9 +56,11 @@ public class ALTooltip: UIView {
         addSubview(messageLabel)
         messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
-        messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        messageLabelTopConstraint = messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8)
+        messageLabelTopConstraint?.isActive = true
         messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         
+        addTitleViewIfNeeded()
         addTailView()
     }
     
@@ -77,9 +81,14 @@ public class ALTooltip: UIView {
     private func addTitleViewIfNeeded() {
         guard type == .contentsTop || type == .contentsBottom else { return }
         addSubview(titleLabel)
-        messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
-        messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        if let messageLabelTopConstraint = messageLabelTopConstraint {
+            messageLabelTopConstraint.isActive = false
+            messageLabel.removeConstraint(messageLabelTopConstraint)
+        }
+        
+        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -6).isActive = true
     }
 }
