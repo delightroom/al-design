@@ -60,4 +60,13 @@ extension ALTooltipType {
         }
         return result
     }
+    
+    var maxWidth: CGFloat {
+        let result: CGFloat
+        switch self {
+        case .smallTop, .smallBottom, .basicTop, .basicBottom: result = 270
+        case .contentsTop, .contentsBottom: result = UIScreen.main.bounds.width
+        }
+        return result
+    }
 }

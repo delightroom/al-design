@@ -55,7 +55,7 @@ public class ALTooltip: UIView {
     
     private func initView() {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(lessThanOrEqualToConstant: 270).isActive = true
+        widthAnchor.constraint(lessThanOrEqualToConstant: type.maxWidth).isActive = true
         layer.cornerRadius = 6
         backgroundColor = type.backgroundColor
         
@@ -84,9 +84,8 @@ public class ALTooltip: UIView {
             arrowViewConstraints.append(arrowView.centerXAnchor.constraint(equalTo: centerXAnchor))
         case .smallBottom, .basicBottom, .contentsBottom:
             arrowViewConstraints.append(arrowView.topAnchor.constraint(equalTo: bottomAnchor))
-            
         }
-        if let leadingAnchorConstant = leadingAnchorConstant, leadingAnchorConstant > 0 && leadingAnchorConstant < 270 {
+        if let leadingAnchorConstant = leadingAnchorConstant {
             arrowViewConstraints.append(arrowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingAnchorConstant))
         } else {
             arrowViewConstraints.append(arrowView.centerXAnchor.constraint(equalTo: centerXAnchor))
