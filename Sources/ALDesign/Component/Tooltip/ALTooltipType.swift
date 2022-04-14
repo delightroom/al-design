@@ -20,15 +20,15 @@ public enum ALTooltipType {
 extension ALTooltipType {
     func attributedTitle(for title: String?) -> NSMutableAttributedString? {
         guard let title = title else { return nil }
-        return title.button.addColor(.onPrimary)
+        return title.text(.button).addColor(.onPrimary)
     }
     
     func attributedMessage(for message: String) -> NSMutableAttributedString {
         let result: NSMutableAttributedString
         switch self {
-        case .smallTop, .smallBottom: result = message.overline
-        case .basicTop, .basicBottom: result = message.paragraph.addColor(.onPrimary)
-        case .contentsTop, .contentsBottom: result = message.caption.addColor(.onPrimary)
+        case .smallTop, .smallBottom: result = message.text(.overline)
+        case .basicTop, .basicBottom: result = message.text(.paragraph).addColor(.onPrimary)
+        case .contentsTop, .contentsBottom: result = message.text(.caption1).addColor(.onPrimary)
         }
         return result
     }
