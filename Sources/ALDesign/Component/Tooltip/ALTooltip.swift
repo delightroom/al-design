@@ -30,6 +30,15 @@ public class ALTooltip: UIView {
         return label
     }()
     
+    lazy private var closeButton: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
+        view.image = LineIcon.close1616
+        view.tintColor = .secondaryVariant
+        return view
+    }()
+    
     lazy private var arrowView: TooltipArrowView = {
         let view = TooltipArrowView(type: type)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -67,10 +76,11 @@ public class ALTooltip: UIView {
         messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -type.verticalEdgeInset).isActive = true
         
         addTitleViewIfNeeded()
-        addTailView()
+        addCloseButtonIfNeeded()
+        addArrowView()
     }
     
-    private func addTailView() {
+    private func addArrowView() {
         addSubview(arrowView)
         setupArrowView()
     }
@@ -81,7 +91,6 @@ public class ALTooltip: UIView {
         switch type {
         case .smallTop, .basicTop, .contentsTop:
             arrowViewConstraints.append(arrowView.bottomAnchor.constraint(equalTo: topAnchor))
-            arrowViewConstraints.append(arrowView.centerXAnchor.constraint(equalTo: centerXAnchor))
         case .smallBottom, .basicBottom, .contentsBottom:
             arrowViewConstraints.append(arrowView.topAnchor.constraint(equalTo: bottomAnchor))
         }
@@ -108,6 +117,16 @@ public class ALTooltip: UIView {
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44).isActive = true
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -6).isActive = true
+    }
+    
+    private func addCloseButtonIfNeeded() {
+        guard type == .contentsTop || type == .contentsBottom else { return }
+        addSubview(closeButton)
+        
+        closeButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
+        closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     }
     
     private func addTapGestureRecognizer() {
