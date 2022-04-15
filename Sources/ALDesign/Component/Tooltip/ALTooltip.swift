@@ -113,9 +113,9 @@ public class ALTooltip: UIView {
             messageLabel.removeConstraint(messageLabelTopConstraint)
         }
         
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -6).isActive = true
     }
     
@@ -123,8 +123,8 @@ public class ALTooltip: UIView {
         guard type == .contentsTop || type == .contentsBottom else { return }
         addSubview(closeButton)
         
-        closeButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
-        closeButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
         closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     }
