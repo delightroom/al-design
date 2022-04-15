@@ -34,7 +34,7 @@ public class ALTooltip: UIView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.image = LineIcon.close1616
+        view.image = LineIcon.close2424
         view.tintColor = .secondaryVariant
         return view
     }()
@@ -113,9 +113,9 @@ public class ALTooltip: UIView {
             messageLabel.removeConstraint(messageLabelTopConstraint)
         }
         
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -44).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -6).isActive = true
     }
     

@@ -65,7 +65,7 @@ extension ALTooltipType {
         let result: CGFloat
         switch self {
         case .smallTop, .smallBottom, .basicTop, .basicBottom: result = 270
-        case .contentsTop, .contentsBottom: result = UIScreen.main.bounds.width
+        case .contentsTop, .contentsBottom: result = UIScreen.main.bounds.width - 64
         }
         return result
     }
