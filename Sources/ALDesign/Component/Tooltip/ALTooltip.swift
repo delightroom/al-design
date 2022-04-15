@@ -125,8 +125,8 @@ public class ALTooltip: UIView {
         
         closeButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
-        closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true
+        closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14).isActive = true
     }
     
     private func addTapGestureRecognizer() {
