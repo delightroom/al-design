@@ -44,16 +44,6 @@ public class ALTag: UIView {
         titleLabel.attributedText = type.attributedTitle(for: title)
     }
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-        print("willMove", bounds)
-    }
-    
-    public override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        print("didMoveToSuperview", bounds)
-    }
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
         guard let backgroundColors = backgroundColors else { return }
