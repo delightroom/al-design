@@ -5,7 +5,6 @@
 //  Created by 이옥민 on 2022/04/07.
 //
 
-import Foundation
 import UIKit
 
 public enum ALTooltipType {
