@@ -22,30 +22,16 @@ extension ALTagType {
         return result
     }
     
-    var topInset: CGFloat {
+    var height: CGFloat {
         let result: CGFloat
         switch self {
-        case .small: result = 4
-        case .medium: result = 3
-        }
-        return result
-    }
-    
-    var bottomInset: CGFloat {
-        let result: CGFloat
-        switch self {
-        case .small: result = 4
-        case .medium: result = 5
+        case .small: result = 24
+        case .medium: result = 32
         }
         return result
     }
     
     var cornerRadius: CGFloat {
-        let result: CGFloat
-        switch self {
-        case .small: result = 12
-        case .medium: result = 16
-        }
-        return result
+        return height / 2
     }
 }

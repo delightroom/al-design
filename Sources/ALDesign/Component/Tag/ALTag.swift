@@ -36,9 +36,9 @@ public class ALTag: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = type.cornerRadius
         
+        heightAnchor.constraint(equalToConstant: type.height).isActive = true
         addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
         titleLabel.attributedText = type.attributedTitle(for: title)
