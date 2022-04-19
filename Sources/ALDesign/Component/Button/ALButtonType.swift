@@ -55,22 +55,25 @@ extension ALButtonSize {
             case .lineIconLeft:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
+                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
+                attatchment.image = LineIcon.repeat1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
                 result.append(NSAttributedString(attachment: attatchment))
                 result.append(" \(title)".text(.caption1))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
+                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
+                attatchment.image = LineIcon.repeat1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
                 result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
             case .underline:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = LineIcon.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
+                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
+                attatchment.image = LineIcon.repeat1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
                 result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
             default:
