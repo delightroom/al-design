@@ -26,25 +26,22 @@ extension ALButtonSize {
             case .lineIconLeft:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14, weight: .heavy).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
-                attatchment.image = LineIcon.repeat1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
+                attatchment.image = SolidIcon.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
                 result.append(NSAttributedString(attachment: attatchment))
                 result.append(" \(title)".text(.overline))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14, weight: .heavy).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
-                attatchment.image = LineIcon.repeat1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
+                attatchment.image = SolidIcon.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
                 result.append("\(title) ".text(.overline))
                 result.append(NSAttributedString(attachment: attatchment))
             case .underline:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14, weight: .heavy).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
-                attatchment.image = LineIcon.repeat1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
+                attatchment.image = LineIcon.forward1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
                 result.append("\(title) ".text(.overline))
                 result.append(NSAttributedString(attachment: attatchment))
             default:
@@ -55,25 +52,22 @@ extension ALButtonSize {
             case .lineIconLeft:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
-                attatchment.image = LineIcon.repeat1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
+                attatchment.image = SolidIcon.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
                 result.append(NSAttributedString(attachment: attatchment))
                 result.append(" \(title)".text(.caption1))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
-                attatchment.image = LineIcon.repeat1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
+                attatchment.image = SolidIcon.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
                 result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
             case .underline:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                let attachmentBoundsY = (UIFont.systemFont(ofSize: 14).capHeight - LineIcon.repeat1616.size.height).rounded() / 2
-                attatchment.image = LineIcon.repeat1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: LineIcon.repeat1616.size)
+                attatchment.image = LineIcon.forward1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
                 result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
             default:
@@ -95,21 +89,21 @@ extension ALButtonSize {
     func contentEdgeInsets(for style: ALButtonStyle) -> UIEdgeInsets {
         let result: UIEdgeInsets
         switch self {
-        case .big: result = UIEdgeInsets(top: 22, left: 56, bottom: 22, right: 56)
-        case .medium: result = UIEdgeInsets(top: 14, left: 32, bottom: 14, right: 32)
+        case .big: result = UIEdgeInsets(top: 22, left: 56, bottom: 20, right: 56)
+        case .medium: result = UIEdgeInsets(top: 14, left: 32, bottom: 12, right: 32)
         case .small:
             switch style {
-            case .lineIconLeft: result = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 16)
-            case .lineIconRight: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 12)
-            case .underline: result = UIEdgeInsets(top: 8, left: 0, bottom: 4, right: 0)
-            default: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+            case .lineIconLeft: result = UIEdgeInsets(top: 10, left: 12, bottom: 8, right: 16)
+            case .lineIconRight: result = UIEdgeInsets(top: 10, left: 16, bottom: 8, right: 12)
+            case .underline: result = UIEdgeInsets(top: 8, left: 0, bottom: 2, right: 0)
+            default: result = UIEdgeInsets(top: 10, left: 16, bottom: 8, right: 16)
             }
         case .tiny:
             switch style {
-            case .lineIconLeft: result = UIEdgeInsets(top: 6, left: 8, bottom: 6, right: 12)
-            case .lineIconRight: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 8)
-            case .underline: result = UIEdgeInsets(top: 3, left: 0, bottom: 6, right: 0)
-            default: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12)
+            case .lineIconLeft: result = UIEdgeInsets(top: 6, left: 8, bottom: 4, right: 12)
+            case .lineIconRight: result = UIEdgeInsets(top: 6, left: 12, bottom: 4, right: 8)
+            case .underline: result = UIEdgeInsets(top: 3, left: 0, bottom: 4, right: 0)
+            default: result = UIEdgeInsets(top: 6, left: 12, bottom: 4, right: 12)
             }
         }
         return result
