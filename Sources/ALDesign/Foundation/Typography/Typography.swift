@@ -96,9 +96,9 @@ extension String {
             lineHeight = 18
         }
         let style = NSMutableParagraphStyle()
-        style.maximumLineHeight = lineHeight
-        style.minimumLineHeight = lineHeight
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - font.lineHeight) / 2]
+//        style.maximumLineHeight = lineHeight
+//        style.minimumLineHeight = lineHeight
+        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
 }
