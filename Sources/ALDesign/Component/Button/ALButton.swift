@@ -81,7 +81,7 @@ public class ALButton: UIButton {
     }
     
     private func setupBorderIfNeeded() {
-        guard let borderColor = style.borderColor else { return }
+        guard style != .underline, let borderColor = style.borderColor else { return }
         let alpha: CGFloat = isEnabled ? 1.0 : 0.4
         layer.borderColor = borderColor.withAlphaComponent(alpha).cgColor
         layer.borderWidth = 1
