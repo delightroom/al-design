@@ -133,7 +133,7 @@ extension ALButtonStyle {
         return result
     }
     
-    var backgroundColor: [UIColor]? {
+    var backgroundColors: [UIColor]? {
         let result: [UIColor]?
         switch self {
         case .gradient: result = UIColor.premiumHorizon
@@ -163,7 +163,7 @@ extension ALButtonStyle {
         return result.withAlphaComponent(0.4)
     }
     
-    var disabledBackgroundColor: [UIColor]? {
+    var disabledBackgroundColors: [UIColor]? {
         let result: [UIColor]?
         switch self {
         case .gradient: result = UIColor.premiumHorizon

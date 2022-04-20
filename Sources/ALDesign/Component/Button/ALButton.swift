@@ -15,7 +15,7 @@ public class ALButton: UIButton {
         didSet {
             setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
             sizeToFit()
-            setupBackgroundColor()
+            setupGradientBackgroundColorIfNeeded()
         }
     }
     
@@ -52,21 +52,32 @@ public class ALButton: UIButton {
     }
     
     private func setupBackgroundColor() {
-        guard let backgroundColor = isEnabled ? style.backgroundColor : style.disabledBackgroundColor else { return }
-        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
-        if backgroundColor.count > 1 {
-            self.gradient?.removeFromSuperlayer()
-            let gradient: CAGradientLayer = CAGradientLayer()
-            gradient.colors = backgroundColor.map { $0.withAlphaComponent(alpha).cgColor }
-            gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-            gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-            gradient.frame = bounds
-            layer.insertSublayer(gradient, below: titleLabel?.layer)
-            clipsToBounds = true
-            self.gradient = gradient
+        guard let backgroundColors = isEnabled ? style.backgroundColors : style.disabledBackgroundColors else { return }
+        if backgroundColors.count > 1 {
+            setupGradientBackgroundColor(backgroundColors)
         } else {
-            self.backgroundColor = backgroundColor.first?.withAlphaComponent(alpha)
+            let alpha: CGFloat = isEnabled ? 1.0 : 0.4
+            let backgroundColor = backgroundColors.first
+            self.backgroundColor = backgroundColor?.withAlphaComponent(alpha)
         }
+    }
+    
+    private func setupGradientBackgroundColorIfNeeded() {
+        guard let backgroundColors = isEnabled ? style.backgroundColors : style.disabledBackgroundColors, backgroundColors.count > 1 else { return }
+        setupGradientBackgroundColor(backgroundColors)
+    }
+    
+    private func setupGradientBackgroundColor(_ colors: [UIColor]) {
+        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
+        self.gradient?.removeFromSuperlayer()
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = colors.map { $0.withAlphaComponent(alpha).cgColor }
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.frame = bounds
+        layer.insertSublayer(gradient, below: titleLabel?.layer)
+        clipsToBounds = true
+        self.gradient = gradient
     }
     
     private func setupBorderIfNeeded() {
