@@ -148,8 +148,8 @@ extension ALButtonStyle {
     var borderColor: UIColor? {
         let result: UIColor?
         switch self {
-        case .gradient, .primary, .affordance, .basic, .underline: result = nil
-        case .line, .lineIconLeft, .lineIconRight: result = .surfaceMediumEmphasis
+        case .gradient, .primary, .affordance, .basic: result = nil
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
         return result
     }
