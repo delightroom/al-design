@@ -20,7 +20,7 @@ extension ALButtonSize {
         let result: NSMutableAttributedString
         switch self {
         case .big: result = title.text(.title3)
-        case .medium: result = title.text(.button)
+        case .medium: result = title.text(.subtitle1)
         case .small:
             switch style {
             case .lineIconLeft:
