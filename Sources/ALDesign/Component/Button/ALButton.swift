@@ -11,9 +11,11 @@ import UIKit
 public class ALButton: UIButton {
     var size: ALButtonSize
     var style: ALButtonStyle
+    private var icon: UIImage?
+    
     public var title: String {
         didSet {
-            setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+            setAttributedTitle()
             sizeToFit()
             resetBackgroundColorIfNeeded()
         }
@@ -37,15 +39,16 @@ public class ALButton: UIButton {
         return view
     }()
     
-    init(size: ALButtonSize, style: ALButtonStyle, title: String) {
+    init(size: ALButtonSize, style: ALButtonStyle, title: String, icon: UIImage? = nil) {
         self.size = size
         self.style = style
         self.title = title
+        self.icon = icon
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = size.cornerRadius
         contentEdgeInsets = size.contentEdgeInsets(for: style)
-        setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+        setAttributedTitle()
         if let borderColor = style.borderColor {
             layer.borderColor = borderColor
             layer.borderWidth = 1
@@ -72,6 +75,14 @@ public class ALButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setAttributedTitle() {
+        if let icon = icon {
+            setAttributedTitle(size.attributedTitle(for: title, style: style, icon: icon), for: .normal)
+        } else {
+            setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+        }
+    }
+    
     private func handlePressed() {
         guard style != .underline else { return }
         if isHighlighted {
@@ -83,7 +94,7 @@ public class ALButton: UIButton {
     
     private func handleDisabled() {
         let color: UIColor = isEnabled ? style.textColor : style.disabledColor
-        setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(color), for: .normal)
+        setAttributedTitle()
     }
     
     private func resetBackgroundColorIfNeeded() {

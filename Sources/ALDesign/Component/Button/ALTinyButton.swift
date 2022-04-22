@@ -49,8 +49,8 @@ public class ALTinyLineButton: ALButton {
 }
 
 public class ALTinyLineIconRightButton: ALButton {
-    public init(title: String) {
-        super.init(size: .tiny, style: .lineIconRight, title: title)
+    public init(title: String, icon: UIImage) {
+        super.init(size: .tiny, style: .lineIconRight, title: title, icon: icon)
     }
     
     required init?(coder: NSCoder) {
@@ -59,8 +59,8 @@ public class ALTinyLineIconRightButton: ALButton {
 }
 
 public class ALTinyLineIconLeftButton: ALButton {
-    public init(title: String) {
-        super.init(size: .tiny, style: .lineIconLeft, title: title)
+    public init(title: String, icon: UIImage) {
+        super.init(size: .tiny, style: .lineIconLeft, title: title, icon: icon)
     }
     
     required init?(coder: NSCoder) {
@@ -77,8 +77,8 @@ public class ALTinyUnderlineButton: ALButton {
         }
     }
     
-    public init(title: String) {
-        super.init(size: .tiny, style: .underline, title: title)
+    public init(title: String, icon: UIImage) {
+        super.init(size: .tiny, style: .underline, title: title, icon: icon)
         addUndeline()
     }
     
