@@ -113,6 +113,7 @@ extension ALButtonSize {
 enum ALButtonStyle {
     case gradient
     case primary
+    case affordance
     case basic
     case line
     case lineIconLeft
@@ -125,38 +126,50 @@ extension ALButtonStyle {
         let result: UIColor
         switch self {
         case .gradient, .primary: result = .onPrimary
+        case .affordance: result = .appbar
         case .basic: result = .surfaceHighEmphasis
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
         return result
     }
     
-    var backgroundColor: [UIColor]? {
+    var backgroundColors: [UIColor]? {
         let result: [UIColor]?
         switch self {
         case .gradient: result = UIColor.premiumHorizon
         case .primary: result = [.primary]
+        case .affordance: result = [.priority]
         case .basic: result = [.surfaceDefault]
         case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
         return result
     }
     
-    var borderColor: CGColor? {
-        let result: CGColor?
+    var borderColor: UIColor? {
+        let result: UIColor?
         switch self {
-        case .gradient, .primary, .basic: result = nil
-        case .line, .lineIconLeft, .lineIconRight, .underline: result = UIColor.surfaceMediumEmphasis.cgColor
+        case .gradient, .primary, .affordance, .basic: result = nil
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
         return result
     }
     
-    var disabledColor: UIColor {
+    var disabledTextColor: UIColor {
         let result: UIColor
         switch self {
-        case .gradient, .primary: result = .primaryVariant
-        case .basic: result = UIColor(hexString: "#2F333D")
-        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
+        case .gradient, .primary: result = .scrim
+        case .affordance, .basic, .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceLowEmphasis
+        }
+        return result.withAlphaComponent(0.4)
+    }
+    
+    var disabledBackgroundColors: [UIColor]? {
+        let result: [UIColor]?
+        switch self {
+        case .gradient: result = UIColor.premiumHorizon
+        case .primary: result = [.primary]
+        case .affordance, .basic: result = [.surfaceDefault]
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
         return result
     }
