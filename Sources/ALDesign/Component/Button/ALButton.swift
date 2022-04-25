@@ -95,6 +95,7 @@ public class ALButton: UIButton {
     }
     
     private func setAttributedTitle() {
+        let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
         setAttributedTitle(size.attributedTitle(for: title, style: style, icon: icon).addColor(textColor), for: .normal)
     }
     
