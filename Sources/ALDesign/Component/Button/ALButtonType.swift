@@ -16,7 +16,8 @@ enum ALButtonSize {
 }
 
 extension ALButtonSize {
-    func attributedTitle(for title: String, style: ALButtonStyle, icon: UIImage) -> NSMutableAttributedString {
+    func attributedTitle(for title: String, style: ALButtonStyle, icon: UIImage?) -> NSMutableAttributedString {
+        guard let icon = icon else { return attributedTitle(for: title, style: style) }
         let result: NSMutableAttributedString
         let font: UIFont
         switch self {

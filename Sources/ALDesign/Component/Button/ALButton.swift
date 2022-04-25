@@ -95,11 +95,7 @@ public class ALButton: UIButton {
     }
     
     private func setAttributedTitle() {
-        if let icon = icon {
-            setAttributedTitle(size.attributedTitle(for: title, style: style, icon: icon), for: .normal)
-        } else {
-            setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
-        }
+        setAttributedTitle(size.attributedTitle(for: title, style: style, icon: icon).addColor(textColor), for: .normal)
     }
     
     private func handlePressed() {
@@ -115,7 +111,5 @@ public class ALButton: UIButton {
         setupBorderIfNeeded()
         setupBackgroundColor()
         setAttributedTitle()
-//        let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
-//        setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(textColor), for: .normal)
     }
 }
