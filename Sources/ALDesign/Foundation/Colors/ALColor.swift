@@ -14,7 +14,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white100.value
-        default: result = ALColorPalette.black50.value
+        case .dark: result = ALColorPalette.black50.value
+        case .unspecified: result = ALColorPalette.black50.value
+        @unknown default: result = ALColorPalette.black50.value
         }
         return result
     }
@@ -25,7 +27,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white200.value
-        default: result = ALColorPalette.black300.value
+        case .dark: result = ALColorPalette.black300.value
+        case .unspecified: result = ALColorPalette.black300.value
+        @unknown default: result = ALColorPalette.black300.value
         }
         return result
     }
@@ -36,7 +40,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white400.value
-        default: result = ALColorPalette.black400.value
+        case .dark: result = ALColorPalette.black400.value
+        case .unspecified: result = ALColorPalette.black400.value
+        @unknown default: result = ALColorPalette.black400.value
         }
         return result
     }
@@ -47,7 +53,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white300.value
-        default: result = ALColorPalette.black300.value
+        case .dark: result = ALColorPalette.black300.value
+        case .unspecified: result = ALColorPalette.black300.value
+        @unknown default: result = ALColorPalette.black300.value
         }
         return result
     }
@@ -58,7 +66,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.black100.value.withAlphaComponent(0.88)
-        default: result = .black.withAlphaComponent(0.88)
+        case .dark: result = ALColorPalette.black.value.withAlphaComponent(0.88)
+        case .unspecified: result = ALColorPalette.black.value.withAlphaComponent(0.88)
+        @unknown default: result = ALColorPalette.black.value.withAlphaComponent(0.88)
         }
         return result
     }
@@ -69,7 +79,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white.value
-        default: result = ALColorPalette.black100.value
+        case .dark: result = ALColorPalette.black100.value
+        case .unspecified: result = ALColorPalette.black100.value
+        @unknown default: result = ALColorPalette.black100.value
         }
         return result
     }
@@ -80,7 +92,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.black50.value
-        default: result = ALColorPalette.white50.value
+        case .dark: result = ALColorPalette.white50.value
+        case .unspecified: result = ALColorPalette.white50.value
+        @unknown default: result = ALColorPalette.white50.value
         }
         return result
     }
@@ -91,7 +105,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.black700.value
-        default: result = ALColorPalette.white900.value
+        case .dark: result = ALColorPalette.white900.value
+        case .unspecified: result = ALColorPalette.white900.value
+        @unknown default: result = ALColorPalette.white900.value
         }
         return result
     }
@@ -102,7 +118,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white900.value
-        default: result = ALColorPalette.black600.value
+        case .dark: result = ALColorPalette.black600.value
+        case .unspecified: result = ALColorPalette.black600.value
+        @unknown default: result = ALColorPalette.black600.value
         }
         return result
     }
@@ -113,7 +131,9 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white600.value
-        default: result = ALColorPalette.black500.value
+        case .dark: result = ALColorPalette.black500.value
+        case .unspecified: result = ALColorPalette.black500.value
+        @unknown default: result = ALColorPalette.black500.value
         }
         return result
     }
@@ -124,7 +144,22 @@ extension UIColor {
         let result: UIColor
         switch UITraitCollection.current.userInterfaceStyle {
         case .light: result = ALColorPalette.white500.value
-        default: result = ALColorPalette.black300.value
+        case .dark: result = ALColorPalette.black300.value
+        case .unspecified: result = ALColorPalette.black300.value
+        @unknown default: result = ALColorPalette.black300.value
+        }
+        return result
+    }
+    
+    /// dark: white600
+    /// light: black200
+    public static var priority: UIColor {
+        let result: UIColor
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .light: result = ALColorPalette.black200.value
+        case .dark: result = ALColorPalette.white600.value
+        case .unspecified: result = ALColorPalette.white600.value
+        @unknown default: result = ALColorPalette.white600.value
         }
         return result
     }

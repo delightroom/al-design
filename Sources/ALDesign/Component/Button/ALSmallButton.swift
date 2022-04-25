@@ -28,6 +28,16 @@ public class ALSmallPrimaryButton: ALButton {
     }
 }
 
+public class ALSmallAffordanceButton: ALButton {
+    public init(title: String) {
+        super.init(size: .small, style: .affordance, title: title)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 public class ALSmallBasicButton: ALButton {
     public init(title: String) {
         super.init(size: .small, style: .basic, title: title)
@@ -89,7 +99,7 @@ public class ALSmallUnderlineButton: ALButton {
     private func addUndeline() {
         layer.borderWidth = 0
         underline.removeFromSuperlayer()
-        underline.backgroundColor = style.borderColor
+        underline.backgroundColor = style.borderColor?.cgColor
         underline.frame = CGRect(x: 0, y: frame.size.height, width: frame.width, height: 1)
         layer.addSublayer(underline)
     }
