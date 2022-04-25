@@ -76,16 +76,16 @@ extension ALButtonSize {
         case .medium: result = UIEdgeInsets(top: 14, left: 32, bottom: 14, right: 32)
         case .small:
             switch style {
-            case .lineIconLeft: result = UIEdgeInsets(top: 6.5, left: 8, bottom: 9, right: 16)
+            case .lineIconLeft: result = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 16)
             case .lineIconRight: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 8)
-            case .underline: result = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+            case .underline: result = UIEdgeInsets(top: 8, left: 0, bottom: 4, right: 0)
             default: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
             }
         case .tiny:
             switch style {
-            case .lineIconLeft: result = UIEdgeInsets(top: 2.5, left: 8, bottom: 5, right: 12)
-            case .lineIconRight: result = UIEdgeInsets(top: 5, left: 12, bottom: 7, right: 8)
-            case .underline: result = UIEdgeInsets(top: 3, left: 0, bottom: 1, right: 0)
+            case .lineIconLeft: result = UIEdgeInsets(top: 6, left: 8, bottom: 6, right: 12)
+            case .lineIconRight: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 8)
+            case .underline: result = UIEdgeInsets(top: 3, left: 0, bottom: 6, right: 0)
             default: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12)
             }
         }
