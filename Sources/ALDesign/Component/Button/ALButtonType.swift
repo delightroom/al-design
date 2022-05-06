@@ -16,21 +16,27 @@ enum ALButtonSize {
 }
 
 extension ALButtonSize {
+    var font: UIFont {
+        let result: UIFont
+        switch self {
+        case .big: result = ButtonTypography.button1.font
+        case .medium: result = ButtonTypography.button2.font
+        case .small: result = ButtonTypography.button3.font
+        case .tiny: result = ButtonTypography.button4.font
+        }
+        return result
+    }
+}
+
+extension ALButtonSize {
     func attributedTitle(for title: String, style: ALButtonStyle, icon: UIImage?) -> NSMutableAttributedString {
         guard let icon = icon else { return attributedTitle(for: title, style: style) }
         let result: NSMutableAttributedString
-        let font: UIFont
-        switch self {
-        case .big: font = ButtonTypography.button1.font
-        case .medium: font = ButtonTypography.button2.font
-        case .small: font = ButtonTypography.button3.font
-        case .tiny: font = ButtonTypography.button4.font
-        }
         
         result = NSMutableAttributedString()
         let attatchment = NSTextAttachment()
         attatchment.image = icon
-        let attachmentBoundsY = (font.capHeight - icon.size.height) / 2
+        let attachmentBoundsY = (self.font.capHeight - icon.size.height) / 2
         attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: icon.size)
         
         switch style {
