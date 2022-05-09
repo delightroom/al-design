@@ -8,14 +8,15 @@
 import UIKit
 
 public class ALNavigationBar: UINavigationBar {
-    private let textAttributes: [NSAttributedString.Key: Any] = [.font: Typography.title2.font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+    private let largeTextAttributes: [NSAttributedString.Key: Any] = [.font: Typography.title2.font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
+    private let textAttributes: [NSAttributedString.Key: Any] = [.font: Typography.subtitle1.font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         isTranslucent = false
         shadowImage = UIImage()
         prefersLargeTitles = true
-        largeTitleTextAttributes = textAttributes
+        largeTitleTextAttributes = largeTextAttributes
         tintColor = .onSurfaceHighEmphasis
     }
     
@@ -28,7 +29,7 @@ public class ALNavigationBar: UINavigationBar {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = backgroundColor
             appearance.titleTextAttributes = textAttributes
-            appearance.largeTitleTextAttributes = textAttributes
+            appearance.largeTitleTextAttributes = largeTextAttributes
             standardAppearance = appearance
             compactAppearance = appearance
             scrollEdgeAppearance = appearance
