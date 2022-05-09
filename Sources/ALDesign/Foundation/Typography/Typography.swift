@@ -29,8 +29,8 @@ public enum Typography {
     case title1
     case title2
     case title3
-    case subtitle
-    case button
+    case subtitle1
+    case subtitle2
     case paragraph
     case overline
     case caption1
@@ -62,8 +62,8 @@ extension String {
         case .title1: font = UIFont.systemFont(ofSize: 32, weight: .heavy)
         case .title2: font = UIFont.systemFont(ofSize: 26, weight: .heavy)
         case .title3: font = UIFont.systemFont(ofSize: 20, weight: .heavy)
-        case .subtitle: font = UIFont.systemFont(ofSize: 18)
-        case .button: font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        case .subtitle1: font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        case .subtitle2: font = UIFont.systemFont(ofSize: 18)
         case .paragraph: font = UIFont.systemFont(ofSize: 16)
         case .overline: font = UIFont.systemFont(ofSize: 14, weight: .heavy)
         case .caption1: font = UIFont.systemFont(ofSize: 14)
