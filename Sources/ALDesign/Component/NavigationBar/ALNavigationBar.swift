@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ALNavigationBar: UINavigationBar {
-    override init(frame: CGRect) {
+public class ALNavigationBar: UINavigationBar {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         isTranslucent = false
         shadowImage = UIImage()
         prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: Typography.title2.font]
+        largeTitleTextAttributes = [NSAttributedString.Key.font: Typography.title2.font]
         tintColor = .onSurfaceHighEmphasis
     }
     
