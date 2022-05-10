@@ -17,16 +17,6 @@ public class ALNavigationController: UINavigationController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.topItem?.backButtonTitle = ""
-    }
-    
-    public override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.topItem?.backButtonTitle = ""
-    }
-    
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
         navigationBar.topItem?.backButtonTitle = ""
