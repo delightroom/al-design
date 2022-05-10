@@ -26,5 +26,10 @@ public class ALNavigationController: UINavigationController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.topItem?.backButtonTitle = ""
     }
+    
+    public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: animated)
+        navigationBar.topItem?.backButtonTitle = ""
+    }
 }
 
