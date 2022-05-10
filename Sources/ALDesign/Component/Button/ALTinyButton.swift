@@ -59,8 +59,8 @@ public class ALTinyLineButton: ALButton {
 }
 
 public class ALTinyLineIconRightButton: ALButton {
-    public init(title: String) {
-        super.init(size: .tiny, style: .lineIconRight, title: title)
+    public init(title: String, icon: UIImage) {
+        super.init(size: .tiny, style: .lineIconRight, title: title, icon: icon)
     }
     
     required init?(coder: NSCoder) {
@@ -69,8 +69,8 @@ public class ALTinyLineIconRightButton: ALButton {
 }
 
 public class ALTinyLineIconLeftButton: ALButton {
-    public init(title: String) {
-        super.init(size: .tiny, style: .lineIconLeft, title: title)
+    public init(title: String, icon: UIImage) {
+        super.init(size: .tiny, style: .lineIconLeft, title: title, icon: icon)
     }
     
     required init?(coder: NSCoder) {
@@ -82,13 +82,15 @@ public class ALTinyUnderlineButton: ALButton {
     private let underline = CALayer()
     
     public override var title: String {
-        didSet {
-            addUndeline()
-        }
+        didSet { addUndeline() }
     }
     
-    public init(title: String) {
-        super.init(size: .tiny, style: .underline, title: title)
+    public override var isEnabled: Bool {
+        didSet { resetUnderline() }
+    }
+    
+    public init(title: String, icon: UIImage) {
+        super.init(size: .tiny, style: .underline, title: title, icon: icon)
         addUndeline()
     }
     
@@ -102,5 +104,10 @@ public class ALTinyUnderlineButton: ALButton {
         underline.backgroundColor = style.borderColor?.cgColor
         underline.frame = CGRect(x: 0, y: frame.size.height, width: frame.width, height: 1)
         layer.addSublayer(underline)
+    }
+    
+    private func resetUnderline() {
+        let alpha: CGFloat = isEnabled ? 1.0 : 0.4
+        underline.backgroundColor = style.borderColor?.withAlphaComponent(alpha).cgColor
     }
 }

@@ -11,9 +11,11 @@ import UIKit
 public class ALButton: UIButton {
     var size: ALButtonSize
     var style: ALButtonStyle
+    private var icon: UIImage?
+    
     public var title: String {
         didSet {
-            setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+            setAttributedTitle()
             sizeToFit()
             setupGradientBackgroundColorIfNeeded()
         }
@@ -37,15 +39,16 @@ public class ALButton: UIButton {
         return view
     }()
     
-    init(size: ALButtonSize, style: ALButtonStyle, title: String) {
+    init(size: ALButtonSize, style: ALButtonStyle, title: String, icon: UIImage? = nil) {
         self.size = size
         self.style = style
         self.title = title
+        self.icon = icon
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = size.cornerRadius
         contentEdgeInsets = size.contentEdgeInsets(for: style)
-        setAttributedTitle(size.attributedTitle(for: title, style: style), for: .normal)
+        setAttributedTitle()
         sizeToFit()
         setupBorderIfNeeded()
         setupBackgroundColor()
@@ -91,6 +94,11 @@ public class ALButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setAttributedTitle() {
+        let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
+        setAttributedTitle(size.attributedTitle(for: title, style: style, icon: icon).addColor(textColor), for: .normal)
+    }
+    
     private func handlePressed() {
         guard style != .underline else { return }
         if isHighlighted {
@@ -103,7 +111,6 @@ public class ALButton: UIButton {
     private func handleDisabled() {
         setupBorderIfNeeded()
         setupBackgroundColor()
-        let textColor: UIColor = isEnabled ? style.textColor : style.disabledTextColor
-        setAttributedTitle(size.attributedTitle(for: title, style: style).addColor(textColor), for: .normal)
+        setAttributedTitle()
     }
 }

@@ -17,7 +17,7 @@ extension ALTagType {
         let result: NSMutableAttributedString
         switch self {
         case .small: result = title.text(.caption3).addColor(.onPrimary)
-        case .medium: result = title.text(.button).addColor(.onPrimary)
+        case .medium: result = title.text(.subtitle1).addColor(.onPrimary)
         }
         return result
     }
