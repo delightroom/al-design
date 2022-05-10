@@ -16,6 +16,7 @@ public class ALNavigationController: UINavigationController {
         } else {
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
+        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
