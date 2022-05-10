@@ -22,8 +22,8 @@ public class ALNavigationController: UINavigationController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         if #available(iOS 14.0, *) {
             navigationItem.backButtonDisplayMode = .minimal
         } else {
