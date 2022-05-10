@@ -18,6 +18,7 @@ public class ALNavigationBar: UINavigationBar {
         prefersLargeTitles = true
         largeTitleTextAttributes = largeTextAttributes
         tintColor = .onSurfaceHighEmphasis
+        topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     required init?(coder: NSCoder) {
