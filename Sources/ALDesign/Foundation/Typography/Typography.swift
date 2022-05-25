@@ -7,11 +7,16 @@
 
 import UIKit
 
-internal func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
-    let lexendFont = UIFont(name: "Lexend-SemiBold", size: size)
+enum LexendType: String {
+    case semiBold = "Lexend-SemiBold"
+    case regular = "Lexend-Regular"
+}
+
+func lexend(_ type: LexendType, ofSize size: CGFloat) -> UIFont {
+    let lexendFont = UIFont(name: type.rawValue, size: size)
     let systemFont = UIFont.systemFont(ofSize: size, weight: .heavy)
     guard lexendFont == nil else { return lexendFont! }
-    guard let fontUrl = Bundle.module.url(forResource: "Lexend-SemiBold", withExtension: "ttf"),
+    guard let fontUrl = Bundle.module.url(forResource: type.rawValue, withExtension: "ttf"),
           let fontDataProvider = CGDataProvider(url: fontUrl as CFURL),
           let font = CGFont(fontDataProvider) else {
               return systemFont
@@ -20,7 +25,7 @@ internal func lexendSemiBold(ofSize size: CGFloat) -> UIFont {
     guard CTFontManagerRegisterGraphicsFont(font, &error) else {
         return systemFont
     }
-    return UIFont(name: "Lexend-SemiBold", size: size)!
+    return UIFont(name: type.rawValue, size: size)!
 }
 
 public enum Typography {
@@ -40,16 +45,15 @@ public enum Typography {
 
 extension String {
     public func number(_ typo: Typography) -> NSMutableAttributedString {
-        let fontSize: CGFloat
+        let font: UIFont
         switch typo {
-        case .hero1: fontSize = 110
-        case .hero2: fontSize = 48
-        case .title1: fontSize = 32
-        case .title2: fontSize = 26
-        case .title3: fontSize = 20
-        default: fontSize = 20
+        case .hero1: font = lexend(.regular, ofSize: 110)
+        case .hero2: font = lexend(.semiBold, ofSize: 48)
+        case .title1: font = lexend(.semiBold, ofSize: 32)
+        case .title2: font = lexend(.semiBold, ofSize: 26)
+        case .title3: font = lexend(.semiBold, ofSize: 20)
+        default: font = lexend(.semiBold, ofSize: 20)
         }
-        let font: UIFont = lexendSemiBold(ofSize: fontSize)
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
@@ -57,7 +61,7 @@ extension String {
     public func text(_ typo: Typography) -> NSMutableAttributedString {
         let font: UIFont
         switch typo {
-        case .hero1: font = UIFont.systemFont(ofSize: 110, weight: .heavy)
+        case .hero1: font = UIFont.systemFont(ofSize: 110)
         case .hero2: font = UIFont.systemFont(ofSize: 48, weight: .heavy)
         case .title1: font = UIFont.systemFont(ofSize: 32, weight: .heavy)
         case .title2: font = UIFont.systemFont(ofSize: 26, weight: .heavy)
