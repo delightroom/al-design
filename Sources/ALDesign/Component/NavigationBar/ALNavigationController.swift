@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ALNavigationController: UINavigationController {
+open class ALNavigationController: UINavigationController {
     
     public init() {
         super.init(navigationBarClass: ALNavigationBar.self, toolbarClass: nil)
@@ -17,7 +17,7 @@ public class ALNavigationController: UINavigationController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
         navigationBar.topItem?.backButtonTitle = ""
     }
