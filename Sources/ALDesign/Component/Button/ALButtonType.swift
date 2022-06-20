@@ -26,15 +26,15 @@ extension ALButtonSize {
             case .lineIconLeft:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
+                attatchment.image = ALIcon.solid.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
                 result.append(NSAttributedString(attachment: attatchment))
                 result.append(" \(title)".text(.overline))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
+                attatchment.image = ALIcon.solid.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
                 result.append("\(title) ".text(.overline))
                 result.append(NSAttributedString(attachment: attatchment))
             case .underline:
@@ -52,15 +52,15 @@ extension ALButtonSize {
             case .lineIconLeft:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
+                attatchment.image = ALIcon.solid.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
                 result.append(NSAttributedString(attachment: attatchment))
                 result.append(" \(title)".text(.caption1))
             case .lineIconRight:
                 result = NSMutableAttributedString()
                 let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
+                attatchment.image = ALIcon.solid.play1616
+                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
                 result.append("\(title) ".text(.caption1))
                 result.append(NSAttributedString(attachment: attatchment))
             case .underline:
