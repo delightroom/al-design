@@ -19,7 +19,7 @@ public enum ALTooltipType {
 extension ALTooltipType {
     func attributedTitle(for title: String?) -> NSMutableAttributedString? {
         guard let title = title else { return nil }
-        return title.text(.button).addColor(.onPrimary)
+        return title.text(.subtitle1).addColor(.onPrimary)
     }
     
     func attributedMessage(for message: String) -> NSMutableAttributedString {

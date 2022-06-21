@@ -10,12 +10,12 @@ import XCTest
 
 final class TypographyTests: XCTestCase {
     func testlexend() {
-        let font = lexendSemiBold(ofSize: 11)
+        let font = lexend(.semiBold, ofSize: 11)
         XCTAssertNotNil(font)
     }
     
     func testNumberTypo() {
-        let fonts = [lexendSemiBold(ofSize: 110), lexendSemiBold(ofSize: 48), lexendSemiBold(ofSize:32), lexendSemiBold(ofSize: 26), lexendSemiBold(ofSize: 20)]
+        let fonts = [lexend(.regular, ofSize: 110), lexend(.semiBold, ofSize: 48), lexend(.semiBold, ofSize:32), lexend(.semiBold, ofSize: 26), lexend(.semiBold, ofSize: 20)]
 
         let input = "123456789"
         let output = [input.number(.hero1), input.number(.hero2), input.number(.title1), input.number(.title2), input.number(.title3)]
@@ -25,17 +25,13 @@ final class TypographyTests: XCTestCase {
     }
     
     func testTextTypo() {
-        let fonts: [(UIFont, CGFloat)] = [(UIFont.systemFont(ofSize: 110, weight: .heavy), 110), (UIFont.systemFont(ofSize: 48, weight: .heavy), 62), (UIFont.systemFont(ofSize: 32, weight: .heavy), 42), (UIFont.systemFont(ofSize: 26, weight: .heavy), 34), (UIFont.systemFont(ofSize: 20, weight: .heavy), 26), (UIFont.systemFont(ofSize: 17, weight: .heavy), 24), (UIFont.systemFont(ofSize: 16), 22), (UIFont.systemFont(ofSize: 14, weight: .heavy), 20), (UIFont.systemFont(ofSize: 14), 20), (UIFont.systemFont(ofSize: 12, weight: .heavy), 18), (UIFont.systemFont(ofSize: 12), 18)]
+        let fonts: [UIFont] = [UIFont.systemFont(ofSize: 110), UIFont.systemFont(ofSize: 48, weight: .heavy), UIFont.systemFont(ofSize: 32, weight: .heavy), UIFont.systemFont(ofSize: 26, weight: .heavy), UIFont.systemFont(ofSize: 20, weight: .heavy), UIFont.systemFont(ofSize: 18, weight: .heavy), UIFont.systemFont(ofSize: 16), UIFont.systemFont(ofSize: 14, weight: .heavy), UIFont.systemFont(ofSize: 14), UIFont.systemFont(ofSize: 12, weight: .heavy), UIFont.systemFont(ofSize: 12)]
 
         let input = "Good Morning"
-        let output = [input.text(.hero1), input.text(.hero2), input.text(.title1), input.text(.title2), input.text(.title3), input.text(.button), input.text(.paragraph), input.text(.overline), input.text(.caption1), input.text(.caption2), input.text(.caption3)]
+        let output = [input.text(.hero1), input.text(.hero2), input.text(.title1), input.text(.title2), input.text(.title3), input.text(.subtitle1), input.text(.paragraph), input.text(.overline), input.text(.caption1), input.text(.caption2), input.text(.caption3)]
         
         let correctOutput: [NSAttributedString] = fonts.map {
-            let lineHeight: CGFloat = $1
-            let style = NSMutableParagraphStyle()
-            style.maximumLineHeight = lineHeight
-            style.minimumLineHeight = lineHeight
-            return NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.surfaceHighEmphasis, .paragraphStyle: style, .baselineOffset: (lineHeight - $0.lineHeight) / 2])
+            return NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.surfaceHighEmphasis])
         }
 
         XCTAssertEqual(output, correctOutput)
