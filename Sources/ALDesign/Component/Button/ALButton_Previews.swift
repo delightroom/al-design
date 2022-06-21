@@ -28,15 +28,15 @@ struct ALButton_Previews: PreviewProvider {
                     }
                     
                     LivePreview {
-                        ALSmallLineIconRightButton(title: "Button", icon: SolidIcon.play1616)
+                        ALSmallLineIconRightButton(title: "Button", icon: ALIcon.solid.play1616)
                     }
                     
                     LivePreview {
-                        ALSmallLineIconLeftButton(title: "Button", icon: SolidIcon.play1616)
+                        ALSmallLineIconLeftButton(title: "Button", icon: ALIcon.solid.play1616)
                     }
                     
                     LivePreview {
-                        ALSmallUnderlineButton(title: "Button", icon: LineIcon.repeat1616)
+                        ALSmallUnderlineButton(title: "Button", icon: ALIcon.line.repeat1616)
                     }
                 }
                 
@@ -46,15 +46,15 @@ struct ALButton_Previews: PreviewProvider {
                     }
                     
                     LivePreview {
-                        ALTinyLineIconRightButton(title: "Button", icon: SolidIcon.play1616)
+                        ALTinyLineIconRightButton(title: "Button", icon: ALIcon.solid.play1616)
                     }
                     
                     LivePreview {
-                        ALTinyLineIconLeftButton(title: "Button", icon: SolidIcon.play1616)
+                        ALTinyLineIconLeftButton(title: "Button", icon: ALIcon.solid.play1616)
                     }
                     
                     LivePreview {
-                        ALTinyUnderlineButton(title: "Button", icon: LineIcon.repeat1616)
+                        ALTinyUnderlineButton(title: "Button", icon: ALIcon.line.repeat1616)
                     }
                 }
                 Spacer()
@@ -77,11 +77,11 @@ struct ALButton_Previews: PreviewProvider {
                 }
                 
                 LivePreview {
-                    ALSmallLineIconLeftButton(title: "Button", icon: LineIcon.repeat1616)
+                    ALSmallLineIconLeftButton(title: "Button", icon: ALIcon.line.repeat1616)
                 }
                 
                 LivePreview {
-                    ALSmallUnderlineButton(title: "Button", icon: LineIcon.repeat1616)
+                    ALSmallUnderlineButton(title: "Button", icon: ALIcon.line.repeat1616)
                 }
                 Spacer()
             }

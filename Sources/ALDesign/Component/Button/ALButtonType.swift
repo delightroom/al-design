@@ -58,60 +58,10 @@ extension ALButtonSize {
     func attributedTitle(for title: String, style: ALButtonStyle) -> NSMutableAttributedString {
         let result: NSMutableAttributedString
         switch self {
-        case .big: result = title.text(.title3)
-        case .medium: result = title.text(.button)
-        case .small:
-            switch style {
-            case .lineIconLeft:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = ALIcon.solid.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
-                result.append(NSAttributedString(attachment: attatchment))
-                result.append(" \(title)".text(.overline))
-            case .lineIconRight:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = ALIcon.solid.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
-                result.append("\(title) ".text(.overline))
-                result.append(NSAttributedString(attachment: attatchment))
-            case .underline:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = ALIcon.line.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.line.forward1616.size)
-                result.append("\(title) ".text(.overline))
-                result.append(NSAttributedString(attachment: attatchment))
-            default:
-                result = title.text(.overline)
-            }
-        case .tiny:
-            switch style {
-            case .lineIconLeft:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = ALIcon.solid.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
-                result.append(NSAttributedString(attachment: attatchment))
-                result.append(" \(title)".text(.caption1))
-            case .lineIconRight:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = ALIcon.solid.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.solid.play1616.size)
-                result.append("\(title) ".text(.caption1))
-                result.append(NSAttributedString(attachment: attatchment))
-            case .underline:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = ALIcon.line.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: ALIcon.line.forward1616.size)
-                result.append("\(title) ".text(.caption1))
-                result.append(NSAttributedString(attachment: attatchment))
-            default:
-                result = title.text(.caption1)
-            }
+        case .big: result = title.button(.button1)
+        case .medium: result = title.button(.button2)
+        case .small: result = title.button(.button3)
+        case .tiny: result = title.button(.button4)
         }
         return result.addColor(style.textColor)
     }
