@@ -38,6 +38,52 @@ public enum Typography {
     case caption3
 }
 
+public protocol Typographyy {
+    var font: UIFont { get }
+}
+
+struct hero1: Typographyy {
+    var font: UIFont {
+        return .systemFont(ofSize: 110, weight: .heavy)
+    }
+}
+
+extension String {
+//    public func font(_ typo: Typographyy) -> NSMutableAttributedString {
+//
+//    }
+    public func font(_ typo: Typographyy) -> NSMutableAttributedString {
+//        let font: UIFont
+//        switch typo {
+//        case .hero1: font = UIFont.systemFont(ofSize: 110, weight: .heavy)
+//        case .hero2: font = UIFont.systemFont(ofSize: 48, weight: .heavy)
+//        case .title1: font = UIFont.systemFont(ofSize: 32, weight: .heavy)
+//        case .title2: font = UIFont.systemFont(ofSize: 26, weight: .heavy)
+//        case .title3: font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+//        case .subtitle: font = UIFont.systemFont(ofSize: 18)
+//        case .button: font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+//        case .paragraph: font = UIFont.systemFont(ofSize: 16)
+//        case .overline: font = UIFont.systemFont(ofSize: 14, weight: .heavy)
+//        case .caption1: font = UIFont.systemFont(ofSize: 14)
+//        case .caption2: font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+//        case .caption3: font = UIFont.systemFont(ofSize: 12)
+//        }
+        "ADSF".font(.hero1)
+        let attributes: [NSAttributedString.Key: Any] = [.font: typo.font, .foregroundColor: UIColor.surfaceHighEmphasis]
+        return NSMutableAttributedString(string: self, attributes: attributes)
+    }
+}
+
+extension NSMutableAttributedString {
+    
+    public func number() -> NSMutableAttributedString {
+        guard let font = attribute(.font, at: 0, effectiveRange: nil) as? UIFont else { return self }
+        let range = NSRange(location: 0, length: length)
+        addAttribute(.font, value: lexendSemiBold(ofSize: font.pointSize), range: range)
+        return self
+    }
+    
+}
 extension String {
     public func number(_ typo: Typography) -> NSMutableAttributedString {
         let fontSize: CGFloat
