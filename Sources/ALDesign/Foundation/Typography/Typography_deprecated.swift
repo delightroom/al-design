@@ -7,27 +7,6 @@
 
 import UIKit
 
-extension Typography {
-    var font: UIFont {
-        let result: UIFont
-        switch self {
-        case .hero1: result = UIFont.systemFont(ofSize: 110, weight: .heavy)
-        case .hero2: result = UIFont.systemFont(ofSize: 48, weight: .heavy)
-        case .title1: result = UIFont.systemFont(ofSize: 32, weight: .heavy)
-        case .title2: result = UIFont.systemFont(ofSize: 26, weight: .heavy)
-        case .title3: result = UIFont.systemFont(ofSize: 20, weight: .heavy)
-        case .subtitle2: result = UIFont.systemFont(ofSize: 18)
-        case .subtitle1: result = UIFont.systemFont(ofSize: 17, weight: .heavy)
-        case .paragraph: result = UIFont.systemFont(ofSize: 16)
-        case .overline: result = UIFont.systemFont(ofSize: 14, weight: .heavy)
-        case .caption1: result = UIFont.systemFont(ofSize: 14)
-        case .caption2: result = UIFont.systemFont(ofSize: 12, weight: .heavy)
-        case .caption3: result = UIFont.systemFont(ofSize: 12)
-        }
-        return result
-    }
-}
-
 extension String {
     private func attributedString(type: Typography) -> NSMutableAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: UIColor.onSurfaceHighEmphasisv1]
@@ -113,5 +92,19 @@ extension String {
         paragraphStyle.alignment = alignment
         let attributes: [NSAttributedString.Key: Any] = [.font: type.font, .foregroundColor: color.color, .paragraphStyle: paragraphStyle]
         return NSAttributedString(string: self, attributes: attributes)
+    }
+}
+
+extension String {
+    @available(*, deprecated, message: "Use \".font(_ typo: Typogrpahy).number()\" instead")
+    public func number(_ typo: Typography) -> NSMutableAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [.font: typo.font, .foregroundColor: UIColor.surfaceHighEmphasis]
+        return NSMutableAttributedString(string: self, attributes: attributes).number()
+    }
+    
+    @available(*, deprecated, message: "Use \".font(_ typo: Typogrpahy)\" instead")
+    public func text(_ typo: Typography) -> NSMutableAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [.font: typo.font, .foregroundColor: UIColor.surfaceHighEmphasis]
+        return NSMutableAttributedString(string: self, attributes: attributes)
     }
 }
