@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class ALNavigationBar: UINavigationBar {
+open class ALNavigationBar: UINavigationBar {
     private let largeTextAttributes: [NSAttributedString.Key: Any] = [.font: Typography.title2.font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
     private let textAttributes: [NSAttributedString.Key: Any] = [.font: Typography.subtitle1.font, .foregroundColor: UIColor.onSurfaceHighEmphasis]
     
@@ -24,7 +24,7 @@ public class ALNavigationBar: UINavigationBar {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override var backgroundColor: UIColor? {
+    open override var backgroundColor: UIColor? {
         didSet {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = backgroundColor
