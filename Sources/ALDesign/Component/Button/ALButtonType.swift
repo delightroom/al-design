@@ -16,63 +16,52 @@ enum ALButtonSize {
 }
 
 extension ALButtonSize {
+    var font: UIFont {
+        let result: UIFont
+        switch self {
+        case .big: result = ButtonTypography.button1.font
+        case .medium: result = ButtonTypography.button2.font
+        case .small: result = ButtonTypography.button3.font
+        case .tiny: result = ButtonTypography.button4.font
+        }
+        return result
+    }
+}
+
+extension ALButtonSize {
+    func attributedTitle(for title: String, style: ALButtonStyle, icon: UIImage?) -> NSMutableAttributedString {
+        guard let icon = icon else { return attributedTitle(for: title, style: style) }
+        let result: NSMutableAttributedString
+        
+        result = NSMutableAttributedString()
+        let attatchment = NSTextAttachment()
+        attatchment.image = icon
+        let attachmentBoundsY = (self.font.capHeight - icon.size.height) / 2
+        attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: attachmentBoundsY), size: icon.size)
+        
+        switch style {
+        case .lineIconLeft:
+            result.append(NSAttributedString(attachment: attatchment))
+            result.append(attributedTitle(for: " \(title)", style: style))
+        case .lineIconRight:
+            result.append(attributedTitle(for: "\(title) ", style: style))
+            result.append(NSAttributedString(attachment: attatchment))
+        case .underline:
+            result.append(attributedTitle(for: "\(title) ", style: style))
+            result.append(NSAttributedString(attachment: attatchment))
+        default:
+            result.append(attributedTitle(for: title, style: style))
+        }
+        return result.addColor(style.textColor)
+    }
+    
     func attributedTitle(for title: String, style: ALButtonStyle) -> NSMutableAttributedString {
         let result: NSMutableAttributedString
         switch self {
-        case .big: result = title.text(.title3)
-        case .medium: result = title.text(.button)
-        case .small:
-            switch style {
-            case .lineIconLeft:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
-                result.append(NSAttributedString(attachment: attatchment))
-                result.append(" \(title)".text(.overline))
-            case .lineIconRight:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
-                result.append("\(title) ".text(.overline))
-                result.append(NSAttributedString(attachment: attatchment))
-            case .underline:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = LineIcon.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
-                result.append("\(title) ".text(.overline))
-                result.append(NSAttributedString(attachment: attatchment))
-            default:
-                result = title.text(.overline)
-            }
-        case .tiny:
-            switch style {
-            case .lineIconLeft:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
-                result.append(NSAttributedString(attachment: attatchment))
-                result.append(" \(title)".text(.caption1))
-            case .lineIconRight:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = SolidIcon.play1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: SolidIcon.play1616.size)
-                result.append("\(title) ".text(.caption1))
-                result.append(NSAttributedString(attachment: attatchment))
-            case .underline:
-                result = NSMutableAttributedString()
-                let attatchment = NSTextAttachment()
-                attatchment.image = LineIcon.forward1616
-                attatchment.bounds = CGRect(origin: CGPoint(x: 0, y: -1.5), size: LineIcon.forward1616.size)
-                result.append("\(title) ".text(.caption1))
-                result.append(NSAttributedString(attachment: attatchment))
-            default:
-                result = title.text(.caption1)
-            }
+        case .big: result = title.button(.button1)
+        case .medium: result = title.button(.button2)
+        case .small: result = title.button(.button3)
+        case .tiny: result = title.button(.button4)
         }
         return result.addColor(style.textColor)
     }
@@ -89,21 +78,21 @@ extension ALButtonSize {
     func contentEdgeInsets(for style: ALButtonStyle) -> UIEdgeInsets {
         let result: UIEdgeInsets
         switch self {
-        case .big: result = UIEdgeInsets(top: 22, left: 56, bottom: 20, right: 56)
-        case .medium: result = UIEdgeInsets(top: 14, left: 32, bottom: 12, right: 32)
+        case .big: result = UIEdgeInsets(top: 22, left: 56, bottom: 22, right: 56)
+        case .medium: result = UIEdgeInsets(top: 14, left: 32, bottom: 14, right: 32)
         case .small:
             switch style {
-            case .lineIconLeft: result = UIEdgeInsets(top: 10, left: 12, bottom: 8, right: 16)
-            case .lineIconRight: result = UIEdgeInsets(top: 10, left: 16, bottom: 8, right: 12)
-            case .underline: result = UIEdgeInsets(top: 8, left: 0, bottom: 2, right: 0)
-            default: result = UIEdgeInsets(top: 10, left: 16, bottom: 8, right: 16)
+            case .lineIconLeft: result = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 16)
+            case .lineIconRight: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 8)
+            case .underline: result = UIEdgeInsets(top: 8, left: 0, bottom: 4, right: 0)
+            default: result = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
             }
         case .tiny:
             switch style {
-            case .lineIconLeft: result = UIEdgeInsets(top: 6, left: 8, bottom: 4, right: 12)
-            case .lineIconRight: result = UIEdgeInsets(top: 6, left: 12, bottom: 4, right: 8)
-            case .underline: result = UIEdgeInsets(top: 3, left: 0, bottom: 4, right: 0)
-            default: result = UIEdgeInsets(top: 6, left: 12, bottom: 4, right: 12)
+            case .lineIconLeft: result = UIEdgeInsets(top: 6, left: 8, bottom: 6, right: 12)
+            case .lineIconRight: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 8)
+            case .underline: result = UIEdgeInsets(top: 3, left: 0, bottom: 6, right: 0)
+            default: result = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 12)
             }
         }
         return result
@@ -113,6 +102,7 @@ extension ALButtonSize {
 enum ALButtonStyle {
     case gradient
     case primary
+    case affordance
     case basic
     case line
     case lineIconLeft
@@ -125,38 +115,50 @@ extension ALButtonStyle {
         let result: UIColor
         switch self {
         case .gradient, .primary: result = .onPrimary
+        case .affordance: result = .appbar
         case .basic: result = .surfaceHighEmphasis
         case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
         return result
     }
     
-    var backgroundColor: [UIColor]? {
+    var backgroundColors: [UIColor]? {
         let result: [UIColor]?
         switch self {
         case .gradient: result = UIColor.premiumHorizon
         case .primary: result = [.primary]
+        case .affordance: result = [.priority]
         case .basic: result = [.surfaceDefault]
         case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
         return result
     }
     
-    var borderColor: CGColor? {
-        let result: CGColor?
+    var borderColor: UIColor? {
+        let result: UIColor?
         switch self {
-        case .gradient, .primary, .basic: result = nil
-        case .line, .lineIconLeft, .lineIconRight, .underline: result = UIColor.surfaceMediumEmphasis.cgColor
+        case .gradient, .primary, .affordance, .basic: result = nil
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceMediumEmphasis
         }
         return result
     }
     
-    var disabledColor: UIColor {
+    var disabledTextColor: UIColor {
         let result: UIColor
         switch self {
-        case .gradient, .primary: result = .primaryVariant
-        case .basic: result = UIColor(hexString: "#2F333D")
-        case .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceDefault
+        case .gradient, .primary: result = .scrim
+        case .affordance, .basic, .line, .lineIconLeft, .lineIconRight, .underline: result = .surfaceLowEmphasis
+        }
+        return result.withAlphaComponent(0.4)
+    }
+    
+    var disabledBackgroundColors: [UIColor]? {
+        let result: [UIColor]?
+        switch self {
+        case .gradient: result = UIColor.premiumHorizon
+        case .primary: result = [.primary]
+        case .affordance, .basic: result = [.surfaceDefault]
+        case .line, .lineIconLeft, .lineIconRight, .underline: result = nil
         }
         return result
     }
