@@ -34,7 +34,7 @@ public class ALTooltip: UIView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.image = LineIcon.close2424
+        view.image = ALIcon.line.close2424
         view.tintColor = .secondaryVariant
         return view
     }()
