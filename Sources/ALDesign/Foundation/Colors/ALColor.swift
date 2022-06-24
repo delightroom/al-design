@@ -11,157 +11,126 @@ extension UIColor {
     /// light: white100
     /// dark: black50
     public static var background: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white100.value
-        case .dark: result = ALColorPalette.black50.value
-        case .unspecified: result = ALColorPalette.black50.value
-        @unknown default: result = ALColorPalette.black50.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white100,
+                             darkMode: ALColorPalette.black50)
     }
     
     /// light: white200
     /// dark: black300
     public static var appbar: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white200.value
-        case .dark: result = ALColorPalette.black300.value
-        case .unspecified: result = ALColorPalette.black300.value
-        @unknown default: result = ALColorPalette.black300.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white200,
+                             darkMode: ALColorPalette.black300)
     }
     
     /// light: white400
     /// dark: black400
     public static var onSurfaceDivider12: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white400.value
-        case .dark: result = ALColorPalette.black400.value
-        case .unspecified: result = ALColorPalette.black400.value
-        @unknown default: result = ALColorPalette.black400.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white400,
+                             darkMode: ALColorPalette.black400)
     }
     
     /// light: white300
     /// dark: black300
     public static var onSurfaceDivider5: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white300.value
-        case .dark: result = ALColorPalette.black300.value
-        case .unspecified: result = ALColorPalette.black300.value
-        @unknown default: result = ALColorPalette.black300.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white300,
+                             darkMode: ALColorPalette.black300)
     }
     
     /// light: black100, 0.88
     /// dark: black, 0.88
     public static var scrim: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.black100.value.withAlphaComponent(0.88)
-        case .dark: result = ALColorPalette.black.value.withAlphaComponent(0.88)
-        case .unspecified: result = ALColorPalette.black.value.withAlphaComponent(0.88)
-        @unknown default: result = ALColorPalette.black.value.withAlphaComponent(0.88)
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.black100.value.withAlphaComponent(0.88),
+                             darkMode: ALColorPalette.black.value.withAlphaComponent(0.88))
     }
     
     /// light: white
     /// dark: black100
     public static var surface: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white.value
-        case .dark: result = ALColorPalette.black100.value
-        case .unspecified: result = ALColorPalette.black100.value
-        @unknown default: result = ALColorPalette.black100.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white,
+                             darkMode: ALColorPalette.black100)
     }
     
     /// light: black50
     /// dark: white50
     public static var surfaceHighEmphasis: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.black50.value
-        case .dark: result = ALColorPalette.white50.value
-        case .unspecified: result = ALColorPalette.white50.value
-        @unknown default: result = ALColorPalette.white50.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.black50,
+                             darkMode: ALColorPalette.white50)
     }
     
     /// light: black700
     /// dark: white900
     public static var surfaceMediumEmphasis: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.black700.value
-        case .dark: result = ALColorPalette.white900.value
-        case .unspecified: result = ALColorPalette.white900.value
-        @unknown default: result = ALColorPalette.white900.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.black700,
+                             darkMode: ALColorPalette.white900)
     }
     
-    /// light: black600
-    /// dark: white900
+    /// light: white900
+    /// dark: black600
     public static var surfaceLowEmphasis: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white900.value
-        case .dark: result = ALColorPalette.black600.value
-        case .unspecified: result = ALColorPalette.black600.value
-        @unknown default: result = ALColorPalette.black600.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white900,
+                             darkMode: ALColorPalette.black600)
     }
     
     /// light: white600
     /// dark: black500
     public static var surfaceDefault: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white600.value
-        case .dark: result = ALColorPalette.black500.value
-        case .unspecified: result = ALColorPalette.black500.value
-        @unknown default: result = ALColorPalette.black500.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white600,
+                             darkMode: ALColorPalette.black500)
     }
     
     /// light: white500
     /// dark: black300
     public static var surfaceDisabled: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.white500.value
-        case .dark: result = ALColorPalette.black300.value
-        case .unspecified: result = ALColorPalette.black300.value
-        @unknown default: result = ALColorPalette.black300.value
-        }
-        return result
+        UIColor.dynamicColor(lightMode: ALColorPalette.white500,
+                             darkMode: ALColorPalette.black300)
+    }
+    /// light: black200
+    /// dark: white600
+    public static var priority: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.black200,
+                             darkMode: ALColorPalette.white600)
     }
     
-    /// dark: white600
-    /// light: black200
-    public static var priority: UIColor {
-        let result: UIColor
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .light: result = ALColorPalette.black200.value
-        case .dark: result = ALColorPalette.white600.value
-        case .unspecified: result = ALColorPalette.white600.value
-        @unknown default: result = ALColorPalette.white600.value
-        }
-        return result
+    /// colorGray
+    public static var gray50: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white50,
+                             darkMode: ALColorPalette.black50)
+    }
+    public static var gray100: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white100,
+                             darkMode: ALColorPalette.black100)
+    }
+    public static var gray200: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white200,
+                             darkMode: ALColorPalette.black200)
+    }
+    public static var gray300: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white300,
+                             darkMode: ALColorPalette.black300)
+    }
+    public static var gray400: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white400,
+                             darkMode: ALColorPalette.black400)
+    }
+    public static var gray500: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white500,
+                             darkMode: ALColorPalette.black500)
+    }
+    public static var gray600: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white600,
+                             darkMode: ALColorPalette.black600)
+    }
+    public static var gray700: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white700,
+                             darkMode: ALColorPalette.black700)
+    }
+    public static var gray800: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white800,
+                             darkMode: ALColorPalette.black800)
+    }
+    public static var gray900: UIColor {
+        UIColor.dynamicColor(lightMode: ALColorPalette.white900,
+                             darkMode: ALColorPalette.black900)
     }
     
     /// #F50F3B
@@ -234,16 +203,38 @@ extension UIColor {
         
         var color:UInt64 = 0
         scanner.scanHexInt64(&color)
-
+        
         let mask = 0x000000FF
         let r = Int(color >> 16) & mask
         let g = Int(color >> 8) & mask
         let b = Int(color) & mask
-
+        
         let red   = CGFloat(r) / 255.0
         let green = CGFloat(g) / 255.0
         let blue  = CGFloat(b) / 255.0
-
+        
         self.init(red:red, green:green, blue:blue, alpha:1)
+    }
+    
+    class func dynamicColor(lightMode: UIColor, darkMode: UIColor) -> UIColor {
+        UIColor { (taitCollection: UITraitCollection) -> UIColor in
+            switch taitCollection.userInterfaceStyle {
+            case .dark:         return darkMode
+            case .light:        return lightMode
+            case .unspecified:  return darkMode
+            @unknown default:   return darkMode
+            }
+        }
+    }
+    
+    class func dynamicColor(lightMode: ALColorPalette, darkMode: ALColorPalette) -> UIColor {
+        UIColor { (taitCollection: UITraitCollection) -> UIColor in
+            switch taitCollection.userInterfaceStyle {
+            case .dark:         return darkMode.value
+            case .light:        return lightMode.value
+            case .unspecified:  return darkMode.value
+            @unknown default:   return darkMode.value
+            }
+        }
     }
 }

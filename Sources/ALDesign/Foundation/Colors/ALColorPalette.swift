@@ -30,16 +30,6 @@ public enum ALColorPalette {
     case black700
     case black800
     case black900
-    case gray50
-    case gray100
-    case gray200
-    case gray300
-    case gray400
-    case gray500
-    case gray600
-    case gray700
-    case gray800
-    case gray900
     
     case red900
     case red800
@@ -131,9 +121,9 @@ public enum ALColorPalette {
 }
 
 extension ALColorPalette {
+    
     public var value: UIColor {
         let result: UIColor
-        let isLightTheme: Bool = UITraitCollection.current.userInterfaceStyle == .light
         switch self {
         case .white: result = UIColor(hexString: "#FFFFFF")
         case .white50: result = UIColor(hexString: "#F7FAFF")
@@ -157,16 +147,6 @@ extension ALColorPalette {
         case .black700: result = UIColor(hexString: "#666D7D")
         case .black800: result = UIColor(hexString: "#747C8C")
         case .black900: result = UIColor(hexString: "#858E9E")
-        case .gray50: result = isLightTheme ? ALColorPalette.white50.value : ALColorPalette.black50.value
-        case .gray100: result = isLightTheme ? ALColorPalette.white100.value : ALColorPalette.black100.value
-        case .gray200: result = isLightTheme ? ALColorPalette.white200.value : ALColorPalette.black200.value
-        case .gray300: result = isLightTheme ? ALColorPalette.white300.value : ALColorPalette.black300.value
-        case .gray400: result = isLightTheme ? ALColorPalette.white400.value : ALColorPalette.black400.value
-        case .gray500: result = isLightTheme ? ALColorPalette.white500.value : ALColorPalette.black500.value
-        case .gray600: result = isLightTheme ? ALColorPalette.white600.value : ALColorPalette.black600.value
-        case .gray700: result = isLightTheme ? ALColorPalette.white700.value : ALColorPalette.black700.value
-        case .gray800: result = isLightTheme ? ALColorPalette.white800.value : ALColorPalette.black800.value
-        case .gray900: result = isLightTheme ? ALColorPalette.white900.value : ALColorPalette.black900.value
         case .red900: result = UIColor(hexString: "#FCF7F8")
         case .red800: result = UIColor(hexString: "#FCDCE0")
         case .red700: result = UIColor(hexString: "#FCBBC4")
