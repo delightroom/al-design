@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_weather_cloudy_light_24_24.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ic_weather_cloudy_dark_24_24.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
