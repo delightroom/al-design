@@ -221,8 +221,8 @@ extension UIColor {
             switch taitCollection.userInterfaceStyle {
             case .dark:         return darkMode
             case .light:        return lightMode
-            case .unspecified:  return darkMode
-            @unknown default:   return darkMode
+            case .unspecified:  return lightMode
+            @unknown default:   return lightMode
             }
         }
     }
@@ -232,8 +232,8 @@ extension UIColor {
             switch taitCollection.userInterfaceStyle {
             case .dark:         return darkMode.value
             case .light:        return lightMode.value
-            case .unspecified:  return darkMode.value
-            @unknown default:   return darkMode.value
+            case .unspecified:  return lightMode.value
+            @unknown default:   return lightMode.value
             }
         }
     }
