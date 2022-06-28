@@ -28,54 +28,73 @@ func lexend(_ type: LexendType, ofSize size: CGFloat) -> UIFont {
     return UIFont(name: type.rawValue, size: size)!
 }
 
-public enum Typography {
-    case hero1
-    case hero2
-    case title1
-    case title2
-    case title3
-    case subtitle1
-    case subtitle2
-    case paragraph
-    case overline
-    case caption1
-    case caption2
-    case caption3
+public struct Typography {
+    let font: UIFont
+}
+
+extension Typography {
+    public static let hero1: Typography = {
+        return .init(font: .systemFont(ofSize: 110))
+    }()
+    
+    public static let hero2: Typography = {
+        return .init(font: .systemFont(ofSize: 48, weight: .heavy))
+    }()
+    
+    public static let title1: Typography = {
+        return .init(font: .systemFont(ofSize: 32, weight: .heavy))
+    }()
+    
+    public static let title2: Typography = {
+        return .init(font: .systemFont(ofSize: 26, weight: .heavy))
+    }()
+    
+    public static let title3: Typography = {
+        return .init(font: .systemFont(ofSize: 20, weight: .heavy))
+    }()
+    
+    public static let subtitle1: Typography = {
+        return .init(font: .systemFont(ofSize: 18, weight: .heavy))
+    }()
+    
+    public static let subtitle2: Typography = {
+        return .init(font: .systemFont(ofSize: 18))
+    }()
+    
+    public static let paragraph: Typography = {
+        return .init(font: .systemFont(ofSize: 16))
+    }()
+    
+    public static let overline: Typography = {
+        return .init(font: .systemFont(ofSize: 14, weight: .heavy))
+    }()
+    
+    public static let caption1: Typography = {
+        return .init(font: .systemFont(ofSize: 14))
+    }()
+    
+    public static let caption2: Typography = {
+        return .init(font: .systemFont(ofSize: 12, weight: .heavy))
+    }()
+    
+    public static let caption3: Typography = {
+        return .init(font: .systemFont(ofSize: 12))
+    }()
 }
 
 extension String {
-    public func number(_ typo: Typography) -> NSMutableAttributedString {
-        let font: UIFont
-        switch typo {
-        case .hero1: font = lexend(.regular, ofSize: 110)
-        case .hero2: font = lexend(.semiBold, ofSize: 48)
-        case .title1: font = lexend(.semiBold, ofSize: 32)
-        case .title2: font = lexend(.semiBold, ofSize: 26)
-        case .title3: font = lexend(.semiBold, ofSize: 20)
-        default: font = lexend(.semiBold, ofSize: 20)
-        }
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis]
+    public func font(_ typo: Typography) -> NSMutableAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [.font: typo.font, .foregroundColor: UIColor.surfaceHighEmphasis]
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
-    
-    public func text(_ typo: Typography) -> NSMutableAttributedString {
-        let font: UIFont
-        switch typo {
-        case .hero1: font = UIFont.systemFont(ofSize: 110)
-        case .hero2: font = UIFont.systemFont(ofSize: 48, weight: .heavy)
-        case .title1: font = UIFont.systemFont(ofSize: 32, weight: .heavy)
-        case .title2: font = UIFont.systemFont(ofSize: 26, weight: .heavy)
-        case .title3: font = UIFont.systemFont(ofSize: 20, weight: .heavy)
-        case .subtitle1: font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-        case .subtitle2: font = UIFont.systemFont(ofSize: 18)
-        case .paragraph: font = UIFont.systemFont(ofSize: 16)
-        case .overline: font = UIFont.systemFont(ofSize: 14, weight: .heavy)
-        case .caption1: font = UIFont.systemFont(ofSize: 14)
-        case .caption2: font = UIFont.systemFont(ofSize: 12, weight: .heavy)
-        case .caption3: font = UIFont.systemFont(ofSize: 12)
-        }
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.surfaceHighEmphasis]
-        return NSMutableAttributedString(string: self, attributes: attributes)
+}
+
+extension NSMutableAttributedString {
+    public func number() -> NSMutableAttributedString {
+        guard let font = attribute(.font, at: 0, effectiveRange: nil) as? UIFont else { return self }
+        let range = NSRange(location: 0, length: length)
+        addAttribute(.font, value: lexend(font.pointSize == 110 ? .regular : .semiBold, ofSize: font.pointSize), range: range)
+        return self
     }
 }
 

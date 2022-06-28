@@ -18,7 +18,7 @@ final class TypographyTests: XCTestCase {
         let fonts = [lexend(.regular, ofSize: 110), lexend(.semiBold, ofSize: 48), lexend(.semiBold, ofSize:32), lexend(.semiBold, ofSize: 26), lexend(.semiBold, ofSize: 20)]
 
         let input = "123456789"
-        let output = [input.number(.hero1), input.number(.hero2), input.number(.title1), input.number(.title2), input.number(.title3)]
+        let output = [input.font(.hero1).number(), input.font(.hero2).number(), input.font(.title1).number(), input.font(.title2).number(), input.font(.title3).number()]
         let correctOutput = fonts.map { NSAttributedString(string: input, attributes: [.font: $0, .foregroundColor: UIColor.surfaceHighEmphasis]) }
 
         XCTAssertEqual(output, correctOutput)
