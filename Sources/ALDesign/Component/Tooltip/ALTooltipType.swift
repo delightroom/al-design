@@ -35,7 +35,7 @@ extension ALTooltipType {
     var backgroundColor: UIColor {
         let result: UIColor
         switch self {
-        case .smallTop, .smallBottom: result = ALColorPalette.gray400.value
+        case .smallTop, .smallBottom: result = .gray400
         case .basicTop, .basicBottom, .contentsTop, .contentsBottom: result = .secondary
         }
         return result
