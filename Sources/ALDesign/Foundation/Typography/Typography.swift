@@ -46,7 +46,7 @@ extension Typography {
     }()
     
     public static let title2: Typography = {
-        return .init(font: .systemFont(ofSize: 26, weight: .heavy))
+        return .init(font: .systemFont(ofSize: 24, weight: .heavy))
     }()
     
     public static let title3: Typography = {
